@@ -7,6 +7,11 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.5"
+    "naive-ui": "^2.31.0",
+    "nuxt": "3.0.0-rc.5",
+    "nuxt-windicss": "^2.4.3"
+  },
+  "dependencies": {
+    "@css-render/vue3-ssr": "^0.15.10"
   }
 }
