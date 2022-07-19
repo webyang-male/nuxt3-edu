@@ -1,7 +1,7 @@
 <template>
     <div>
         <nuxt-link to="/test">goto测试页</nuxt-link>
-       <p>index</p> 
+        <p>index</p>
     </div>
     <n-icon size="40">
         <search />
@@ -11,5 +11,5 @@
 <script setup>
 //引入naive-ui图标
 import { NIcon } from 'naive-ui'
-import {Search } from '@vicons/ionicons5'
+import { Search } from '@vicons/ionicons5'
 </script>
