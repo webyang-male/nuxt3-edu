@@ -7,6 +7,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@vicons/ionicons5": "^0.12.0",
     "naive-ui": "^2.31.0",
     "nuxt": "3.0.0-rc.5",
     "nuxt-windicss": "^2.4.3"
