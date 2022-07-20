@@ -3,6 +3,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     'NavBar': typeof import("../components/NavBar.vue")['default'],
     'PageFooter': typeof import("../components/PageFooter.vue")['default'],
+    'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
+    'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -12,6 +14,8 @@ declare module 'vue' {
     'NuxtLoadingIndicator': typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
     'LazyNavBar': typeof import("../components/NavBar.vue")['default'],
     'LazyPageFooter': typeof import("../components/PageFooter.vue")['default'],
+    'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
+    'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -23,6 +27,8 @@ declare module 'vue' {
 }
 export const NavBar: typeof import("../components/NavBar.vue")['default']
 export const PageFooter: typeof import("../components/PageFooter.vue")['default']
+export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
+export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -32,6 +38,8 @@ export const NuxtLink: typeof import("../node_modules/nuxt/dist/app/components/n
 export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
 export const LazyNavBar: typeof import("../components/NavBar.vue")['default']
 export const LazyPageFooter: typeof import("../components/PageFooter.vue")['default']
+export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
+export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
