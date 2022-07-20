@@ -4,7 +4,7 @@
             <n-button text class="!ml-[3rem] !text-xl !font-bold ">追梦教育</n-button>
 
             <UiMenu>
-                <ui-menu-item v-for="(item, index) in menus" :key="item.name" :active="route.path == item.path"
+                <ui-menu-item v-for="(item, index) in menus" :key="item.name" :active="isMenuItemActive(item)"
                     @click="handleOpen(item.path)">
                     {{ item.name }}
                 </ui-menu-item>
@@ -49,33 +49,57 @@ const menus = [{
     path: "/"
 }, {
     name: "考试",
-    path: "/paper/1"
+    path: "/paper/1",
+    match: [{ name: 'paper-page' }]
 }, {
     name: "拼团",
-    path: "/list/group/1"
+    path: "/list/group/1",
+    match: [{ name: 'list-type-page', params: { type: 'group' } }]
 }, {
     name: "秒杀",
-    path: "/list/flashsale/1"
+    path: "/list/flashsale/1",
+    match: [{ name: 'list-type-page', params: { type: 'flashsale' } }]
 }, {
     name: "直播",
-    path: "/list/live/1"
+    path: "/list/live/1",
+    match: [{ name: 'list-type-page', params: { type: 'live' } }]
 }, {
     name: "专栏",
-    path: "/list/column/1"
+    path: "/list/column/1",
+    match: [{ name: 'list-type-page', params: { type: 'column' } }]
 }, {
     name: "电子书",
-    path: "/list/book/1"
+    path: "/list/book/1",
+    match: [{ name: 'list-type-page', params: { type: 'book' } }]
 }, {
     name: "社区",
-    path: "/bbs/0/1"
+    path: "/bbs/0/1",
+    match: [{ name: 'bbs-bbs_id-page' }]
 }, {
     name: "课程",
-    path: "/list/course/1"
+    path: "/list/course/1",
+    match: [{ name: 'list-type-page', params: { type: 'course' } }]
 }]
 
 function handleOpen(path) {
     navigateTo(path)
-} 
+}
+
+let isMenuItemActive = (item) => {
+    if (item.match) {
+        let i = item.match.findIndex(o => {
+            let res = true;
+            if (o.params && typeof (o.params === 'object')) {
+                res =  Object.keys(o.params).every(key => {
+                    return o.params[key] === route.params[key]
+                })
+            }
+           return o.name == route.name && res
+        })
+        return i != -1;
+    }
+    return route.path == item.path;
+}
 </script>
 
 <style>
