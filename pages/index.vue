@@ -1,45 +1,44 @@
 <template>
     <div>
         <template v-if="pending">
-            <div>
-                加载中...
-            </div>
+            加载中...
         </template>
         <template v-else-if="error">
-            <div>
-                错误提示：<br> {{ error?.data?.data }}
-            </div>
+           错误提示： {{ error?.data?.data }}
         </template>
         <template v-else>
-            <div>
-                {{ data }}
-            </div>
+            <template v-for="(item,index) in data" :key="index">
+                <Banner :data="item.data" v-if="item.type == 'swiper'"/>
+            </template>
         </template>
-        <p>{{ data }}</p>
+        
     </div>
 </template>
-
-<script setup>
-const { data, pending, refresh, error } = await useFetch('/index', {
-    key: 'IndexData',
-    //域名抽离
-    baseUrl: 'http://demonuxtapi.dishait.cn/pc',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        appid: 'bd9d01ecc75dbbaaefce1'
+<script setup> 
+const { 
+    pending,
+    data,
+    refresh,
+    error
+} = await useFetch("/index",{
+    key:"IndexData",
+    baseURL:"http://demonuxtapi.dishait.cn/pc",
+    headers:{
+        appid:"bd9d01ecc75dbbaaefce"
     },
-    //响应之前的数据处理函数
-    transform: (data) => {
-        return data.data
+    // 响应之前数据处理
+    transform:(res)=>{
+        return res.data
     },
-    //是否开启缓存
-    initialCache: false,
-    //懒加载
-    lazy: true,
-
+    // 是否开启缓存
+    initialCache:false,
+    // 懒加载
+    lazy:true
 })
-//服务端时直接报错
-if (process.server && error.value) {
-    throwError(error.value?.data.data)
+
+// 服务端时直接报错
+if(process.server && error.value){
+    throwError(error.value?.data?.data)
 }
+
 </script>

@@ -1,13 +1,12 @@
 <template>
     <div class="body">
-        <NavBar />
+        <NavBar/>
         <main class="container">
-            <slot />
+            <slot/>
         </main>
-        <PageFooter />
+        <PageFooter/>
     </div>
 </template>
-
 <style>
 .body {
     min-width: 1000px;
