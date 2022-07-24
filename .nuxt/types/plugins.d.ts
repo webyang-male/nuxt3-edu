@@ -11,7 +11,8 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/head/runtime/plugin").default> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/router").default> &
   InjectionType<typeof import("../../plugins/globalloading").default> &
-  InjectionType<typeof import("../../plugins/naive-ui").default>
+  InjectionType<typeof import("../../plugins/naive-ui").default> &
+  InjectionType<typeof import("../../plugins/tool").default>
 
 declare module '#app' {
   interface NuxtApp extends NuxtAppInjections { }

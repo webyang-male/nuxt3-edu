@@ -9,6 +9,7 @@
         <template v-else>
             <template v-for="(item,index) in data" :key="index">
                 <Banner :data="item.data" v-if="item.type == 'swiper'"/>
+                <ImageNav :data="item.data"  v-else-if="item.type == 'icons'"/>
             </template>
         </template>
         

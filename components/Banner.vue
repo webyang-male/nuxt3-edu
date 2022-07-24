@@ -1,9 +1,9 @@
 <template>
     <n-carousel show-arrow class="mb-6">
-        <img v-for="(item,index) in data" :key="index"
+        <img v-for="(item,index) in data" :key="item"
         class="carousel-img rounded cursor-pointer"
         :src="item.src"
-        @click="open(item)"
+        @click="$commonOpen(item)"
         >
     </n-carousel>
 </template>
