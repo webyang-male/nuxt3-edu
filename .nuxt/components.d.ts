@@ -2,8 +2,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'Banner': typeof import("../components/Banner.vue")['default'],
+    'CourseList': typeof import("../components/CourseList.vue")['default'],
     'ImageAd': typeof import("../components/ImageAd.vue")['default'],
     'ImageNav': typeof import("../components/ImageNav.vue")['default'],
+    'ListCard': typeof import("../components/ListCard.vue")['default'],
     'NavBar': typeof import("../components/NavBar.vue")['default'],
     'PageFooter': typeof import("../components/PageFooter.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
@@ -16,8 +18,10 @@ declare module 'vue' {
     'NuxtLink': typeof import("../node_modules/nuxt/dist/app/components/nuxt-link")['default'],
     'NuxtLoadingIndicator': typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
     'LazyBanner': typeof import("../components/Banner.vue")['default'],
+    'LazyCourseList': typeof import("../components/CourseList.vue")['default'],
     'LazyImageAd': typeof import("../components/ImageAd.vue")['default'],
     'LazyImageNav': typeof import("../components/ImageNav.vue")['default'],
+    'LazyListCard': typeof import("../components/ListCard.vue")['default'],
     'LazyNavBar': typeof import("../components/NavBar.vue")['default'],
     'LazyPageFooter': typeof import("../components/PageFooter.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
@@ -32,8 +36,10 @@ declare module 'vue' {
   }
 }
 export const Banner: typeof import("../components/Banner.vue")['default']
+export const CourseList: typeof import("../components/CourseList.vue")['default']
 export const ImageAd: typeof import("../components/ImageAd.vue")['default']
 export const ImageNav: typeof import("../components/ImageNav.vue")['default']
+export const ListCard: typeof import("../components/ListCard.vue")['default']
 export const NavBar: typeof import("../components/NavBar.vue")['default']
 export const PageFooter: typeof import("../components/PageFooter.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
@@ -46,8 +52,10 @@ export const ServerPlaceholder: typeof import("../node_modules/nuxt/dist/app/com
 export const NuxtLink: typeof import("../node_modules/nuxt/dist/app/components/nuxt-link")['default']
 export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
 export const LazyBanner: typeof import("../components/Banner.vue")['default']
+export const LazyCourseList: typeof import("../components/CourseList.vue")['default']
 export const LazyImageAd: typeof import("../components/ImageAd.vue")['default']
 export const LazyImageNav: typeof import("../components/ImageNav.vue")['default']
+export const LazyListCard: typeof import("../components/ListCard.vue")['default']
 export const LazyNavBar: typeof import("../components/NavBar.vue")['default']
 export const LazyPageFooter: typeof import("../components/PageFooter.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']

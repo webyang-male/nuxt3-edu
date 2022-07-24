@@ -4,7 +4,7 @@
         <n-gi v-for="(item,index) in data" :key="item">
             <n-card class="cursor-pointer" @click="$commonOpen(item)">
                 <template #cover>
-                    <img :src="item.src" class="w-[100%] h-[90px]">
+                    <img :src="item.src" class="w-[100%] h-[115px]">
                 </template>
                 <div class="text-center pt-4">
                     {{item.name}}

@@ -11,6 +11,7 @@
                 <Banner :data="item.data" v-if="item.type == 'swiper'"/>
                 <ImageNav :data="item.data"  v-else-if="item.type == 'icons'"/>
                 <ImageAd :data="item.data" v-else-if="item.type == 'imageAd'"/>
+                <ListCard :data="item.data" :title="item.title" v-else-if="item.type == 'list'"/>
             </template>
         </template>
         
