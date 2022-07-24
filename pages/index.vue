@@ -10,12 +10,14 @@
             <template v-for="(item,index) in data" :key="index">
                 <Banner :data="item.data" v-if="item.type == 'swiper'"/>
                 <ImageNav :data="item.data"  v-else-if="item.type == 'icons'"/>
+                <ImageAd :data="item.data" v-else-if="item.type == 'imageAd'"/>
             </template>
         </template>
         
     </div>
 </template>
-<script setup> 
+<script setup>
+import ImageAd1 from '~~/components/ImageAd.vue'; 
 const { 
     pending,
     data,

@@ -1,3 +1,4 @@
+<!-- 首页轮播图 -->
 <template>
     <n-carousel show-arrow class="mb-6">
         <img v-for="(item,index) in data" :key="item"

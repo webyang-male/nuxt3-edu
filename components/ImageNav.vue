@@ -1,3 +1,4 @@
+<!-- 首页图片分类 -->
 <template>
     <n-grid x-gap="12" :cols="4" class="mb-6">
         <n-gi v-for="(item,index) in data" :key="item">
