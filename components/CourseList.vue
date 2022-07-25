@@ -1,3 +1,4 @@
+<!-- 首页公共课程列表组件 -->
 <template>
     <n-card class="cursor-pointer mb-5 shadow-md !border-0" @click="$commonOpen(item)">
         <template #cover>

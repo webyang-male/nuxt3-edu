@@ -12,17 +12,16 @@
                 <ImageNav :data="item.data"  v-else-if="item.type == 'icons'"/>
                 <ImageAd :data="item.data" v-else-if="item.type == 'imageAd'"/>
                 <ListCard :data="item.data" :title="item.title" v-else-if="item.type == 'list'"/>
+                <ListCard :data="item.data" :type="item.listType" :title="item.title" v-else-if="item.type == 'promotion'"/>
             </template>
         </template>
         
     </div>
 </template>
 <script setup>
-import ImageAd1 from '~~/components/ImageAd.vue'; 
 const { 
     pending,
     data,
-    refresh,
     error
 } = await useFetch("/index",{
     key:"IndexData",
