@@ -48,6 +48,6 @@ if (props.type === 'group') {
     })
     // console.log(data.value?.rows);
     pdata.value = (data.value?.rows).reverse() || []
-    console.log(pdata.value);
+    // console.log(pdata.value);
 }
 </script>
