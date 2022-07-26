@@ -37,4 +37,7 @@ export default defineNuxtConfig({
           : [],
     },
   },
+  autoImports: {
+    dirs: ["apis"],
+  }
 });

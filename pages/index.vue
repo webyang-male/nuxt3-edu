@@ -20,6 +20,8 @@
     </div>
 </template>
 <script setup>
+import { useHttp } from '~~/composables/useHttp';
+
 //设置首页标题,举个例子，这里的title就是首页的标题
 useHead({
     title: '首页',
@@ -28,25 +30,32 @@ useHead({
         { name: "description", content: "基于vue3的nuxt框架SSR教育站点首页" },
     ],
 })
+
 const {
     pending,
     data,
     error
-} = await useFetch("/index", {
-    key: "IndexData",
-    baseURL: "http://demonuxtapi.dishait.cn/pc",
-    headers: {
-        appid: "bd9d01ecc75dbbaaefce"
-    },
-    // 响应之前数据处理
-    transform: (res) => {
-        return res.data
-    },
-    // 是否开启缓存
-    initialCache: false,
-    // 懒加载
-    lazy: true
-})
+} = await useIndexDataApi()
+
+// const {
+//     pending,
+//     data,
+//     error
+// } = await useFetch("/index", {
+//     key: "IndexData",
+//     baseURL: "http://demonuxtapi.dishait.cn/pc",
+//     headers: {
+//         appid: "bd9d01ecc75dbbaaefce"
+//     },
+//     // 响应之前数据处理
+//     transform: (res) => {
+//         return res.data
+//     },
+//     // 是否开启缓存
+//     initialCache: false,
+//     // 懒加载
+//     lazy: true
+// })
 
 // 服务端时直接报错
 if (process.server && error.value) {

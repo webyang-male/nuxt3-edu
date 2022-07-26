@@ -10,7 +10,7 @@ const fetchConfig = {
 function useGetFetchOptions(options = {}) {
   options.baseURL = options.baseURL ?? fetchConfig.baseURL;
   options.headers = options.headers ?? {
-    appid: fetchConfig.appid,
+    appid: fetchConfig.headers.appid ?? ""
   };
   options.initialCache = options.initialCache ?? false;
   options.lazy = options.lazy ?? false;
