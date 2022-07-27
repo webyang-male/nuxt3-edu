@@ -1,24 +1,16 @@
 <template>
-    <div>
-        <template v-if="pending">
-            加载中...
+    <LoadingGroup :pending="pending" :error="error">
+        <template v-for="(item, index) in data" :key="index">
+            <Banner :data="item.data" v-if="item.type == 'swiper'" />
+            <ImageNav :data="item.data" v-else-if="item.type == 'icons'" />
+            <ImageAd :data="item.data" v-else-if="item.type == 'imageAd'" />
+            <ListCard :data="item.data" :title="item.title" v-else-if="item.type == 'list'" />
+            <ListCard :data="item.data" :type="item.listType" :title="item.title"
+                v-else-if="item.type == 'promotion'" />
         </template>
-        <template v-else-if="error">
-            错误提示： {{ error?.data?.data }}
-        </template>
-        <template v-else>
-            <template v-for="(item, index) in data" :key="index">
-                <Banner :data="item.data" v-if="item.type == 'swiper'" />
-                <ImageNav :data="item.data" v-else-if="item.type == 'icons'" />
-                <ImageAd :data="item.data" v-else-if="item.type == 'imageAd'" />
-                <ListCard :data="item.data" :title="item.title" v-else-if="item.type == 'list'" />
-                <ListCard :data="item.data" :type="item.listType" :title="item.title"
-                    v-else-if="item.type == 'promotion'" />
-            </template>
-        </template>
-
-    </div>
+    </LoadingGroup>
 </template>
+
 <script setup>
 import { useHttp } from '~~/composables/useHttp';
 
