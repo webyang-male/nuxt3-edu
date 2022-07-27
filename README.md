@@ -46,4 +46,4 @@ npm run dev [-- -o]
 
 **项目首页展示👇**
 
-![](./screenshot-20220726-index.png)
+![](./demo/screenshot-20220726-index.png)
