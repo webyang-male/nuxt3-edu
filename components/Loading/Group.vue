@@ -1,10 +1,12 @@
+<!-- 全局加载组件  -->
 <template>
     <div>
-        <template v-if="pending">
-            加载中...
+        <template v-if="loading">
+            <LoadingSkeleton />
         </template>
         <template v-else-if="error">
-            <n-result class="mt-10" status="500" title="500 错误提示" :description="error?.data?.data || '服务器出错可能说明该雇更多程序员了'">
+            <n-result class="mt-10" status="500" title="500 错误提示"
+                :description="error?.data?.data || '服务器出错可能说明该雇更多程序员了'">
                 <template #footer>
                     <n-button @click="$router.go(-1)">返回上页</n-button>
                 </template>
@@ -16,8 +18,10 @@
     </div>
 </template>
 <script setup>
-import {NButton,NResult} from "naive-ui"
-defineProps({
+import { onBeforeUnmount } from "vue";
+import { NButton, NResult } from "naive-ui"
+
+const props = defineProps({
     pending: {
         type: Boolean,
         default: false
@@ -26,5 +30,20 @@ defineProps({
         type: [String, Boolean, Symbol],
         default: false
     },
+})
+
+//解决骨架屏加载过快抖动
+const loading = ref(false)
+const stop = watchEffect(() => {
+    if (props.pending && !loading.value) {
+        loading.value = true
+    } else {
+        setTimeout(() => {
+            loading.value = false
+        }, 500);
+    }
+})
+onBeforeUnmount(() => {
+    stop()
 })
 </script>

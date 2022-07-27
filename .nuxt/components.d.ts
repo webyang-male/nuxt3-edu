@@ -11,6 +11,7 @@ declare module 'vue' {
     'Price': typeof import("../components/Price.vue")['default'],
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
@@ -30,6 +31,7 @@ declare module 'vue' {
     'LazyPrice': typeof import("../components/Price.vue")['default'],
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
@@ -51,6 +53,7 @@ export const PageFooter: typeof import("../components/PageFooter.vue")['default'
 export const Price: typeof import("../components/Price.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
@@ -70,6 +73,7 @@ export const LazyPageFooter: typeof import("../components/PageFooter.vue")['defa
 export const LazyPrice: typeof import("../components/Price.vue")['default']
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
