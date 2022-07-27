@@ -1,3 +1,4 @@
+<!-- 公共课程列表组件 -->
 <template>
     <div>
         <div class="flex mb-3">
@@ -30,24 +31,36 @@ const props = defineProps({
 })
 
 const pdata = ref(props.data || [])
-if (props.type === 'group') {
+if (props.type === "group") {
     const {
-        data
-    } = await useFetch("/group/list?page=1&usable=1&limit=8", {
-        key: "groupData",
-        baseURL: "http://demonuxtapi.dishait.cn/pc",
-        headers: {
-            appid: "bd9d01ecc75dbbaaefce"
-        },
-        // 响应之前数据处理
-        transform: (res) => {
-            return res.data
-        },
-        // 是否开启缓存
-        initialCache: false,
+        data,
+    } = await useGroupDataApi({
+        page: 1,
+        usable: 1,
+        limit: 8
     })
-    // console.log(data.value?.rows);
-    pdata.value = (data.value?.rows).reverse() || []
-    // console.log(pdata.value);
+    // console.log(data.value);
+    pdata.value = ((data.value?.rows).reverse()).slice(0,4) ?? []
 }
+
+// if (props.type === 'group') {
+//     const {
+//         data
+//     } = await useFetch("/group/list?page=1&usable=1&limit=8", {
+//         key: "groupData",
+//         baseURL: "http://demonuxtapi.dishait.cn/pc",
+//         headers: {
+//             appid: "bd9d01ecc75dbbaaefce"
+//         },
+//         // 响应之前数据处理
+//         transform: (res) => {
+//             return res.data
+//         },
+//         // 是否开启缓存
+//         initialCache: false,
+//     })
+//     // console.log(data.value?.rows);
+//     pdata.value = (data.value?.rows).reverse() || []
+//     // console.log(pdata.value);
+// }
 </script>

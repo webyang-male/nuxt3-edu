@@ -35,13 +35,13 @@ export async function useHttp(key, url, options = {}) {
 }
 
 //get请求
-export function useHttpGet(key, url, options) {
+export function useHttpGet(key, url, options={}) {
   options.method = "GET";
   return useHttp(key, url, options);
 }
 
 //post请求
-export function useHttpPost(key, url, options) {
+export function useHttpPost(key, url, options={}) {
     options.method = "POST";
     return useHttp(key, url, options);
   }
