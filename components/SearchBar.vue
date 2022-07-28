@@ -1,6 +1,6 @@
 <!-- 搜索弹窗 -->
 <template>
-   <n-drawer v-model:show="drawer" placement="top">
+   <n-drawer v-model:show="drawer" placement="top" :on-after-enter="addKeydown" :on-after-leave="removeKeydown">
       <n-drawer-content class="h-full flex justify-center items-center">
          <n-input-group class="flex justify-center items-center">
             <n-button type="primary" size="large">
@@ -20,6 +20,11 @@
 <script setup>
 import { ref } from 'vue'
 import { NDrawer, NInputGroup, NButton, NInput } from "naive-ui"
+
+//导出方法让父组件调用
+defineExpose({
+   open
+})
 
 //搜索输入框
 const keyword = ref("")
@@ -49,9 +54,24 @@ let open = () => {
    drawer.value = true
 }
 
-//导出方法让父组件调用
-defineExpose({
-   open
-})
+//键盘事件处理
+let handleEnterEvent = (e) => {
+   // if (e.keyCode === 13) {
+   //    handleSearch()
+   // }
+   console.log(e);
+   if (e.key === "Enter" && keyword.value) {
+      handleSearch()
+   }
+
+}
+//定义回车键监听事件
+let addKeydown = (e) => {
+   document.addEventListener("keydown", handleEnterEvent)
+}
+//移除事件
+let removeKeydown = () => {
+   document.removeEventListener("keydown", handleEnterEvent)
+}
 </script>
 
