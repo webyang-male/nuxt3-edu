@@ -40,7 +40,7 @@ const stop = watchEffect(() => {
     } else {
         setTimeout(() => {
             loading.value = false
-        }, 500);
+        }, 300);
     }
 })
 onBeforeUnmount(() => {

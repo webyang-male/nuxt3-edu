@@ -21,11 +21,6 @@
 import { ref } from 'vue'
 import { NDrawer, NInputGroup, NButton, NInput } from "naive-ui"
 
-//导出方法让父组件调用
-defineExpose({
-   open
-})
-
 //搜索输入框
 const keyword = ref("")
 let handleSearch = () => {
@@ -53,6 +48,11 @@ let open = () => {
    keyword.value = ""
    drawer.value = true
 }
+
+//导出方法让父组件调用
+defineExpose({
+   open
+})
 
 //键盘事件处理
 let handleEnterEvent = (e) => {

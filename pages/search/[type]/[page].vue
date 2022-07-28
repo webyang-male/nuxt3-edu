@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-
+    definePageMeta({
+       middleware: ["search"],
+    })
 </script>
 
-<style lang="scss" scoped>
-</style>
