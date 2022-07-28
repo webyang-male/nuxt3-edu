@@ -14,6 +14,12 @@ export default defineNuxtConfig({
         { name: "keywords", content: "vue3,nuxt3,ssr,大赵同学,zain" },
         { name: "description", content: "基于vue3的nuxt框架SSR教育demo站点" },
       ],
+      link: [
+        {
+          rel: "icon",
+          href: "https://v3.nuxtjs.org/_nuxt/icons/icon_64x64.a3b4ce.png",
+        },
+      ],
     },
   },
   css: ["~/assets/css/main.css"],
@@ -39,5 +45,5 @@ export default defineNuxtConfig({
   },
   autoImports: {
     dirs: ["apis"],
-  }
+  },
 });

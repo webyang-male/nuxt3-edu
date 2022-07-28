@@ -1,3 +1,4 @@
+// 搜索中间件校验
 export default defineNuxtRouteMiddleware((to, from) => {
   let { type, page } = to.params;
   let { keyword } = to.query;

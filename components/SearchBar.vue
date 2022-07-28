@@ -2,7 +2,7 @@
 <template>
    <n-drawer v-model:show="drawer" placement="top" :on-after-enter="addKeydown" :on-after-leave="removeKeydown">
       <n-drawer-content class="h-full flex justify-center items-center">
-         <n-input-group class="flex justify-center items-center">
+         <n-input-group class="h-full flex justify-center !items-center">
             <n-button type="primary" size="large">
                想要寻找什么？
             </n-button>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { NDrawer, NInputGroup, NButton, NInput } from "naive-ui"
+import { NDrawer, NInputGroup, NButton, NInput,NDrawerContent } from "naive-ui"
 
 //搜索输入框
 const keyword = ref("")
