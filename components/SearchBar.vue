@@ -6,7 +6,8 @@
             <n-button type="primary" size="large">
                想要寻找什么？
             </n-button>
-            <n-input size="large" v-model="keyword" placeholder="write some here" :style="{ width: '500px' }" />
+            <!-- v-model:value大意了，ui组件用法坑 -->
+            <n-input size="large" v-model:value="keyword" placeholder="write some here" :style="{ width: '500px' }" />
             <n-button size="large" type="primary" ghost :disabled="!keyword" @click="handleSearch">
                搜索
             </n-button>
@@ -23,11 +24,28 @@ import { NDrawer, NInputGroup, NButton, NInput } from "naive-ui"
 //搜索输入框
 const keyword = ref("")
 let handleSearch = () => {
-   console.log(keyword.value)
+   navigateTo({
+      name: "search-type-page",
+      params: {
+         type: "course",
+         page: 1,
+      },
+      query: {
+         keyword: keyword.value,
+      },
+   })
+   setTimeout(() => {
+      close()
+   }, 200);
 }
 
 const drawer = ref(false)
+const close = () => {
+   drawer.value = false
+}
+
 let open = () => {
+   keyword.value = ""
    drawer.value = true
 }
 
