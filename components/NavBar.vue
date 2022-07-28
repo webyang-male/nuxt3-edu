@@ -9,7 +9,7 @@
                 </ui-menu-item>
             </ui-menu>
 
-            <n-button circle class="ml-auto mr-3">
+            <n-button circle class="ml-auto mr-3" @click="openSearchBar">
                 <template #icon>
                     <n-icon><Search /></n-icon>
                 </template>
@@ -25,6 +25,8 @@
         </div>
     </div>
     <div class="w-[100%] h-[80px]"></div>
+    <!-- 搜索窗 -->
+    <SearchBar ref="SearchBarRef"/>
 </template>
 <script setup>
 import {
@@ -108,6 +110,8 @@ const menus = [{
         }
     }]
 }]
+
+
 function handleOpen(path){
     navigateTo(path)
 }
@@ -132,6 +136,13 @@ const userOptions = [{
     label: "退出",
     key: "logout",
 }]
+
+//搜索窗
+const SearchBarRef = ref(null);
+let openSearchBar = ()=>{
+    SearchBarRef.value.open()
+}
+
 </script>
 <style>
 .navbar {
