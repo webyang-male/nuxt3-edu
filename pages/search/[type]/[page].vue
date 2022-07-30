@@ -54,7 +54,6 @@ const {
     data,
     pending,
     error,
-    refresh
 } = await useSearchListApi({
     page: page.value,
     keyword: encodeURIComponent(title.value),
