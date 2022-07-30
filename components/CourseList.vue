@@ -1,7 +1,7 @@
 <template>
     <n-card class="cursor-pointer mb-5 shadow-md !border-0" footer-style="padding:0;">
         <template #cover>
-            <img :src="item.cover" class="w-[100%] h-[150px]" />
+            <img v-if="item?.cover" :src="reg.test(item.cover) ? item.cover : img_404" class="w-[100%] h-[150px]">
         </template>
         <div class="pt-2">
             <span class="font-bold w-full truncate font-semibold">{{ item.title }}</span>
@@ -31,4 +31,8 @@ import {
 defineProps({
     item: Object
 })
+
+let reg = /^(http|https):\/\//;
+let img_404 = "https://unpkg.com/hassan-assets@1.0.22/img/404.png";
+// console.log(reg.test(img_404));
 </script>

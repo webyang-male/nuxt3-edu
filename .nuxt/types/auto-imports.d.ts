@@ -83,6 +83,7 @@ declare global {
   const useRoute: typeof import('../../node_modules/nuxt/dist/app')['useRoute']
   const useRouter: typeof import('../../node_modules/nuxt/dist/app')['useRouter']
   const useRuntimeConfig: typeof import('../../node_modules/nuxt/dist/app')['useRuntimeConfig']
+  const useSearchListApi: typeof import('../../apis/common')['useSearchListApi']
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
   const useTransitionState: typeof import('vue')['useTransitionState']
@@ -181,6 +182,7 @@ declare module '@vue/runtime-core' {
     readonly useRoute: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRouter']>
     readonly useRuntimeConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRuntimeConfig']>
+    readonly useSearchListApi: UnwrapRef<typeof import('../../apis/common')['useSearchListApi']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
