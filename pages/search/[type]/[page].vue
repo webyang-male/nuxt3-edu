@@ -17,7 +17,8 @@
             </n-grid>
             <!-- 分页组件 -->
             <div class="flex justify-center items-center mt-5 mb-10">
-                <n-pagination size="large" :item-count="total" :page="page" :page-size="limit" :on-update:page="handlePageChange" />
+                <n-pagination size="large" :item-count="total" :page="page" :page-size="limit"
+                    :on-update:page="handlePageChange" />
             </div>
         </LoadingGroup>
     </div>
@@ -57,11 +58,14 @@ const handleClick = (t) => {
 //搜索功能
 const page = ref(parseInt(route.params.page));
 const limit = ref(10);
-const { data, pending, error } = await useSearchListApi({
-    page: page.value,
-    keyword: encodeURIComponent(title.value),
-    type: type.value,
+const { data, pending, error, refresh } = await useSearchListApi(() => {
+    return {
+        type: type.value,
+        page: page.value,
+        keyword: encodeURIComponent(title.value),
+    };
 });
+
 
 //搜索结果数据预处理
 const rows = computed(() => data.value?.rows ?? []);
@@ -79,6 +83,17 @@ const handlePageChange = (p) => {
         },
     });
 };
+
+//Query参数刷新页面实现
+const stop = watch(() => route.query.keyword, (val) => {
+    title.value = val;
+    refresh();
+});
+
+//页面销毁时解除监听
+onBeforeUnmount(() => {
+    stop();
+});
 
 definePageMeta({
     middleware: ["search"],
