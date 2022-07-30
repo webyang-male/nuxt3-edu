@@ -77,6 +77,7 @@ declare global {
   const useLink: typeof import('vue-router')['useLink']
   const useMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
+  const usePage: typeof import('../../composables/usePage')['usePage']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']
   const useRequestHeaders: typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']
@@ -176,6 +177,7 @@ declare module '@vue/runtime-core' {
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
+    readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']>
     readonly useRequestHeaders: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']>

@@ -55,34 +55,52 @@ const handleClick = (t) => {
     });
 };
 
-//搜索功能
-const page = ref(parseInt(route.params.page));
-const limit = ref(10);
-const { data, pending, error, refresh } = await useSearchListApi(() => {
+// //搜索功能
+// const page = ref(parseInt(route.params.page));
+// const limit = ref(10);
+// const { data, pending, error, refresh } = await useSearchListApi(() => {
+//     return {
+//         type: type.value,
+//         page: page.value,
+//         keyword: encodeURIComponent(title.value),
+//     };
+// });
+
+
+// //搜索结果数据预处理
+// const rows = computed(() => data.value?.rows ?? []);
+// //搜索结果总数
+// const total = computed(() => data.value?.count ?? 0);
+
+// const handlePageChange = (p) => {
+//     navigateTo({
+//         params: {
+//             ...route.params,
+//             page: p,
+//         },
+//         query: {
+//             ...route.query,
+//         },
+//     });
+// };
+
+const {
+    page,
+    limit,
+    pending,
+    error,
+    refresh,
+    rows,
+    total,
+    handlePageChange
+} = await usePage(({ page, limit }) => useSearchListApi(() => {
     return {
         type: type.value,
-        page: page.value,
+        page,
         keyword: encodeURIComponent(title.value),
     };
-});
-
-
-//搜索结果数据预处理
-const rows = computed(() => data.value?.rows ?? []);
-//搜索结果总数
-const total = computed(() => data.value?.count ?? 0);
-
-const handlePageChange = (p) => {
-    navigateTo({
-        params: {
-            ...route.params,
-            page: p,
-        },
-        query: {
-            ...route.query,
-        },
-    });
-};
+})
+)
 
 //Query参数刷新页面实现
 const stop = watch(() => route.query.keyword, (val) => {
