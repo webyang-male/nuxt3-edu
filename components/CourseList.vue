@@ -1,7 +1,9 @@
 <template>
     <n-card class="cursor-pointer mb-5 shadow-md !border-0" footer-style="padding:0;">
         <template #cover>
-            <img v-if="item?.cover" :src="reg.test(item.cover) ? item.cover : img_404" class="w-[100%] h-[150px]">
+            <!-- nuxt3特性：服务端渲染会导致404图片资源加载失败，可实验性尝试ClientOnly API -->
+            <UiImage v-if="item?.cover" :src="item.cover" class="w-[100%] h-[150px]" />
+            <!-- <UiImage v-if="item?.cover" :src="reg.test(item.cover) ? item.cover : img_404" class="w-[100%] h-[150px]"/> -->
         </template>
         <div class="pt-2">
             <span class="font-bold w-full truncate font-semibold">{{ item.title }}</span>
@@ -32,7 +34,8 @@ defineProps({
     item: Object
 })
 
-let reg = /^(http|https):\/\//;
-let img_404 = "https://unpkg.com/hassan-assets@1.0.22/img/404.png";
-// console.log(reg.test(img_404));
+//偷懒404处理-废弃
+// let reg = /^(http|https):\/\//;
+// let img_404 = "https://unpkg.com/hassan-assets@1.0.22/img/404.png";
+
 </script>

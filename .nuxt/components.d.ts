@@ -13,6 +13,7 @@ declare module 'vue' {
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
@@ -36,6 +37,7 @@ declare module 'vue' {
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
@@ -61,6 +63,7 @@ export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
@@ -84,6 +87,7 @@ export const LazySearchBar: typeof import("../components/SearchBar.vue")['defaul
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']

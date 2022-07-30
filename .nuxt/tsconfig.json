@@ -49,6 +49,9 @@
       "public": [
         "public"
       ],
+      "public/*": [
+        "public/*"
+      ],
       "#app": [
         "node_modules/nuxt/dist/app"
       ],
