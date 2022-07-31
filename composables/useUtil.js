@@ -16,7 +16,6 @@ export function useEnterEvent(event) {
   let handleEnterEvent = (e) => {
     if (e.key === "Enter") {
       event();
-      //取消事件的默认行为
       e.preventDefault();
     }
   };
