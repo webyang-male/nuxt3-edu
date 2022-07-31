@@ -128,6 +128,7 @@ const onSubmit = () => {
         navigateTo(route.query.from || "/", { replace: true })
     })
 }
+useEnterEvent(() => onSubmit())
 
 definePageMeta({
     layout: "login"

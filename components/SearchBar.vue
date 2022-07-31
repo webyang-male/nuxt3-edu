@@ -59,7 +59,7 @@ let handleEnterEvent = (e) => {
    // if (e.keyCode === 13) {
    //    handleSearch()
    // }
-   console.log(e);
+   // console.log(e);
    if (e.key === "Enter" && keyword.value) {
       handleSearch()
    }

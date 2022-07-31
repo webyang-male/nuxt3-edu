@@ -10,3 +10,22 @@ export function useQueryToString(query = {}) {
   }
   return q;
 }
+
+//回车事件
+export function useEnterEvent(event) {
+  let handleEnterEvent = (e) => {
+    if (e.key === "Enter") {
+      event();
+      //取消事件的默认行为
+      e.preventDefault();
+    }
+  };
+  onBeforeMount(() => {
+    document.addEventListener("keydown", handleEnterEvent);
+  });
+
+  //移除事件
+  onUnmounted(() => {
+    document.removeEventListener("keydown", handleEnterEvent);
+  });
+}
