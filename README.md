@@ -1,4 +1,4 @@
-# Vue3-SSR-Edu
+# Nuxt3-Edu
 ### 一·、项目简介
 
 基于Nuxt3 + Vue3 + NaiveUI+ Vite实战开发在线教育SSR服务端渲染网站应用。
@@ -42,8 +42,10 @@ npm run dev [-- -o]
 
 ### 六、其它
 
-  一切为了探索前端技术栈潮流，觉得喜欢的可以点个`star🌟`；本项目仅供前端项目源码。
+  一切为了探索前端技术栈潮流，觉得喜欢的可以<font style="color:gold">点个`star🌟`</font>；本项目仅供前端项目源码。
 
 **项目首页展示👇**
 
 ![](./demo/screenshot-20220726-index.png)
+
+推荐练手的Vue3全家桶<font color="#C20C0C">网易云音乐项目👉https://github.com/path-yu/cloud-music</font>
