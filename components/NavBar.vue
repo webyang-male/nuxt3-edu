@@ -18,17 +18,16 @@
                 </template>
             </n-button>
 
-            <nuxt-link to="/login">
+            <nuxt-link to="/login" v-if="!user">
                 <n-button secondary strong>登录</n-button>
             </nuxt-link>
-
-            <!-- <n-dropdown :options="userOptions">
-                <n-avatar
-                    round
-                    size="small"
-                    src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
-                />
-            </n-dropdown> -->
+            <!-- 
+https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg
+-->
+            <n-dropdown v-else :options="userOptions">
+                <n-avatar round size="small"
+                    :src="user.avator || 'https://angular.cn/assets/images/favicons/favicon.ico '" />
+            </n-dropdown>
         </div>
     </div>
     <div class="w-[100%] h-[80px]"></div>
@@ -46,6 +45,7 @@ import {
     Search
 } from "@vicons/ionicons5"
 
+const user = useUser()
 const route = useRoute()
 const menus = [{
     name: "首页",
