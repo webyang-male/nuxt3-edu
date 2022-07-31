@@ -10,6 +10,9 @@
         </UiTab>
         <!-- 搜索渲染 -->
         <LoadingGroup :pending="pending" :error="error">
+            <template #loading>
+                <LoadingCourseSkeleton />
+            </template>
             <n-grid :x-gap="20" :cols="4">
                 <n-gi v-for="(item, index) in rows" :key="index">
                     <CourseList :item="item" />

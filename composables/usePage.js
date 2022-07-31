@@ -1,3 +1,4 @@
+//搜索和分页获取数据功能抽离
 export async function usePage(initListApiCallback){
     const route = useRoute()
     const page = ref(parseInt(route.params.page))
