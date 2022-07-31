@@ -1,7 +1,7 @@
 <template>
     <n-form class="w-[22rem]" :model="form" ref="formRef" :rules="rules" size="large">
         <n-form-item :show-label="false" path="username">
-            <n-input v-model:value="form.username" placeholder="用户名/手机/邮箱" />
+            <n-input v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
         </n-form-item>
         <n-form-item :show-label="false" path="password">
             <n-input type="password" v-model:value="form.password" placeholder="输入密码" />
@@ -19,7 +19,9 @@
                     忘记密码
                 </n-button>
             </div>
-            <n-button class="w-full" type="primary" @click="onSubmit">{{ type === 'login' ? '登 录' : '注 册' }}</n-button>
+
+            <n-button class="w-full" type="primary" @click="onSubmit">{{ type === 'login' ? '登 录' : '注 册' }}
+            </n-button>
             <div class="flex text-xs w-full justify-center items-center mt-3 text-warm-gray-600">
                 注册即同意
                 <n-button quaternary type="primary" size="tiny">
@@ -30,10 +32,11 @@
                     《隐私政策》
                 </n-button>
             </div>
+
         </div>
     </n-form>
-
 </template>
+
 
 <script setup>
 import {
@@ -56,7 +59,37 @@ const form = reactive({
     password: "",
     repassword: ""
 })
-const rules = {}
+const rules = computed(() => {
+    let r = {
+        username: [{
+            required: true,
+            message: type.value === "login" ? "请输入用户名/手机/邮箱" : "请输入用户名",
+            trigger: "blur"
+        }],
+        password: [{
+            required: true,
+            message: "请输入密码",
+            trigger: "blur"
+        }],
+
+    }
+    if (type.value != "login") {
+        r.repassword = [{
+            required: true,
+            message: "请再次输入密码",
+        }, {
+            validator: (rule, value, callback) => {
+                if (value !== form.password) {
+                    callback(new Error("两次输入的密码不一致"))
+                } else {
+                    callback()
+                }
+            },
+            trigger: ["blur", "input"]
+        }]
+    }
+    return r
+})
 
 const changeType = () => {
     type.value = type.value === "login" ? "register" : "login"
@@ -67,13 +100,22 @@ const changeType = () => {
         form.username = ""
         form.password = ""
         form.repassword = ""
+        formRef.value.restoreValidation()
     } catch (error) {
         console.log(error);
     }
 }
 
-const onSubmit = () => {
 
+
+const onSubmit = () => {
+    formRef.value.validate((error) => {
+        if (error) {
+            return false
+        } else {
+            console.log('suc');
+        }
+    });
 }
 
 definePageMeta({
