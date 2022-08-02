@@ -1,4 +1,10 @@
 <template>
+    <n-alert title="" type="info" class="mb-6">
+        演示账号和密码为：
+        <n-tag :bordered="false" type="success">
+            ceshi1
+        </n-tag>
+    </n-alert>
     <n-form class="w-[340px]" ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="username">
             <n-input v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
@@ -36,6 +42,8 @@ import {
     NInput,
     NFormItem,
     NButton,
+    NAlert,
+    NTag,
     createDiscreteApi
 } from "naive-ui"
 

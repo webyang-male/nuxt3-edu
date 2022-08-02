@@ -67,6 +67,7 @@ declare global {
   const useEnterEvent: typeof import('../../composables/useUtil')['useEnterEvent']
   const useError: typeof import('../../node_modules/nuxt/dist/app')['useError']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
+  const useGetinfoApi: typeof import('../../apis/user')['useGetinfoApi']
   const useGroupDataApi: typeof import('../../apis/index')['useGroupDataApi']
   const useHead: typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']
   const useHttp: typeof import('../../composables/useHttp')['useHttp']
@@ -81,6 +82,7 @@ declare global {
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const usePage: typeof import('../../composables/usePage')['usePage']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
+  const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']
   const useRequestHeaders: typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']
   const useRoute: typeof import('../../node_modules/nuxt/dist/app')['useRoute']
@@ -170,6 +172,7 @@ declare module '@vue/runtime-core' {
     readonly useEnterEvent: UnwrapRef<typeof import('../../composables/useUtil')['useEnterEvent']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useError']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
+    readonly useGetinfoApi: UnwrapRef<typeof import('../../apis/user')['useGetinfoApi']>
     readonly useGroupDataApi: UnwrapRef<typeof import('../../apis/index')['useGroupDataApi']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']>
     readonly useHttp: UnwrapRef<typeof import('../../composables/useHttp')['useHttp']>
@@ -184,6 +187,7 @@ declare module '@vue/runtime-core' {
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
+    readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']>
     readonly useRequestHeaders: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']>
     readonly useRoute: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRoute']>
