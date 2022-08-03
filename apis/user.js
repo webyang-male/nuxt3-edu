@@ -10,3 +10,8 @@ export function useGetinfoApi() {
     $:true
   });
 }
+
+//用户退出
+export function useLogoutApi() {
+  return useHttpGet("logout", "/logout");
+}

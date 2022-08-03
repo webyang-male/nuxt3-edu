@@ -78,6 +78,8 @@ declare global {
   const useLazyFetch: typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']
   const useLink: typeof import('vue-router')['useLink']
   const useLoginApi: typeof import('../../apis/user')['useLoginApi']
+  const useLogout: typeof import('../../composables/useAuth')['useLogout']
+  const useLogoutApi: typeof import('../../apis/user')['useLogoutApi']
   const useMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const usePage: typeof import('../../composables/usePage')['usePage']
@@ -183,6 +185,8 @@ declare module '@vue/runtime-core' {
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLoginApi: UnwrapRef<typeof import('../../apis/user')['useLoginApi']>
+    readonly useLogout: UnwrapRef<typeof import('../../composables/useAuth')['useLogout']>
+    readonly useLogoutApi: UnwrapRef<typeof import('../../apis/user')['useLogoutApi']>
     readonly useMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>

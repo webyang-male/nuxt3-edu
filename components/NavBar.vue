@@ -4,7 +4,7 @@
             <n-button text class="!text-xl !font-bold">初心教育</n-button>
 
             <ui-menu>
-                <ui-menu-item v-for="(item, index) in menus" :key="index" :active="isMenuItemActive(item)"
+                <ui-menu-item v-for="(item, index) in menus" :key="item" :active="isMenuItemActive(item)"
                     @click="handleOpen(item.path)">
                     {{ item.name }}
                 </ui-menu-item>
@@ -24,7 +24,7 @@
             <!-- 
 https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg
 -->
-            <n-dropdown v-else :options="userOptions">
+            <n-dropdown v-else :options="userOptions" @select="handleSelect">
                 <n-avatar round size="small"
                     :src="user.avator || 'https://angular.cn/assets/images/favicons/favicon.ico '" />
             </n-dropdown>
@@ -39,7 +39,8 @@ import {
     NButton,
     NIcon,
     NDropdown,
-    NAvatar
+    NAvatar,
+    createDiscreteApi
 } from "naive-ui"
 import {
     Search
@@ -150,6 +151,27 @@ let openSearchBar = () => {
     SearchBarRef.value.open()
 }
 
+//下拉菜单事件
+const handleSelect = (k) => {
+    switch (k) {
+        case "logout":
+            const { dialog } = createDiscreteApi(['dialog'])
+            dialog.warning({
+                title: '警告',
+                content: '是否确认退出登录？',
+                positiveText: '确定',
+                negativeText: '取消',
+                onPositiveClick: async() => {
+                   await useLogout()
+                },
+                // onNegativeClick: () => {
+                //     message.error('取消')
+                // }
+            })
+
+    }
+
+} 
 </script>
 <style>
 .navbar {
