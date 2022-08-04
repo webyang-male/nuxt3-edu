@@ -5,7 +5,7 @@
             ceshi1
         </n-tag>
     </n-alert>
-    <n-form class="w-[340px]" ref="formRef" :model="form" :rules="rules" size="large">
+    <n-form class="w-[340px]" :ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="username">
             <n-input v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
         </n-form-item>
@@ -50,10 +50,12 @@ import {
 const route = useRoute()
 const type = ref("login")
 const title = ref("登录")
+
 useHead({
     title
 })
 
+//表单验证
 const formRef = ref(null)
 const form = reactive({
     name: "",
@@ -107,46 +109,19 @@ const changeType = () => {
     }
 }
 
-
+//加载效果
 const loading = ref(false)
 
+//回车事件
 const onSubmit = () => {
     formRef.value.validate(async (errors) => {
         if (errors) return;
 
-        loading.value = true
-
-        let {
-            data,
-            error
-        } = type.value === 'login' ? await useLoginApi(form) : await useRegApi(form)
-
-        loading.value = false
-
-        if (error.value) return;
-
-        const { message } = createDiscreteApi(["message"])
-        message.success(type.value === 'login' ? "登录成功" : "注册成功")
-
-        if (type.value === 'login') {
-            // 将用户登录成功返回的token存储在cookie当中，用户登录成功的标识
-            const token = useCookie("token")
-            token.value = data.value.token
-            // console.log(data.value);
-            const user = useUser()
-
-            user.value = data.value
-
-            // 跳转
-            navigateTo(route.query.from || "/", { replace: true })
-        } else {
-            //切换回登录页
-            changeType()
-        }
     })
 }
 useEnterEvent(() => onSubmit())
 
+//ui布局
 definePageMeta({
     layout: "login"
 })
