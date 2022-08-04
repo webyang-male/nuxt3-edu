@@ -85,6 +85,7 @@ declare global {
   const usePage: typeof import('../../composables/usePage')['usePage']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
+  const useRegApi: typeof import('../../apis/user')['useRegApi']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']
   const useRequestHeaders: typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']
   const useRoute: typeof import('../../node_modules/nuxt/dist/app')['useRoute']
@@ -192,6 +193,7 @@ declare module '@vue/runtime-core' {
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
+    readonly useRegApi: UnwrapRef<typeof import('../../apis/user')['useRegApi']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']>
     readonly useRequestHeaders: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']>
     readonly useRoute: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRoute']>

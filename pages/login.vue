@@ -112,33 +112,37 @@ const loading = ref(false)
 
 const onSubmit = () => {
     formRef.value.validate(async (errors) => {
-        if (errors) return
+        if (errors) return;
 
         loading.value = true
 
         let {
             data,
             error
-        } = await useLoginApi(form)
+        } = type.value === 'login' ? await useLoginApi(form) : await useRegApi(form)
 
         loading.value = false
 
-        if (error.value) return
+        if (error.value) return;
 
         const { message } = createDiscreteApi(["message"])
-        message.success("登录成功")
+        message.success(type.value === 'login' ? "登录成功" : "注册成功")
 
-        // 将用户登录成功返回的token存储在cookie当中，用户登录成功的标识
-        const token = useCookie("token")
-        token.value = data.value.token
-        // console.log(data.value);
-        const user = useUser()
-        // console.log(user);
+        if (type.value === 'login') {
+            // 将用户登录成功返回的token存储在cookie当中，用户登录成功的标识
+            const token = useCookie("token")
+            token.value = data.value.token
+            // console.log(data.value);
+            const user = useUser()
 
-        user.value = data.value
-        // console.log(user.value);
-        // 跳转
-        navigateTo(route.query.from || "/", { replace: true })
+            user.value = data.value
+
+            // 跳转
+            navigateTo(route.query.from || "/", { replace: true })
+        } else {
+            //切换回登录页
+            changeType()
+        }
     })
 }
 useEnterEvent(() => onSubmit())

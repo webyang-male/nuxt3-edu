@@ -10,6 +10,12 @@ export function useGetinfoApi() {
     $:true
   });
 }
+//注册
+export function useRegApi(body) {
+  return useHttpPost("reg", "/reg", {
+    body,
+  });
+}
 
 //用户退出
 export function useLogoutApi() {

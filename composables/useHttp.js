@@ -18,7 +18,8 @@ function useGetFetchOptions(options = {}){
 
     // 用户登录，默认传token
     const token = useCookie("token")
-    if(token.value){
+   
+    if(token.value){ 
         options.headers.token = token.value
     }
 

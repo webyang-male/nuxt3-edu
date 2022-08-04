@@ -3,6 +3,8 @@
         <div class="container flex items-center h-[60px]">
             <n-button text class="!text-xl !font-bold">初心教育</n-button>
 
+
+
             <ui-menu>
                 <ui-menu-item v-for="(item, index) in menus" :key="item" :active="isMenuItemActive(item)"
                     @click="handleOpen(item.path)">
