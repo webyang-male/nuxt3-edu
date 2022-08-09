@@ -5,9 +5,9 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { useHttp, useHttpGet, useHttpPost } from 'E:/WebProject/Nuxt3SSR/composables/useHttp';
 export { useUser, useRefreshUserInfo, useLogout } from 'E:/WebProject/Nuxt3SSR/composables/useAuth';
 export { usePage } from 'E:/WebProject/Nuxt3SSR/composables/usePage';
-export { useSearchListApi } from 'E:/WebProject/Nuxt3SSR/apis/common';
 export { useQueryToString, useEnterEvent } from 'E:/WebProject/Nuxt3SSR/composables/useUtil';
+export { useSearchListApi } from 'E:/WebProject/Nuxt3SSR/apis/common';
 export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/Nuxt3SSR/apis/index';
-export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi } from 'E:/WebProject/Nuxt3SSR/apis/user';
+export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi } from 'E:/WebProject/Nuxt3SSR/apis/user';
 export { definePageMeta } from 'E:/WebProject/Nuxt3SSR/node_modules/nuxt/dist/pages/runtime/composables';
 export { useLink } from 'vue-router';

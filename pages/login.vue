@@ -7,13 +7,13 @@
     </n-alert>
     <n-form class="w-[340px]" :ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="username">
-            <n-input v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
+            <n-input clearable v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
         </n-form-item>
         <n-form-item :show-label="false" path="password">
-            <n-input v-model:value="form.password" placeholder="密码" type="password" />
+            <n-input clearable v-model:value="form.password" placeholder="密码" type="password" />
         </n-form-item>
         <n-form-item v-if="type != 'login'" :show-label="false" path="repassword">
-            <n-input v-model:value="form.repassword" placeholder="确认密码" type="password" />
+            <n-input clearable v-model:value="form.repassword" placeholder="确认密码" type="password" />
         </n-form-item>
         <div class="flex justify-between w-full mb-2">
             <n-button quaternary type="primary" size="tiny" @click="changeType">

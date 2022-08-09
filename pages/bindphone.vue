@@ -1,10 +1,13 @@
 <template>
     <n-form class="w-[340px]" :ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="phone">
-            <n-input v-model:value="form.phone" placeholder="这里输入手机号" />
+            <n-input v-model:value="form.phone" placeholder="这里输入手机号" clearable/>
         </n-form-item>
         <n-form-item :show-label="false" path="code">
-            <n-input v-model:value="form.code" placeholder="输入6位验证码" />
+            <n-input-group>
+                <n-input :style="{ width: '75%' }" v-model:value="form.code" placeholder="输入6位验证码" />
+                <SendCode :phone="form.phone"/>
+            </n-input-group>
         </n-form-item>
         <div>
             <n-button class="w-full" type="primary" @click="onSubmit" :loading="loading">
@@ -18,6 +21,7 @@
 import {
     NForm,
     NInput,
+    NInputGroup,
     NFormItem,
     NButton,
     NAlert,

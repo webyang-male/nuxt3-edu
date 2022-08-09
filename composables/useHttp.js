@@ -8,6 +8,7 @@ const fetchConfig = {
     },
 }
 
+//请求体封装
 function useGetFetchOptions(options = {}){
     options.baseURL = options.baseURL ?? fetchConfig.baseURL
     options.headers = options.headers ?? {
@@ -26,6 +27,7 @@ function useGetFetchOptions(options = {}){
     return options
 }
 
+//http请求封装
 export async function useHttp(key,url,options = {}){
     options = useGetFetchOptions(options)
     options.key = key
