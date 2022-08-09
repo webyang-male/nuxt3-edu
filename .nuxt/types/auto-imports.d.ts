@@ -71,6 +71,7 @@ declare global {
   const useGetCaptchaApi: typeof import('../../apis/user')['useGetCaptchaApi']
   const useGetinfoApi: typeof import('../../apis/user')['useGetinfoApi']
   const useGroupDataApi: typeof import('../../apis/index')['useGroupDataApi']
+  const useHasAuth: typeof import('../../composables/useAuth')['useHasAuth']
   const useHead: typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']
   const useHttp: typeof import('../../composables/useHttp')['useHttp']
   const useHttpGet: typeof import('../../composables/useHttp')['useHttpGet']
@@ -181,6 +182,7 @@ declare module '@vue/runtime-core' {
     readonly useGetCaptchaApi: UnwrapRef<typeof import('../../apis/user')['useGetCaptchaApi']>
     readonly useGetinfoApi: UnwrapRef<typeof import('../../apis/user')['useGetinfoApi']>
     readonly useGroupDataApi: UnwrapRef<typeof import('../../apis/index')['useGroupDataApi']>
+    readonly useHasAuth: UnwrapRef<typeof import('../../composables/useAuth')['useHasAuth']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']>
     readonly useHttp: UnwrapRef<typeof import('../../composables/useHttp')['useHttp']>
     readonly useHttpGet: UnwrapRef<typeof import('../../composables/useHttp')['useHttpGet']>
