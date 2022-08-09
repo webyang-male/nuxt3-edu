@@ -30,3 +30,10 @@ export function useGetCaptchaApi(phone) {
     },
   });
 }
+
+//绑定手机号
+export function useBindPhoneApi(body) {
+  return useHttpPost("bindPhone", "/bind_mobile", {
+    body
+  });
+}

@@ -7,7 +7,6 @@ export async function useRefreshUserInfo() {
   const token = useCookie("token");
   const user = useUser();
   // 用户已登录，直接获取用户信息
-  console.log(token, user);
   if (token.value) {
     let { data, error } = await useGetinfoApi();
 
