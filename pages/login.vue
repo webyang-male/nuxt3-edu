@@ -152,7 +152,8 @@ useEnterEvent(() => onSubmit())
 
 //ui布局
 definePageMeta({
-    layout: "login"
+    layout: "login",
+    middleware: ["only-visitor"]
 })
 
 

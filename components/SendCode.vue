@@ -55,5 +55,6 @@ const sendCode = async () => {
     const msg = data.value == "ok" ? "验证码发送成功" : `当前演示验证码为:${data.value}`
     const { message } = createDiscreteApi(["message"])
     message.success(msg)
+    console.log("验证码：" + data.value);
 }
 </script>
