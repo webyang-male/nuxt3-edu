@@ -37,3 +37,10 @@ export function useBindPhoneApi(body) {
     body
   });
 }
+
+//忘记密码
+export function useForgetApi(body) {
+  return useHttpPost("forget", "/forget", {
+    body
+  });
+}

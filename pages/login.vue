@@ -19,8 +19,8 @@
             <n-button quaternary type="primary" size="tiny" @click="changeType">
                 {{ type === 'login' ? '注册' : '登录' }}
             </n-button>
-            <nuxt-link to="/forget" class="text-primary">
-                <n-button quaternary type="primary" size="tiny">忘记密码</n-button>
+            <nuxt-link to="/forget" class="text-primary" >
+                <n-button quaternary type="primary" size="tiny" >忘记密码</n-button>
             </nuxt-link>
         </div>
         <div>
@@ -148,9 +148,13 @@ const onSubmit = () => {
 
 useEnterEvent(() => onSubmit())
 
+
+
 //ui布局
 definePageMeta({
     layout: "login"
 })
+
+
 </script>
 
