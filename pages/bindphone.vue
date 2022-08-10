@@ -1,3 +1,4 @@
+<!-- 手机号绑定页面 -->
 <template>
     <n-form class="w-[340px]" ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="phone">

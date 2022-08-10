@@ -19,7 +19,9 @@
             <n-button quaternary type="primary" size="tiny" @click="changeType">
                 {{ type === 'login' ? '注册' : '登录' }}
             </n-button>
-            <n-button quaternary type="primary" size="tiny">忘记密码</n-button>
+            <nuxt-link to="/forget" class="text-primary">
+                <n-button quaternary type="primary" size="tiny">忘记密码</n-button>
+            </nuxt-link>
         </div>
         <div>
             <n-button class="w-full" type="primary" @click="onSubmit" :loading="loading">
