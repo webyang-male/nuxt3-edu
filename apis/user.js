@@ -44,3 +44,17 @@ export function useForgetApi(body) {
     body
   });
 }
+
+//获取学习记录
+export function useUserHistoryApi(query) {
+  return useHttpGet(
+    "userHistory",
+    () => {
+      let q = useQueryToString(query());
+      return `/user_history/list${q}`;
+    },
+    {
+      lazy: true,
+    }
+  );
+}
