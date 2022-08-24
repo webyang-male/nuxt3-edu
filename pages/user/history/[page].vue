@@ -1,4 +1,4 @@
-<!-- 搜索结果组件页 -->
+<!-- 学习记录页面 -->
 <template>
     <div>
         <UiTab>
@@ -7,11 +7,11 @@
         </UiTab>
         <!-- 搜索渲染 -->
         <LoadingGroup :pending="pending" :error="error">
-            <div>
-                {{ rows }}
+            <div class="px-3">
+                <UserHistoryList v-for="(item, index) in rows" :key="index" :item="item" />
             </div>
             <!-- 分页组件 -->
-            <div class="flex justify-center items-center mt-5 mb-10">
+            <div class="flex justify-center items-center mt-5  !pb-[1.5rem]">
                 <n-pagination size="large" :item-count="total" :page="page" :page-size="limit"
                     :on-update:page="handlePageChange" />
             </div>
@@ -42,7 +42,7 @@ const handleClick = (t) => {
     navigateTo({
         params: {
             ...route.params,
-
+            page: 1,
         },
         query: {
             ...route.query,

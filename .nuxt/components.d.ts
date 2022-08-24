@@ -20,6 +20,7 @@ declare module 'vue' {
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -46,6 +47,7 @@ declare module 'vue' {
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -74,6 +76,7 @@ export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -100,6 +103,7 @@ export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
