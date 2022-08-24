@@ -3,6 +3,8 @@ import { createDiscreteApi } from "naive-ui";
 export default defineNuxtRouteMiddleware(async (to, from) => {
   const token = useCookie("token");
   const user = useUser();
+  const route = useRoute()
+
   //未登录
   if (!token.value) {
     if (process.client) {
