@@ -9,7 +9,7 @@
                 @click="handleClick(item.value)">{{ item.label }}</UiTabItem>
         </UiTab>
         <!-- 搜索渲染 -->
-        <LoadingGroup :pending="pending" :error="error">
+        <LoadingGroup :pending="pending" :error="error" :isEmpty="rows.length === 0">
             <template #loading>
                 <LoadingCourseSkeleton />
             </template>

@@ -18,7 +18,6 @@
 
 <script setup>
 import { NGrid, NGridItem } from 'naive-ui'
-import auth from '~~/middleware/auth';
 const route = useRoute()
 const pageKey = computed(() => route.fullPath)
 
@@ -27,7 +26,7 @@ const menus = [{
     name: "user-history-page",
 }, {
     title: "购买记录",
-    name: "",
+    name: "user-buy-page",
 }, {
     title: "我的考试",
     name: "",

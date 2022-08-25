@@ -14,6 +14,10 @@
                 </template>
             </n-result>
         </template>
+        <template v-else-if="isEmpty">
+        <!-- 空数据组件 -->
+            <Empty />
+        </template>
         <template v-else>
             <slot />
         </template>
@@ -32,6 +36,10 @@ const props = defineProps({
         type: [String, Boolean, Symbol],
         default: false
     },
+    isEmpty: {
+        type: Boolean,
+        default: false
+    }
 })
 
 //解决骨架屏加载过快抖动
