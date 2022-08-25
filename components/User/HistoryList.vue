@@ -1,4 +1,4 @@
-<!-- 学习记录组件 -->
+<!-- 学习记录数据展示组件 -->
 <template>
     <UiCard>
         <UiCardHeader>

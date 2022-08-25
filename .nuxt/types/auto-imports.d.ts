@@ -86,6 +86,7 @@ declare global {
   const useLogoutApi: typeof import('../../apis/user')['useLogoutApi']
   const useMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
+  const useOrderListApi: typeof import('../../apis/user')['useOrderListApi']
   const usePage: typeof import('../../composables/usePage')['usePage']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
@@ -199,6 +200,7 @@ declare module '@vue/runtime-core' {
     readonly useLogoutApi: UnwrapRef<typeof import('../../apis/user')['useLogoutApi']>
     readonly useMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
+    readonly useOrderListApi: UnwrapRef<typeof import('../../apis/user')['useOrderListApi']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>

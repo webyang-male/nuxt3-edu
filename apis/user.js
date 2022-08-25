@@ -34,14 +34,14 @@ export function useGetCaptchaApi(phone) {
 //绑定手机号
 export function useBindPhoneApi(body) {
   return useHttpPost("bindPhone", "/bind_mobile", {
-    body
+    body,
   });
 }
 
 //忘记密码
 export function useForgetApi(body) {
   return useHttpPost("forget", "/forget", {
-    body
+    body,
   });
 }
 
@@ -57,4 +57,11 @@ export function useUserHistoryApi(query) {
       lazy: true,
     }
   );
+}
+
+//获取购买记录
+export function useOrderListApi(page) {
+  return useHttpGet("OrderList", `/order/list?page=${page}`, {
+   lazy: true,
+  });
 }
