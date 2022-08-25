@@ -12,15 +12,19 @@ declare module 'vue' {
     'SearchBar': typeof import("../components/SearchBar.vue")['default'],
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'SendCode': typeof import("../components/SendCode.vue")['default'],
-    'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
-    'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
-    'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
+    'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'UiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
+    'UiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
+    'UiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
+    'UiCard': typeof import("../components/Ui/Card/index.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -39,15 +43,19 @@ declare module 'vue' {
     'LazySearchBar': typeof import("../components/SearchBar.vue")['default'],
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazySendCode': typeof import("../components/SendCode.vue")['default'],
-    'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
-    'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
-    'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
+    'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'LazyUiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
+    'LazyUiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
+    'LazyUiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
+    'LazyUiCard': typeof import("../components/Ui/Card/index.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default'],
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
@@ -68,15 +76,19 @@ export const Price: typeof import("../components/Price.vue")['default']
 export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const SendCode: typeof import("../components/SendCode.vue")['default']
-export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
-export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
-export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
+export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const UiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
+export const UiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
+export const UiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']
+export const UiCard: typeof import("../components/Ui/Card/index.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -95,15 +107,19 @@ export const LazyPrice: typeof import("../components/Price.vue")['default']
 export const LazySearchBar: typeof import("../components/SearchBar.vue")['default']
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazySendCode: typeof import("../components/SendCode.vue")['default']
-export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
-export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
-export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
+export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const LazyUiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
+export const LazyUiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
+export const LazyUiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']
+export const LazyUiCard: typeof import("../components/Ui/Card/index.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']

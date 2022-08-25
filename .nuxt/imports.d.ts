@@ -6,8 +6,8 @@ export { useUser, useRefreshUserInfo, useLogout, useHasAuth } from 'E:/WebProjec
 export { useHttp, useHttpGet, useHttpPost } from 'E:/WebProject/nuxt3-edu/composables/useHttp';
 export { usePage } from 'E:/WebProject/nuxt3-edu/composables/usePage';
 export { useQueryToString, useEnterEvent } from 'E:/WebProject/nuxt3-edu/composables/useUtil';
-export { useSearchListApi } from 'E:/WebProject/nuxt3-edu/apis/common';
-export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi, useBindPhoneApi, useForgetApi, useUserHistoryApi } from 'E:/WebProject/nuxt3-edu/apis/user';
 export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/nuxt3-edu/apis/index';
+export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi, useBindPhoneApi, useForgetApi, useUserHistoryApi } from 'E:/WebProject/nuxt3-edu/apis/user';
+export { useSearchListApi } from 'E:/WebProject/nuxt3-edu/apis/common';
 export { definePageMeta } from 'E:/WebProject/nuxt3-edu/node_modules/nuxt/dist/pages/runtime/composables';
 export { useLink } from 'vue-router';
