@@ -29,7 +29,7 @@ const menus = [{
     name: "user-buy-page",
 }, {
     title: "我的考试",
-    name: "",
+    name: "user-test-page",
 }, {
     title: "我的帖子",
     name: "",

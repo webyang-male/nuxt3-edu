@@ -23,6 +23,7 @@ declare module 'vue' {
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
     'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'UserTestList': typeof import("../components/User/TestList.vue")['default'],
     'UiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
     'UiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
     'UiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
@@ -56,6 +57,7 @@ declare module 'vue' {
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
     'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'LazyUserTestList': typeof import("../components/User/TestList.vue")['default'],
     'LazyUiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
     'LazyUiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
     'LazyUiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
@@ -91,6 +93,7 @@ export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
 export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const UserTestList: typeof import("../components/User/TestList.vue")['default']
 export const UiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
 export const UiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
 export const UiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']
@@ -124,6 +127,7 @@ export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
 export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const LazyUserTestList: typeof import("../components/User/TestList.vue")['default']
 export const LazyUiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
 export const LazyUiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
 export const LazyUiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']

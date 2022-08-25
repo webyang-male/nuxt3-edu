@@ -65,3 +65,11 @@ export function useOrderListApi(page) {
    lazy: true,
   });
 }
+
+
+//考试记录 /user_test/list?page=1
+export function useUserTestApi(page) {
+  return useHttpGet("UserTestApi", `/user_test/list?page=${page}`, {
+   lazy: true,
+  });
+}
