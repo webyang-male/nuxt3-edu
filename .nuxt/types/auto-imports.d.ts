@@ -89,6 +89,7 @@ declare global {
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const useOrderListApi: typeof import('../../apis/user')['useOrderListApi']
   const usePage: typeof import('../../composables/usePage')['usePage']
+  const usePostSupportApi: typeof import('../../apis/bbs')['usePostSupportApi']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
   const useRegApi: typeof import('../../apis/user')['useRegApi']
@@ -205,6 +206,7 @@ declare module '@vue/runtime-core' {
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useOrderListApi: UnwrapRef<typeof import('../../apis/user')['useOrderListApi']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
+    readonly usePostSupportApi: UnwrapRef<typeof import('../../apis/bbs')['usePostSupportApi']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
     readonly useRegApi: UnwrapRef<typeof import('../../apis/user')['useRegApi']>
