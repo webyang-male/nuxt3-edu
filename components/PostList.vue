@@ -44,32 +44,8 @@ import { ThumbsUpSharp, ChatboxEllipsesOutline } from "@vicons/ionicons5"
 defineProps({ item: Object })
 
 //点赞点击事件
-const supportLoading = ref(false)
-const handleSupport = (item) => {
-    //用户登录才能操作
-    useHasAuth(async () => {
-        //行为判断
-        let type = item.issupport ? 'unsupport' : 'support'
-        let msg = item.issupport ? '取消点赞' : '点赞'
-
-        supportLoading.value = true;
-        const { error } = await usePostSupportApi(item.id, type)
-        supportLoading.value = false;
-
-        //操作失败
-        if (error.value) return;
-
-        //操作成功
-        if (type === 'unsupport') {
-            item.support_count--
-        } else {
-            item.support_count++;
-        }
-
-        item.issupport = !item.issupport;
-
-        const { message } = createDiscreteApi(["message"])
-        message.success(msg + "成功！")
-    })
-}
+const {
+    supportLoading,
+    handleSupport
+} = useHandleSupportPost()
 </script>
