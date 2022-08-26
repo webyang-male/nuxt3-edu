@@ -62,14 +62,20 @@ export function useUserHistoryApi(query) {
 //获取购买记录
 export function useOrderListApi(page) {
   return useHttpGet("OrderList", `/order/list?page=${page}`, {
-   lazy: true,
+    lazy: true,
   });
 }
 
-
 //考试记录 /user_test/list?page=1
 export function useUserTestApi(page) {
-  return useHttpGet("UserTestApi", `/user_test/list?page=${page}`, {
-   lazy: true,
+  return useHttpGet("UserTest", `/user_test/list?page=${page}`, {
+    lazy: true,
+  });
+}
+
+//我的帖子列表 /mypost?page=1
+export function useMypostListApi(page) {
+  return useHttpGet("MypostList", `/mypost?page=${page}`, {
+    lazy: true,
   });
 }

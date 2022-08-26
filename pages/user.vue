@@ -32,7 +32,7 @@ const menus = [{
     name: "user-test-page",
 }, {
     title: "我的帖子",
-    name: "",
+    name: "user-post-page",
 }, {
     title: "优惠券记录",
     name: "",
