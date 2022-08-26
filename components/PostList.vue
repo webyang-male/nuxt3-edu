@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { NTag, NImage, NButton } from 'naive-ui'
+import { NTag, NImage, NButton,NIcon } from 'naive-ui'
 import { ThumbsUpSharp, ChatboxEllipsesOutline } from "@vicons/ionicons5"
 const props = defineProps({ item: Object })
 
