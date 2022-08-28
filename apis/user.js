@@ -87,17 +87,16 @@ export function useUserCouponApi(page) {
   });
 }
 
-//获取优惠券记录 /user_fava?page=1
+// 我的收藏列表
 export function useMyFavaListApi(page) {
   return useHttpGet("MyFavaList", `/user_fava?page=${page}`, {
     lazy: true,
   });
 }
 
-//取消收藏 /uncollect
+// 取消收藏
 export function useUncollectApi(body) {
-  return useHttpGet("Uncollect", `/uncollect`, {
-    body
+  return useHttpPost("Uncollect", "/uncollect", {
+    body,
   });
 }
-
