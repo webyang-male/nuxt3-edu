@@ -23,6 +23,7 @@ declare module 'vue' {
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
     'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
+    'UserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
     'UserTestList': typeof import("../components/User/TestList.vue")['default'],
     'UiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
@@ -58,6 +59,7 @@ declare module 'vue' {
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
     'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
+    'LazyUserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
     'LazyUserTestList': typeof import("../components/User/TestList.vue")['default'],
     'LazyUiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
@@ -95,6 +97,7 @@ export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
 export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
+export const UserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
 export const UserTestList: typeof import("../components/User/TestList.vue")['default']
 export const UiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
@@ -130,6 +133,7 @@ export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['def
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
 export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
+export const LazyUserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
 export const LazyUserTestList: typeof import("../components/User/TestList.vue")['default']
 export const LazyUiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']

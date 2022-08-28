@@ -79,3 +79,10 @@ export function useMypostListApi(page) {
     lazy: true,
   });
 }
+
+//获取优惠券记录 /user_coupon?page=1
+export function useUserCouponApi(page) {
+  return useHttpGet("UserCoupon", `/user_coupon?page=${page}`, {
+    lazy: true,
+  });
+}
