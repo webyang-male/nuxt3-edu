@@ -64,6 +64,7 @@ const form = reactive({
     password: "",
     repassword: ""
 })
+
 const rules = computed(() => {
     let r = {
         username: [{

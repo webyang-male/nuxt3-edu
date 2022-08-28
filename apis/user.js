@@ -100,3 +100,14 @@ export function useUncollectApi(body) {
     body,
   });
 }
+
+//修改用户资料 /update_info
+
+export function useUpdateUserInfoApi(body) {
+  return useHttpPost("updateUserInfo", "/update_info", {
+    body,
+  });
+}
+
+// 登�
+

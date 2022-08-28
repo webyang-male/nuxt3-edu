@@ -1,0 +1,71 @@
+<!-- 修改资料页面 -->
+<template>
+    <div class="p-5">
+        <n-form :model="form" ref="formRef" :rules="rules" label-width="80" label-placement="left">
+            <n-form-item label="用户名">
+                <n-input v-model:value="user.username" disabled @click="unEditName" />
+            </n-form-item>
+            <n-form-item label="头像" path="avatar" class="ml-[-.8rem]">
+                <n-upload action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f" :default-file-list="fileList"
+                    list-type="image-card">
+                    点击上传
+                </n-upload>
+            </n-form-item>
+            <n-form-item label="昵称" path="nickname">
+                <n-input v-model:value="form.nickname" placeholder="请输入昵称" />
+            </n-form-item>
+            <n-form-item label="性别" path="sex">
+                <n-radio-group v-model:value="value" name="radiogroup">
+                    <n-space>
+                        <n-radio v-for="item in options" :key="item.value" :value="item.value">
+                            {{ item.value }}
+                        </n-radio>
+                    </n-space>
+                </n-radio-group>
+            </n-form-item>
+            <n-form-item>
+                <n-button class="ml-8" type="primary" @click="onSubmit">提交修改</n-button>
+            </n-form-item>
+        </n-form>
+    </div>
+</template>
+
+<script setup>
+import {
+    NForm, NFormItem, NInput, NRadio, NRadioGroup, NButton, createDiscreteApi, NUpload, NSpace
+} from "naive-ui"
+
+//获取用户名
+const user = useUser()
+
+const formRef = ref(null)
+const form = reactive({
+    avatar: "",
+    nickname: "",
+    sex: ""
+})
+
+const rules = {
+    nickname: [{
+        required: true,
+        message: "code:nickname null 昵称必填"
+    }],
+    sex: [{
+        required: true,
+        message: "性别必选"
+    }],
+}
+
+const unEditName = () => {
+    const { message } = createDiscreteApi(["message"])
+    message.warning("演示页面，不要坏坏修改哦~")
+}
+
+const options = [{
+    value: "未知"
+}, {
+    value: "男"
+}, {
+    value: "女"
+}]
+</script> 

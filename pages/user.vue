@@ -41,7 +41,7 @@ const menus = [{
     name: "user-fava-page",
 }, {
     title: "修改资料",
-    name: "",
+    name: "user-edit",
 }, {
     title: "修改密码",
     name: "",
