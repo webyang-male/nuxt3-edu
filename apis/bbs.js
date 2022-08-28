@@ -6,3 +6,13 @@ export function usePostSupportApi(post_id, type = "support") {
     },
   });
 }
+
+//删除帖子 
+export function useDeletePostApi(id) {
+    return useHttpPost("deletePost", `/post/delete`, {
+      body: {
+       id
+      },
+    });
+  }
+  

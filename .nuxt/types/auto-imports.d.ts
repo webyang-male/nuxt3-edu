@@ -65,6 +65,7 @@ declare global {
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useDeletePostApi: typeof import('../../apis/bbs')['useDeletePostApi']
   const useEnterEvent: typeof import('../../composables/useUtil')['useEnterEvent']
   const useError: typeof import('../../node_modules/nuxt/dist/app')['useError']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
@@ -183,6 +184,7 @@ declare module '@vue/runtime-core' {
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDeletePostApi: UnwrapRef<typeof import('../../apis/bbs')['useDeletePostApi']>
     readonly useEnterEvent: UnwrapRef<typeof import('../../composables/useUtil')['useEnterEvent']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useError']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>

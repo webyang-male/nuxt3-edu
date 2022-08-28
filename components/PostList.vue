@@ -1,6 +1,7 @@
+<!-- 帖子组件 -->
 <template>
     <div class="border-b p-5">
-        <div class="cursor-pointer">
+        <div class="cursor-pointer text-gray-600" @click="open">
             <n-tag v-if="item.is_top" :bordered="false" type="success" size="small">
                 置顶
             </n-tag>
@@ -31,7 +32,7 @@
                 评论 {{ item.comment_count || 0 }}
             </n-button>
             <n-button text size="tiny" class="mr-3">作者：{{ item.user.name }}</n-button>
-            <n-button type="error" size="tiny">
+            <n-button type="error" size="tiny" @click="deleteItem" :loading="loading">
                 删除
             </n-button>
         </div>
@@ -41,11 +42,41 @@
 <script setup>
 import { NTag, NImage, NButton, NIcon, createDiscreteApi } from 'naive-ui'
 import { ThumbsUpSharp, ChatboxEllipsesOutline } from "@vicons/ionicons5"
-defineProps({ item: Object })
+const props = defineProps({ item: Object })
 
 //点赞点击事件
 const {
     supportLoading,
     handleSupport
 } = useHandleSupportPost()
+
+//删除帖子
+const loading = ref(false)
+const emit = defineEmits(['delete'])
+
+const deleteItem = () => {
+    const { dialog, message } = createDiscreteApi(["dialog", "message"])
+    dialog.warning({
+        content: "是否要删除该贴？",
+        positiveText: "确定",
+        negativeText: "取消",
+        onPositiveClick: async () => {
+            loading.value = true
+            emit('delete', {
+                id: props.item.id,
+                success() {
+                    message.success('删除成功')
+                    loading.value = false
+                },
+                fail() {
+                    loading.value = false
+                }
+            });
+        },
+    });
+}
+
+const open = () => {
+    navigateTo("/post_detail/"+props.item.id)
+}
 </script>
