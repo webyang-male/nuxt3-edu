@@ -15,7 +15,7 @@
                 <n-input v-model:value="form.nickname" placeholder="请输入昵称" />
             </n-form-item>
             <n-form-item label="性别" path="sex">
-                <n-radio-group v-model:value="value" name="radiogroup">
+                <n-radio-group v-model:value="form.sex" name="sex">
                     <n-space>
                         <n-radio v-for="item in options" :key="item.value" :value="item.value">
                             {{ item.value }}
@@ -24,7 +24,7 @@
                 </n-radio-group>
             </n-form-item>
             <n-form-item>
-                <n-button class="ml-8" type="primary" @click="onSubmit">提交修改</n-button>
+                <n-button class="ml-8" type="primary" @click="onSubmit" :loading="loading">提交修改</n-button>
             </n-form-item>
         </n-form>
     </div>
@@ -45,10 +45,17 @@ const form = reactive({
     sex: ""
 })
 
+//初始化form
+if (user.value) {
+    form.avatar = user.value.avatar
+    form.nickname = user.value.nickname
+    form.sex = user.value.sex
+}
+
 const rules = {
     nickname: [{
         required: true,
-        message: "code:nickname null 昵称必填"
+        message: "Error code:nickname null 昵称必填"
     }],
     sex: [{
         required: true,
@@ -68,4 +75,24 @@ const options = [{
 }, {
     value: "女"
 }]
+
+const loading = ref(false)
+const onSubmit = () => {
+    formRef.value.validate(async (errors) => {
+        if (errors) return;
+
+        loading.value = true;
+        const { data, error } = await useUpdateUserInfoApi(form)
+
+        loading.value = false;
+
+        if (error.value) return;
+
+        const { message } = createDiscreteApi(["message"])
+        message.success("修改成功")
+
+        //刷新用户信息
+        useRefreshUserInfo()
+    })
+}
 </script> 

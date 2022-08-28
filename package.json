@@ -13,6 +13,7 @@
     "nuxt-windicss": "^2.4.3"
   },
   "dependencies": {
-    "@css-render/vue3-ssr": "^0.15.10"
+    "@css-render/vue3-ssr": "^0.15.10",
+    "darkmode-js": "^1.5.7"
   }
 }

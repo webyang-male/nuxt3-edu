@@ -12,7 +12,8 @@
 </template>
 
 <script setup>
-import { useHttp } from '~~/composables/useHttp';
+
+
 
 //设置首页标题,举个例子，这里的title就是首页的标题
 useHead({
@@ -53,5 +54,6 @@ const {
 if (process.server && error.value) {
     throwError(error.value?.data?.data)
 }
+
 
 </script>
