@@ -6,7 +6,6 @@
         <span class="text-gray-500 text-sm">{{ item.goods.title }}</span>
         <n-button class="ml-auto mr-3" type="success" size="tiny" @click="">查看</n-button>
         <n-button type="error" size="tiny" @click="">删除</n-button>
-
     </div>
 </template>
 
