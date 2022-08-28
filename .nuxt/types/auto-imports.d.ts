@@ -87,6 +87,7 @@ declare global {
   const useLogout: typeof import('../../composables/useAuth')['useLogout']
   const useLogoutApi: typeof import('../../apis/user')['useLogoutApi']
   const useMeta: typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']
+  const useMyFavaListApi: typeof import('../../apis/user')['useMyFavaListApi']
   const useMypostListApi: typeof import('../../apis/user')['useMypostListApi']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const useOrderListApi: typeof import('../../apis/user')['useOrderListApi']
@@ -207,6 +208,7 @@ declare module '@vue/runtime-core' {
     readonly useLogout: UnwrapRef<typeof import('../../composables/useAuth')['useLogout']>
     readonly useLogoutApi: UnwrapRef<typeof import('../../apis/user')['useLogoutApi']>
     readonly useMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useMeta']>
+    readonly useMyFavaListApi: UnwrapRef<typeof import('../../apis/user')['useMyFavaListApi']>
     readonly useMypostListApi: UnwrapRef<typeof import('../../apis/user')['useMypostListApi']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useOrderListApi: UnwrapRef<typeof import('../../apis/user')['useOrderListApi']>

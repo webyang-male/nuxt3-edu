@@ -38,7 +38,7 @@ const menus = [{
     name: "user-coupon-page",
 }, {
     title: "我的收藏",
-    name: "",
+    name: "user-fava-page",
 }, {
     title: "修改资料",
     name: "",

@@ -86,3 +86,10 @@ export function useUserCouponApi(page) {
     lazy: true,
   });
 }
+
+//获取优惠券记录 /user_fava?page=1
+export function useMyFavaListApi(page) {
+  return useHttpGet("MyFavaList", `/user_fava?page=${page}`, {
+    lazy: true,
+  });
+}
