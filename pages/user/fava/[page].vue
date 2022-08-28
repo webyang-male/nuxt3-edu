@@ -2,29 +2,45 @@
 <template>
     <LoadingGroup :pending="pending" :error="error" :isEmpty="rows.length === 0">
         <div class="p-3">
-            <UserFavaList v-for="(item, index) in rows" :key="index" :item="item" />
+            <UserFavaList v-for="(item, index) in rows" :key="index" :item="item" @delete="handleDeleteItem" />
         </div>
-        <!-- 分页组件 -->
-        <div class="flex justify-center items-center mt-5  !pb-[1.5rem]">
-            <n-pagination size="large" :item-count="total" :page="page" :page-size="limit"
+        <div class="flex justify-center items-center mt-5 pb-10">
+            <n-pagination size="large" :page="page" :item-count="total" :page-size="limit"
                 :on-update:page="handlePageChange" />
         </div>
     </LoadingGroup>
 </template>
-
 <script setup>
-import { NPagination } from "naive-ui";
+import {
+    NPagination
+} from "naive-ui"
 
-useHead({ title: "我的收藏" });
+useHead({ title: "我的收藏" })
 
 const {
     page,
     limit,
+    total,
+    handlePageChange,
+    rows,
     pending,
     error,
-    rows,
-    total,
-    handlePageChange
+    refresh
 } = await usePage(({ page, limit }) => useMyFavaListApi(page))
 
+async function handleDeleteItem({ goods_id, type, success, fail }) {
+    let {
+        error
+    } = await useUncollectApi({
+        goods_id,
+        type
+    })
+
+    if (error.value) {
+        fail()
+    } else {
+        success()
+        refresh()
+    }
+}
 </script>

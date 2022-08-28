@@ -93,3 +93,11 @@ export function useMyFavaListApi(page) {
     lazy: true,
   });
 }
+
+//取消收藏 /uncollect
+export function useUncollectApi(body) {
+  return useHttpGet("Uncollect", `/uncollect`, {
+    body
+  });
+}
+

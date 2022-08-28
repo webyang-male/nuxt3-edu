@@ -105,6 +105,7 @@ declare global {
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
   const useTransitionState: typeof import('vue')['useTransitionState']
+  const useUncollectApi: typeof import('../../apis/user')['useUncollectApi']
   const useUser: typeof import('../../composables/useAuth')['useUser']
   const useUserCouponApi: typeof import('../../apis/user')['useUserCouponApi']
   const useUserHistoryApi: typeof import('../../apis/user')['useUserHistoryApi']
@@ -226,6 +227,7 @@ declare module '@vue/runtime-core' {
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
+    readonly useUncollectApi: UnwrapRef<typeof import('../../apis/user')['useUncollectApi']>
     readonly useUser: UnwrapRef<typeof import('../../composables/useAuth')['useUser']>
     readonly useUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useUserCouponApi']>
     readonly useUserHistoryApi: UnwrapRef<typeof import('../../apis/user')['useUserHistoryApi']>

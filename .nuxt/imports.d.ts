@@ -5,10 +5,10 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { useUser, useRefreshUserInfo, useLogout, useHasAuth, useHandleSupportPost } from 'E:/WebProject/nuxt3-edu/composables/useAuth';
 export { useHttp, useHttpGet, useHttpPost } from 'E:/WebProject/nuxt3-edu/composables/useHttp';
 export { usePage } from 'E:/WebProject/nuxt3-edu/composables/usePage';
-export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
 export { useSearchListApi } from 'E:/WebProject/nuxt3-edu/apis/common';
 export { useQueryToString, useEnterEvent } from 'E:/WebProject/nuxt3-edu/composables/useUtil';
+export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
 export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/nuxt3-edu/apis/index';
-export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi, useBindPhoneApi, useForgetApi, useUserHistoryApi, useOrderListApi, useUserTestApi, useMypostListApi, useUserCouponApi, useMyFavaListApi } from 'E:/WebProject/nuxt3-edu/apis/user';
+export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi, useBindPhoneApi, useForgetApi, useUserHistoryApi, useOrderListApi, useUserTestApi, useMypostListApi, useUserCouponApi, useMyFavaListApi, useUncollectApi } from 'E:/WebProject/nuxt3-edu/apis/user';
 export { definePageMeta } from 'E:/WebProject/nuxt3-edu/node_modules/nuxt/dist/pages/runtime/composables';
 export { useLink } from 'vue-router';
