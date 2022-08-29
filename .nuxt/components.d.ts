@@ -14,14 +14,15 @@ declare module 'vue' {
     'SearchBar': typeof import("../components/SearchBar.vue")['default'],
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'SendCode': typeof import("../components/SendCode.vue")['default'],
-    'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
-    'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
-    'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'Uploader': typeof import("../components/Uploader.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
+    'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'UserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'UserFavaList': typeof import("../components/User/FavaList.vue")['default'],
@@ -51,14 +52,15 @@ declare module 'vue' {
     'LazySearchBar': typeof import("../components/SearchBar.vue")['default'],
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazySendCode': typeof import("../components/SendCode.vue")['default'],
-    'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
-    'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
-    'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'LazyUploader': typeof import("../components/Uploader.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
+    'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
+    'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
     'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'LazyUserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'LazyUserFavaList': typeof import("../components/User/FavaList.vue")['default'],
@@ -90,14 +92,15 @@ export const Price: typeof import("../components/Price.vue")['default']
 export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const SendCode: typeof import("../components/SendCode.vue")['default']
-export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
-export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
-export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const Uploader: typeof import("../components/Uploader.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
+export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const UserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const UserFavaList: typeof import("../components/User/FavaList.vue")['default']
@@ -127,14 +130,15 @@ export const LazyPrice: typeof import("../components/Price.vue")['default']
 export const LazySearchBar: typeof import("../components/SearchBar.vue")['default']
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazySendCode: typeof import("../components/SendCode.vue")['default']
-export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
-export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
-export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const LazyUploader: typeof import("../components/Uploader.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
+export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
+export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
 export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const LazyUserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const LazyUserFavaList: typeof import("../components/User/FavaList.vue")['default']

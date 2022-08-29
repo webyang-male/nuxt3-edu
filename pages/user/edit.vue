@@ -6,10 +6,7 @@
                 <n-input v-model:value="user.username" disabled @click="unEditName" />
             </n-form-item>
             <n-form-item label="头像" path="avatar" class="ml-[-.8rem]">
-                <n-upload action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f" :default-file-list="fileList"
-                    list-type="image-card">
-                    点击上传
-                </n-upload>
+                <uploader v-model="form.avatar"/>
             </n-form-item>
             <n-form-item label="昵称" path="nickname">
                 <n-input v-model:value="form.nickname" placeholder="请输入昵称" />
@@ -32,7 +29,7 @@
 
 <script setup>
 import {
-    NForm, NFormItem, NInput, NRadio, NRadioGroup, NButton, createDiscreteApi, NUpload, NSpace
+    NForm, NFormItem, NInput, NRadio, NRadioGroup, NButton, createDiscreteApi,NSpace
 } from "naive-ui"
 
 //获取用户名

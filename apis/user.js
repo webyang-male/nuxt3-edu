@@ -109,5 +109,14 @@ export function useUpdateUserInfoApi(body) {
   });
 }
 
-// 登�
-
+// 上传图片
+export function useUploadConfig(){
+  const token = useCookie("token")
+  return {
+      action: fetchConfig.baseURL + "/upload",
+      headers:{
+          appid:fetchConfig.headers.appid,
+          token:token.value
+      }
+  }
+}

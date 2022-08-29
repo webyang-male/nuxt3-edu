@@ -15,6 +15,7 @@ declare global {
   const definePageMeta: typeof import('../../node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']
   const effect: typeof import('vue')['effect']
   const effectScope: typeof import('vue')['effectScope']
+  const fetchConfig: typeof import('../../composables/useHttp')['fetchConfig']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
@@ -107,6 +108,7 @@ declare global {
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useUncollectApi: typeof import('../../apis/user')['useUncollectApi']
   const useUpdateUserInfoApi: typeof import('../../apis/user')['useUpdateUserInfoApi']
+  const useUploadConfig: typeof import('../../apis/user')['useUploadConfig']
   const useUser: typeof import('../../composables/useAuth')['useUser']
   const useUserCouponApi: typeof import('../../apis/user')['useUserCouponApi']
   const useUserHistoryApi: typeof import('../../apis/user')['useUserHistoryApi']
@@ -138,6 +140,7 @@ declare module '@vue/runtime-core' {
     readonly definePageMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']>
     readonly effect: UnwrapRef<typeof import('vue')['effect']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly fetchConfig: UnwrapRef<typeof import('../../composables/useHttp')['fetchConfig']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -230,6 +233,7 @@ declare module '@vue/runtime-core' {
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useUncollectApi: UnwrapRef<typeof import('../../apis/user')['useUncollectApi']>
     readonly useUpdateUserInfoApi: UnwrapRef<typeof import('../../apis/user')['useUpdateUserInfoApi']>
+    readonly useUploadConfig: UnwrapRef<typeof import('../../apis/user')['useUploadConfig']>
     readonly useUser: UnwrapRef<typeof import('../../composables/useAuth')['useUser']>
     readonly useUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useUserCouponApi']>
     readonly useUserHistoryApi: UnwrapRef<typeof import('../../apis/user')['useUserHistoryApi']>
