@@ -1,4 +1,4 @@
-<!-- 搜索结果组件页 -->
+<!-- 课程列表页 -->
 <template>
     <div>
         <n-breadcrumb class="mb-5">
@@ -6,7 +6,7 @@
                 <nuxt-link to="/">首页</nuxt-link>
             </n-breadcrumb-item>
             <n-breadcrumb-item>
-                课程列表
+                {{title}}
             </n-breadcrumb-item>
         </n-breadcrumb>
         <!-- 课程渲染 -->
@@ -32,9 +32,7 @@
 import { NGrid, NGi, NPagination, NBreadcrumb, NBreadcrumbItem } from "naive-ui";
 const route = useRoute();
 const { type } = route.params;
-useHead({ title: "课程列表" });
-
-
+const title = route.meta.title;
 
 const {
     page,
@@ -47,6 +45,7 @@ const {
     handlePageChange
 } = await usePage(({ page, limit }) => usecourseListApi(page))
 
-
-
+definePageMeta({
+    middleware: ["list"]
+})
 </script>
