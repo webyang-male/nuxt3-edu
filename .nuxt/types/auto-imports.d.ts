@@ -114,6 +114,7 @@ declare global {
   const useUserCouponApi: typeof import('../../apis/user')['useUserCouponApi']
   const useUserHistoryApi: typeof import('../../apis/user')['useUserHistoryApi']
   const useUserTestApi: typeof import('../../apis/user')['useUserTestApi']
+  const usecourseListApi: typeof import('../../apis/course')['usecourseListApi']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const withCtx: typeof import('vue')['withCtx']
@@ -240,6 +241,7 @@ declare module '@vue/runtime-core' {
     readonly useUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useUserCouponApi']>
     readonly useUserHistoryApi: UnwrapRef<typeof import('../../apis/user')['useUserHistoryApi']>
     readonly useUserTestApi: UnwrapRef<typeof import('../../apis/user')['useUserTestApi']>
+    readonly usecourseListApi: UnwrapRef<typeof import('../../apis/course')['usecourseListApi']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly withCtx: UnwrapRef<typeof import('vue')['withCtx']>
