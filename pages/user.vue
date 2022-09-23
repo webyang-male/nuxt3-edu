@@ -47,7 +47,7 @@ const menus = [{
     name: "user-password",
 }, {
     title: "其他设置",
-    name: "",
+    name: "user-other",
 }]
 
 const activeName = computed(() => route.name)
