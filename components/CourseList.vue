@@ -1,5 +1,5 @@
 <template>
-    <n-card class="cursor-pointer mb-5 shadow-md !border-0" footer-style="padding:0;">
+    <n-card class="cursor-pointer mb-5 shadow-md !border-0" footer-style="padding:0;" @click="open">
         <template #cover>
             <!-- nuxt3特性：服务端渲染会导致404图片资源加载失败，可实验性尝试ClientOnly API -->
             <UiImage v-if="item?.cover" :src="item.cover" class="w-[100%] h-[150px]" />
@@ -30,12 +30,17 @@
 import {
     NCard
 } from "naive-ui"
-defineProps({
+
+const props = defineProps({
     item: Object
 })
 
-//偷懒404处理-废弃
+//偷懒404处理
 // let reg = /^(http|https):\/\//;
 // let img_404 = "https://unpkg.com/hassan-assets@1.0.22/img/404.png";
+
+let open = () => {
+    navigateTo(`/detail/course/${props.item.id}`);
+}
 
 </script>
