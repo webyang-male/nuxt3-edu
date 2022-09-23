@@ -1,5 +1,6 @@
 <template>
     <div style="width:100%;">
+        <!-- 不在客户端渲染会有不能上传图片的bug -->
         <ClientOnly>
             <template #fallback>
                 <!-- 加载中 -->
@@ -9,7 +10,7 @@
                 </div>
             </template>
             <n-upload
-                accept="image/png,image/jpeg,image/gif"
+                accept="image/*"
                 :action="action"
                 :headers="headers"
                 v-model:file-list="fileList"
@@ -48,6 +49,7 @@ initFileList()
 
 // 上传成功
 const handleSuccess = (...e)=>{
+    console.log(e);
     const { file,event } = e[0]
     const response = JSON.parse(event.target.response)
     file.url = response.data

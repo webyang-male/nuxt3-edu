@@ -107,6 +107,7 @@ declare global {
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useUncollectApi: typeof import('../../apis/user')['useUncollectApi']
+  const useUpdatePasswordApi: typeof import('../../apis/user')['useUpdatePasswordApi']
   const useUpdateUserInfoApi: typeof import('../../apis/user')['useUpdateUserInfoApi']
   const useUploadConfig: typeof import('../../apis/user')['useUploadConfig']
   const useUser: typeof import('../../composables/useAuth')['useUser']
@@ -232,6 +233,7 @@ declare module '@vue/runtime-core' {
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useUncollectApi: UnwrapRef<typeof import('../../apis/user')['useUncollectApi']>
+    readonly useUpdatePasswordApi: UnwrapRef<typeof import('../../apis/user')['useUpdatePasswordApi']>
     readonly useUpdateUserInfoApi: UnwrapRef<typeof import('../../apis/user')['useUpdateUserInfoApi']>
     readonly useUploadConfig: UnwrapRef<typeof import('../../apis/user')['useUploadConfig']>
     readonly useUser: UnwrapRef<typeof import('../../composables/useAuth')['useUser']>

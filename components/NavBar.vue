@@ -183,7 +183,7 @@ const options = {
 }
 
 const darkmode = new Darkmode(options);
-darkmode.showWidget();
+// darkmode.showWidget();
 </script>
 <style>
 .navbar {

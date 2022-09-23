@@ -102,7 +102,6 @@ export function useUncollectApi(body) {
 }
 
 //修改用户资料 /update_info
-
 export function useUpdateUserInfoApi(body) {
   return useHttpPost("updateUserInfo", "/update_info", {
     body,
@@ -119,4 +118,11 @@ export function useUploadConfig(){
           token:token.value
       }
   }
+}
+
+//修改用户密码 /update_password
+export function useUpdatePasswordApi(body) {
+  return useHttpPost("updatePassword", "/update_password", {
+    body,
+  });
 }
