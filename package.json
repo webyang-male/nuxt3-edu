@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@css-render/vue3-ssr": "^0.15.10",
-    "darkmode-js": "^1.5.7"
+    "darkmode-js": "^1.5.7",
+    "sass": "^1.55.0"
   }
 }
