@@ -13,3 +13,8 @@ export function useReadCourseApi(query = {}) {
     lazy: true,
   });
 }
+
+//课程详情-推荐列表
+export function useHotCourseListApi() {
+  return useHttpGet("HotCourseList", `/hot`);
+}

@@ -19,13 +19,30 @@
                 </div>
             </div>
         </section>
+
+        <n-grid :x-gap="20">
+            <n-grid-item :span="18">
+                <section class="detail-bottom">
+                    <UiTab>
+                        <UiTabItem active>详情</UiTabItem>
+                    </UiTab>
+                    <!-- 课程是图文类型并且已经购买则显示课程内容，否则显示介绍 -->
+                    <div class="content" v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
+                    </div>
+                </section>
+            </n-grid-item>
+            <n-grid-item :span="6">
+                <HotCourseList />
+            </n-grid-item>
+        </n-grid>
+
     </LoadingGroup>
 </template>
 
 <script setup>
 import {
     NImage,
-    NButton
+    NButton, NGrid, NGridItem
 } from 'naive-ui';
 
 const route = useRoute()
@@ -65,5 +82,17 @@ const subTitle = computed(() => {
 
 .detail-top .info {
     @apply flex flex-1 flex-col py-2
+}
+
+.detail-bottom {
+    @apply bg-white shadow-white mb-5 rounded
+}
+
+.content {
+    @apply p-4
+}
+
+.content img {
+    max-width: 100% !important;
 }
 </style>

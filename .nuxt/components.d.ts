@@ -4,6 +4,7 @@ declare module 'vue' {
     'Banner': typeof import("../components/Banner.vue")['default'],
     'CourseList': typeof import("../components/CourseList.vue")['default'],
     'Empty': typeof import("../components/Empty.vue")['default'],
+    'HotCourseList': typeof import("../components/HotCourseList.vue")['default'],
     'ImageAd': typeof import("../components/ImageAd.vue")['default'],
     'ImageNav': typeof import("../components/ImageNav.vue")['default'],
     'ListCard': typeof import("../components/ListCard.vue")['default'],
@@ -42,6 +43,7 @@ declare module 'vue' {
     'LazyBanner': typeof import("../components/Banner.vue")['default'],
     'LazyCourseList': typeof import("../components/CourseList.vue")['default'],
     'LazyEmpty': typeof import("../components/Empty.vue")['default'],
+    'LazyHotCourseList': typeof import("../components/HotCourseList.vue")['default'],
     'LazyImageAd': typeof import("../components/ImageAd.vue")['default'],
     'LazyImageNav': typeof import("../components/ImageNav.vue")['default'],
     'LazyListCard': typeof import("../components/ListCard.vue")['default'],
@@ -82,6 +84,7 @@ declare module 'vue' {
 export const Banner: typeof import("../components/Banner.vue")['default']
 export const CourseList: typeof import("../components/CourseList.vue")['default']
 export const Empty: typeof import("../components/Empty.vue")['default']
+export const HotCourseList: typeof import("../components/HotCourseList.vue")['default']
 export const ImageAd: typeof import("../components/ImageAd.vue")['default']
 export const ImageNav: typeof import("../components/ImageNav.vue")['default']
 export const ListCard: typeof import("../components/ListCard.vue")['default']
@@ -120,6 +123,7 @@ export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/
 export const LazyBanner: typeof import("../components/Banner.vue")['default']
 export const LazyCourseList: typeof import("../components/CourseList.vue")['default']
 export const LazyEmpty: typeof import("../components/Empty.vue")['default']
+export const LazyHotCourseList: typeof import("../components/HotCourseList.vue")['default']
 export const LazyImageAd: typeof import("../components/ImageAd.vue")['default']
 export const LazyImageNav: typeof import("../components/ImageNav.vue")['default']
 export const LazyListCard: typeof import("../components/ListCard.vue")['default']

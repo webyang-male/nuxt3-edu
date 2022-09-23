@@ -77,6 +77,7 @@ declare global {
   const useHandleSupportPost: typeof import('../../composables/useAuth')['useHandleSupportPost']
   const useHasAuth: typeof import('../../composables/useAuth')['useHasAuth']
   const useHead: typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']
+  const useHotCourseListApi: typeof import('../../apis/course')['useHotCourseListApi']
   const useHttp: typeof import('../../composables/useHttp')['useHttp']
   const useHttpGet: typeof import('../../composables/useHttp')['useHttpGet']
   const useHttpPost: typeof import('../../composables/useHttp')['useHttpPost']
@@ -205,6 +206,7 @@ declare module '@vue/runtime-core' {
     readonly useHandleSupportPost: UnwrapRef<typeof import('../../composables/useAuth')['useHandleSupportPost']>
     readonly useHasAuth: UnwrapRef<typeof import('../../composables/useAuth')['useHasAuth']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/head/runtime')['useHead']>
+    readonly useHotCourseListApi: UnwrapRef<typeof import('../../apis/course')['useHotCourseListApi']>
     readonly useHttp: UnwrapRef<typeof import('../../composables/useHttp')['useHttp']>
     readonly useHttpGet: UnwrapRef<typeof import('../../composables/useHttp')['useHttpGet']>
     readonly useHttpPost: UnwrapRef<typeof import('../../composables/useHttp')['useHttpPost']>
