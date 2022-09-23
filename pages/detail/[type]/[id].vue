@@ -1,3 +1,4 @@
+<!-- 课程详情页 -->
 <template>
     <LoadingGroup :pending="pending" :error="error">
         <section class="detail-top">
@@ -6,6 +7,7 @@
                 <div class="flex flex-col items-start">
                     <div class="flex items-center">
                         <span class="text-xl mr-2">{{data.title}}</span>
+                        <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type"/>
                     </div>
                     <p class="my-2 text-sm text-gray-400">{{subTitle}}</p>
                     <div v-if="!data.isbuy">

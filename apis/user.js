@@ -126,3 +126,10 @@ export function useUpdatePasswordApi(body) {
     body,
   });
 }
+
+//课程详情/专栏页--收藏
+export function useCollectApi(body) {
+  return useHttpPost("Collect", "/collect", {
+    body,
+  });
+}
