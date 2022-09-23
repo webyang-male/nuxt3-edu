@@ -1,12 +1,35 @@
 <template>
-    <div>
-        课程详情
-    </div>
+    <LoadingGroup :pending="pending" :error="error">
+        <section class="detail-top">
+            <n-image :src="data.cover" object-fit="cover" class="image" />
+            <div class="info">
+                <div class="flex flex-col items-start">
+                    <div class="flex items-center">
+                        <span class="text-xl mr-2">{{data.title}}</span>
+                    </div>
+                    <p class="my-2 text-sm text-gray-400">{{subTitle}}</p>
+                    <div v-if="!data.isbuy">
+                        <Price :value="data.price" class="text-xl" />
+                        <Price :value="data.t_price" through class="text-sm ml-1" />
+                    </div>
+                </div>
+
+                <div class="mt-auto" v-if="!data.isbuy">
+                    <n-button type="primary" @click="">光速学习</n-button>
+                </div>
+            </div>
+        </section>
+    </LoadingGroup>
 </template>
 
 <script setup>
+import {
+    NImage,
+    NButton
+} from 'naive-ui';
+
 const route = useRoute()
-const { id } = route.params
+const { id, type } = route.params
 
 const { data, error, pending, refresh } = await useReadCourseApi({
     id
@@ -16,5 +39,31 @@ const { data, error, pending, refresh } = await useReadCourseApi({
 const title = computed(() => !pending.value ? data.value?.title : "详情页面")
 
 useHead({ title });
+
+const o = {
+    media: "图文",
+    video: "视频",
+    audio: "音频"
+}
+const subTitle = computed(() => {
+    let pre = "";
+    if (type == "course") {
+        pre = `【${o[data.value.type]}】`
+    }
+    return `${pre}${data.value.sub_count}人学过`
+})
 </script>
 
+<style>
+.detail-top {
+    @apply rounded bg-white flex p-5 my-2
+}
+
+.detail-top .image {
+    @apply rounded w-[340px] h-[210px] mr-5
+}
+
+.detail-top .info {
+    @apply flex flex-1 flex-col py-2
+}
+</style>
