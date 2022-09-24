@@ -7,7 +7,7 @@
                 <div class="flex flex-col items-start">
                     <div class="flex items-center">
                         <span class="text-xl mr-2">{{data.title}}</span>
-                        <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type"/>
+                        <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type" />
                     </div>
                     <p class="my-2 text-sm text-gray-400">{{subTitle}}</p>
                     <div v-if="!data.isbuy">
@@ -15,9 +15,9 @@
                         <Price :value="data.t_price" through class="text-sm ml-1" />
                     </div>
                 </div>
-
+                <!-- 免费学习功能建议自行注册账号体验效果 -->
                 <div class="mt-auto" v-if="!data.isbuy">
-                    <n-button type="primary" @click="">光速学习</n-button>
+                    <n-button type="primary" @click="buy" :loading="loading">光速学习</n-button>
                 </div>
             </div>
         </section>
@@ -46,6 +46,7 @@ import {
     NImage,
     NButton, NGrid, NGridItem
 } from 'naive-ui';
+import { useLearnApi } from '~~/apis/course';
 
 const route = useRoute()
 const { id, type } = route.params
@@ -71,6 +72,30 @@ const subTitle = computed(() => {
     }
     return `${pre}${data.value.sub_count}人学过`
 })
+
+//购买课程
+const loading = ref(false)
+let buy = () => {
+    useHasAuth(async () => {
+        // 免费学习
+        if (data.value.price == 0) {
+            loading.value = true
+            let {
+                error: learnError
+            } = await useLearnApi({
+                goods_id: data.value.id,
+                type: type || data.value.type,
+            })
+
+            loading.value = false
+            if (!learnError.value) {
+                refresh()
+            }
+
+            return
+        }
+    })
+}
 </script>
 
 <style>

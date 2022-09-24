@@ -18,3 +18,8 @@ export function useReadCourseApi(query = {}) {
 export function useHotCourseListApi() {
   return useHttpGet("HotCourseList", `/hot`);
 }
+
+// /order/learn 针对免费课
+export function useLearnApi(body) {
+  return useHttpPost("learn", "/order/learn", { body });
+}
