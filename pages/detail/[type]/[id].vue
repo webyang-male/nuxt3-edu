@@ -9,7 +9,9 @@
                         <span class="text-xl mr-2">{{data.title}}</span>
                         <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type" />
                     </div>
-                    <p class="my-2 text-sm text-gray-400">{{subTitle}}</p>
+                    <p class="my-2 text-sm text-gray-400 ml-[-0.5rem]">{{subTitle}}</p>
+                    <!-- 领取优惠券组件 -->
+                    <CouponModal/>
                     <div v-if="!data.isbuy">
                         <Price :value="data.price" class="text-xl" />
                         <Price :value="data.t_price" through class="text-sm ml-1" />

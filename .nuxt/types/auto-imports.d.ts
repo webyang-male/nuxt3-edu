@@ -65,6 +65,7 @@ declare global {
   const useBindPhoneApi: typeof import('../../apis/user')['useBindPhoneApi']
   const useCollectApi: typeof import('../../apis/user')['useCollectApi']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
+  const useCouponListApi: typeof import('../../apis/common')['useCouponListApi']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useDeletePostApi: typeof import('../../apis/bbs')['useDeletePostApi']
@@ -196,6 +197,7 @@ declare module '@vue/runtime-core' {
     readonly useBindPhoneApi: UnwrapRef<typeof import('../../apis/user')['useBindPhoneApi']>
     readonly useCollectApi: UnwrapRef<typeof import('../../apis/user')['useCollectApi']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
+    readonly useCouponListApi: UnwrapRef<typeof import('../../apis/common')['useCouponListApi']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDeletePostApi: UnwrapRef<typeof import('../../apis/bbs')['useDeletePostApi']>

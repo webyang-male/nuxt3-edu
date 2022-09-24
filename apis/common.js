@@ -11,3 +11,8 @@ export function useSearchListApi(query) {
     }
   );
 }
+
+//获取可用优惠券列表  /coupon/list
+export function useCouponListApi() {
+  return useHttpGet("CouponList", "/coupon/list ");
+}

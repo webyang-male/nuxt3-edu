@@ -2,6 +2,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'Banner': typeof import("../components/Banner.vue")['default'],
+    'CouponList': typeof import("../components/CouponList.vue")['default'],
+    'CouponModal': typeof import("../components/CouponModal.vue")['default'],
     'CourseList': typeof import("../components/CourseList.vue")['default'],
     'Empty': typeof import("../components/Empty.vue")['default'],
     'FavaBtn': typeof import("../components/FavaBtn.vue")['default'],
@@ -21,16 +23,16 @@ declare module 'vue' {
     'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
-    'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
-    'UserCouponList': typeof import("../components/User/CouponList.vue")['default'],
-    'UserFavaList': typeof import("../components/User/FavaList.vue")['default'],
-    'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
-    'UserTestList': typeof import("../components/User/TestList.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
+    'UserCouponList': typeof import("../components/User/CouponList.vue")['default'],
+    'UserFavaList': typeof import("../components/User/FavaList.vue")['default'],
+    'UserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'UserTestList': typeof import("../components/User/TestList.vue")['default'],
     'UiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
     'UiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
     'UiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
@@ -43,6 +45,8 @@ declare module 'vue' {
     'NuxtLink': typeof import("../node_modules/nuxt/dist/app/components/nuxt-link")['default'],
     'NuxtLoadingIndicator': typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
     'LazyBanner': typeof import("../components/Banner.vue")['default'],
+    'LazyCouponList': typeof import("../components/CouponList.vue")['default'],
+    'LazyCouponModal': typeof import("../components/CouponModal.vue")['default'],
     'LazyCourseList': typeof import("../components/CourseList.vue")['default'],
     'LazyEmpty': typeof import("../components/Empty.vue")['default'],
     'LazyFavaBtn': typeof import("../components/FavaBtn.vue")['default'],
@@ -62,16 +66,16 @@ declare module 'vue' {
     'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
-    'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
-    'LazyUserCouponList': typeof import("../components/User/CouponList.vue")['default'],
-    'LazyUserFavaList': typeof import("../components/User/FavaList.vue")['default'],
-    'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
-    'LazyUserTestList': typeof import("../components/User/TestList.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
+    'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
+    'LazyUserCouponList': typeof import("../components/User/CouponList.vue")['default'],
+    'LazyUserFavaList': typeof import("../components/User/FavaList.vue")['default'],
+    'LazyUserHistoryList': typeof import("../components/User/HistoryList.vue")['default'],
+    'LazyUserTestList': typeof import("../components/User/TestList.vue")['default'],
     'LazyUiCardBody': typeof import("../components/Ui/Card/Body.vue")['default'],
     'LazyUiCardFooter': typeof import("../components/Ui/Card/Footer.vue")['default'],
     'LazyUiCardHeader': typeof import("../components/Ui/Card/Header.vue")['default'],
@@ -86,6 +90,8 @@ declare module 'vue' {
   }
 }
 export const Banner: typeof import("../components/Banner.vue")['default']
+export const CouponList: typeof import("../components/CouponList.vue")['default']
+export const CouponModal: typeof import("../components/CouponModal.vue")['default']
 export const CourseList: typeof import("../components/CourseList.vue")['default']
 export const Empty: typeof import("../components/Empty.vue")['default']
 export const FavaBtn: typeof import("../components/FavaBtn.vue")['default']
@@ -105,16 +111,16 @@ export const Uploader: typeof import("../components/Uploader.vue")['default']
 export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
-export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
-export const UserCouponList: typeof import("../components/User/CouponList.vue")['default']
-export const UserFavaList: typeof import("../components/User/FavaList.vue")['default']
-export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
-export const UserTestList: typeof import("../components/User/TestList.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
+export const UserCouponList: typeof import("../components/User/CouponList.vue")['default']
+export const UserFavaList: typeof import("../components/User/FavaList.vue")['default']
+export const UserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const UserTestList: typeof import("../components/User/TestList.vue")['default']
 export const UiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
 export const UiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
 export const UiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']
@@ -127,6 +133,8 @@ export const ServerPlaceholder: typeof import("../node_modules/nuxt/dist/app/com
 export const NuxtLink: typeof import("../node_modules/nuxt/dist/app/components/nuxt-link")['default']
 export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
 export const LazyBanner: typeof import("../components/Banner.vue")['default']
+export const LazyCouponList: typeof import("../components/CouponList.vue")['default']
+export const LazyCouponModal: typeof import("../components/CouponModal.vue")['default']
 export const LazyCourseList: typeof import("../components/CourseList.vue")['default']
 export const LazyEmpty: typeof import("../components/Empty.vue")['default']
 export const LazyFavaBtn: typeof import("../components/FavaBtn.vue")['default']
@@ -146,16 +154,16 @@ export const LazyUploader: typeof import("../components/Uploader.vue")['default'
 export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
-export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
-export const LazyUserCouponList: typeof import("../components/User/CouponList.vue")['default']
-export const LazyUserFavaList: typeof import("../components/User/FavaList.vue")['default']
-export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
-export const LazyUserTestList: typeof import("../components/User/TestList.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
+export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
+export const LazyUserCouponList: typeof import("../components/User/CouponList.vue")['default']
+export const LazyUserFavaList: typeof import("../components/User/FavaList.vue")['default']
+export const LazyUserHistoryList: typeof import("../components/User/HistoryList.vue")['default']
+export const LazyUserTestList: typeof import("../components/User/TestList.vue")['default']
 export const LazyUiCardBody: typeof import("../components/Ui/Card/Body.vue")['default']
 export const LazyUiCardFooter: typeof import("../components/Ui/Card/Footer.vue")['default']
 export const LazyUiCardHeader: typeof import("../components/Ui/Card/Header.vue")['default']
