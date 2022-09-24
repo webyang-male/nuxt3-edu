@@ -100,6 +100,7 @@ declare global {
   const usePostSupportApi: typeof import('../../apis/bbs')['usePostSupportApi']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useReadCourseApi: typeof import('../../apis/course')['useReadCourseApi']
+  const useReceiveUserCouponApi: typeof import('../../apis/user')['useReceiveUserCouponApi']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
   const useRegApi: typeof import('../../apis/user')['useRegApi']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']
@@ -232,6 +233,7 @@ declare module '@vue/runtime-core' {
     readonly usePostSupportApi: UnwrapRef<typeof import('../../apis/bbs')['usePostSupportApi']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useReadCourseApi: UnwrapRef<typeof import('../../apis/course')['useReadCourseApi']>
+    readonly useReceiveUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useReceiveUserCouponApi']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
     readonly useRegApi: UnwrapRef<typeof import('../../apis/user')['useRegApi']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']>

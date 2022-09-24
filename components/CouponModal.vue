@@ -8,10 +8,10 @@
                     领取优惠券
                 </n-button>
             </template>
-            <div class="p-2 shadow">
+            <div class="p-2 ">
                 <h4 class="text-lg font-bold mb-3">可用优惠券（{{data.length}}）</h4>
-                <n-scrollbar style="height: 400px">
-                    <CouponList v-for="(item,index) in data" :key="index" />
+                <n-scrollbar style="height: 420px">
+                    <CouponList v-for="(item,index) in data" :key="index" :item="item"/>
                 </n-scrollbar>
             </div>
         </n-popover>
