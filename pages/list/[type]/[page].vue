@@ -43,7 +43,11 @@ const {
     rows,
     total,
     handlePageChange
-} = await usePage(({ page, limit }) => usecourseListApi(page))
+} = await usePage(({ page, limit }) => {
+    return useListApi(type,{
+        page,
+    })
+})
 
 definePageMeta({
     middleware: ["list"]

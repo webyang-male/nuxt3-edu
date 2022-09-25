@@ -88,6 +88,7 @@ declare global {
   const useLazyFetch: typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']
   const useLearnApi: typeof import('../../apis/course')['useLearnApi']
   const useLink: typeof import('vue-router')['useLink']
+  const useListApi: typeof import('../../apis/common')['useListApi']
   const useLoginApi: typeof import('../../apis/user')['useLoginApi']
   const useLogout: typeof import('../../composables/useAuth')['useLogout']
   const useLogoutApi: typeof import('../../apis/user')['useLogoutApi']
@@ -221,6 +222,7 @@ declare module '@vue/runtime-core' {
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useLazyFetch']>
     readonly useLearnApi: UnwrapRef<typeof import('../../apis/course')['useLearnApi']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useListApi: UnwrapRef<typeof import('../../apis/common')['useListApi']>
     readonly useLoginApi: UnwrapRef<typeof import('../../apis/user')['useLoginApi']>
     readonly useLogout: UnwrapRef<typeof import('../../composables/useAuth')['useLogout']>
     readonly useLogoutApi: UnwrapRef<typeof import('../../apis/user')['useLogoutApi']>

@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
         <div class="container flex items-center h-[60px]">
-            <n-button text class="!text-xl !font-bold">IT编程</n-button>
+            <n-button text class="!text-xl !font-bold" @click="goHome">IT编程</n-button>
 
             <ui-menu>
                 <ui-menu-item v-for="(item, index) in menus" :key="index" :active="isMenuItemActive(item)"
@@ -184,13 +184,20 @@ const options = {
 
 const darkmode = new Darkmode(options);
 // darkmode.showWidget();
+
+let goHome = () => {
+    navigateTo({
+        path: "/"
+    })
+}
 </script>
 <style>
 .navbar {
     z-index: 1000;
     @apply bg-white fixed top-0 left-0 right-0 shadow-sm;
 }
-.darkmode-toggle{
+
+.darkmode-toggle {
     z-index: 1001;
 }
 </style>

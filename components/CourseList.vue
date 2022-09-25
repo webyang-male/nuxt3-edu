@@ -40,7 +40,16 @@ const props = defineProps({
 // let img_404 = "https://unpkg.com/hassan-assets@1.0.22/img/404.png";
 
 let open = () => {
-    navigateTo(`/detail/course/${props.item.id}`);
+    let path = ""
+    //课程详情
+    if (["course", "media", "video", "audio"].includes(props.item.type)) {
+        path = `/detail/course/${props.item.id}`
+    }
+    //专栏详情
+    else if (props.item.type == "column") {
+        path = `/detail/column/${props.item.id}`
+    }
+    navigateTo(path);
 }
 
 </script>
