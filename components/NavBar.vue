@@ -23,7 +23,7 @@
 
             <n-dropdown v-else :options="userOptions" @select="handleSelect">
                 <n-avatar round size="small"
-                    :src="user.avatar || 'https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg'" />
+                    :src="user.avatar ? user.avatar : 'https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg'" />
             </n-dropdown>
         </div>
     </div>

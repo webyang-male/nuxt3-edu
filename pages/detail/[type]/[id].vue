@@ -39,7 +39,7 @@
                     <!-- 详情目录 -->
                     <DetailMenu v-else>
                         <DetailMenuItem v-for="(item,index) in data.column_courses" :key="index" :index="index"
-                            :item="item" @click="learn(item)"/>
+                            :item="item" @click="learn(item)" />
 
                         <Empty v-if="data.column_courses.length == 0" desc="啊咧~暂无目录" />
                     </DetailMenu>
@@ -55,9 +55,9 @@
 <script setup>
 import {
     NImage,
-    NButton, NGrid, NGridItem
+    NButton, NGrid, NGridItem, createDiscreteApi
 } from 'naive-ui';
-import { useLearnApi } from '~~/apis/course';
+
 
 const route = useRoute()
 const { id, type } = route.params
@@ -66,12 +66,13 @@ const {
     tabs, tabState, changeTab
 } = useInitDeatailTabs(type)
 
-const { data, error, pending, refresh } = await useReadDetailApi(type, {
-    id
-})
+//获取请求参数
+const query = useRequestQuery()
+
+const { data, error, pending, refresh } = await useReadDetailApi(type, query)
 
 //懒加载数据获取修改页面title失败处理
-const title = computed(() => !pending.value ? data.value?.title : "详情页面")
+const title = computed(() => !pending.value ? data.value?.title : "详情页")
 
 useHead({ title });
 
@@ -141,8 +142,29 @@ function useInitDeatailTabs(t) {
 }
 
 //点击学习
-let learn =(item)=>{
+let learn = (item) => {
+    useHasAuth(() => {
+        const { message } = createDiscreteApi(["message"])
+        if(type == "column" && item.price != 0 && !data.value.isbuy){
+            return message.error("请先购买")
+        }
+        //跳转详情
+        let url = "";
+        if (type == "column") {
+            url = `/detail/course/${item.id}?column_id=${data.value.id}`
+        }
+        navigateTo(url)
+    })
+}
 
+//获取query参数
+function useRequestQuery() {
+    const { column_id } = route.query;
+    let query = { id }
+    if (column_id) {
+        query.column_id = column_id;
+    }
+    return query
 }
 
 </script>
