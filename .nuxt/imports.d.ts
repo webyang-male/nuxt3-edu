@@ -5,11 +5,11 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { fetchConfig, useHttp, useHttpGet, useHttpPost } from 'E:/WebProject/nuxt3-edu/composables/useHttp';
 export { useUser, useRefreshUserInfo, useLogout, useHasAuth, useHandleSupportPost } from 'E:/WebProject/nuxt3-edu/composables/useAuth';
 export { usePage } from 'E:/WebProject/nuxt3-edu/composables/usePage';
+export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
 export { useQueryToString, useEnterEvent } from 'E:/WebProject/nuxt3-edu/composables/useUtil';
 export { useSearchListApi, useCouponListApi, useListApi, useReadDetailApi } from 'E:/WebProject/nuxt3-edu/apis/common';
-export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
 export { usecourseListApi, useReadCourseApi, useHotCourseListApi, useLearnApi } from 'E:/WebProject/nuxt3-edu/apis/course';
-export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/nuxt3-edu/apis/index';
 export { useLoginApi, useGetinfoApi, useRegApi, useLogoutApi, useGetCaptchaApi, useBindPhoneApi, useForgetApi, useUserHistoryApi, useOrderListApi, useUserTestApi, useMypostListApi, useUserCouponApi, useMyFavaListApi, useUncollectApi, useUpdateUserInfoApi, useUploadConfig, useUpdatePasswordApi, useCollectApi, useReceiveUserCouponApi } from 'E:/WebProject/nuxt3-edu/apis/user';
+export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/nuxt3-edu/apis/index';
 export { definePageMeta } from 'E:/WebProject/nuxt3-edu/node_modules/nuxt/dist/pages/runtime/composables';
 export { useLink } from 'vue-router';

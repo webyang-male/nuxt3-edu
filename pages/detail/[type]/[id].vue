@@ -9,7 +9,7 @@
                         <span class="text-xl mr-2">{{data.title}}</span>
                         <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type" />
                     </div>
-                    <p class="my-2 text-sm text-gray-400 ml-[-0.5rem]">{{subTitle}}</p>
+                    <p class="my-2 text-sm text-gray-400 ml-[0.1rem]">{{subTitle}}</p>
                     <!-- 领取优惠券组件 -->
                     <CouponModal />
                     <div v-if="!data.isbuy">
@@ -28,16 +28,21 @@
             <n-grid-item :span="18">
                 <section class="detail-bottom">
                     <UiTab class="border-b">
-                        <UiTabItem 
-                            :active="tabState == item.value" 
-                            v-for="(item,index) in tabs" :key="index"
-                            @click="changeTab(item.value)"
-                            >{{item.label}}
+                        <UiTabItem :active="tabState == item.value" v-for="(item,index) in tabs" :key="index"
+                            @click="changeTab(item.value)">{{item.label}}
                         </UiTabItem>
                     </UiTab>
                     <!-- 课程是图文类型并且已经购买则显示课程内容，否则显示介绍 -->
-                    <div v-if="tabState =='content'" class="content" v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
+                    <div v-if="tabState =='content'" class="content"
+                        v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
                     </div>
+                    <!-- 详情目录 -->
+                    <DetailMenu v-else>
+                        <DetailMenuItem v-for="(item,index) in data.column_courses" :key="index" :index="index"
+                            :item="item" @click="learn(item)"/>
+
+                        <Empty v-if="data.column_courses.length == 0" desc="啊咧~暂无目录" />
+                    </DetailMenu>
                 </section>
             </n-grid-item>
             <n-grid-item :span="6">
@@ -58,7 +63,7 @@ const route = useRoute()
 const { id, type } = route.params
 
 const {
-    tabs,tabState,changeTab
+    tabs, tabState, changeTab
 } = useInitDeatailTabs(type)
 
 const { data, error, pending, refresh } = await useReadDetailApi(type, {
@@ -126,15 +131,19 @@ function useInitDeatailTabs(t) {
     //tab选中状态
     const tabState = ref("content")
 
-    let changeTab = (e)=>{
+    let changeTab = (e) => {
         tabState.value = e;
     }
 
     return {
-        tabs,tabState,changeTab
+        tabs, tabState, changeTab
     }
 }
 
+//点击学习
+let learn =(item)=>{
+
+}
 
 </script>
 
