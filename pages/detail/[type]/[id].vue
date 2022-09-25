@@ -11,7 +11,7 @@
                     </div>
                     <p class="my-2 text-sm text-gray-400 ml-[-0.5rem]">{{subTitle}}</p>
                     <!-- 领取优惠券组件 -->
-                    <CouponModal/>
+                    <CouponModal />
                     <div v-if="!data.isbuy">
                         <Price :value="data.price" class="text-xl" />
                         <Price :value="data.t_price" through class="text-sm ml-1" />
@@ -27,11 +27,16 @@
         <n-grid :x-gap="20">
             <n-grid-item :span="18">
                 <section class="detail-bottom">
-                    <UiTab>
-                        <UiTabItem active>详情</UiTabItem>
+                    <UiTab class="border-b">
+                        <UiTabItem 
+                            :active="tabState == item.value" 
+                            v-for="(item,index) in tabs" :key="index"
+                            @click="changeTab(item.value)"
+                            >{{item.label}}
+                        </UiTabItem>
                     </UiTab>
                     <!-- 课程是图文类型并且已经购买则显示课程内容，否则显示介绍 -->
-                    <div class="content" v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
+                    <div v-if="tabState =='content'" class="content" v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
                     </div>
                 </section>
             </n-grid-item>
@@ -39,7 +44,6 @@
                 <HotCourseList />
             </n-grid-item>
         </n-grid>
-
     </LoadingGroup>
 </template>
 
@@ -53,7 +57,11 @@ import { useLearnApi } from '~~/apis/course';
 const route = useRoute()
 const { id, type } = route.params
 
-const { data, error, pending, refresh } = await useReadDetailApi(type,{
+const {
+    tabs,tabState,changeTab
+} = useInitDeatailTabs(type)
+
+const { data, error, pending, refresh } = await useReadDetailApi(type, {
     id
 })
 
@@ -98,6 +106,36 @@ let buy = () => {
         }
     })
 }
+
+//初始化详情页tab
+function useInitDeatailTabs(t) {
+    const tabs = computed(() => {
+        let ts = [{
+            label: "详情",
+            value: "content"
+        }]
+        if (t == "column" || t == "book") {
+            ts.push({
+                label: "目录",
+                value: "menu"
+            })
+        }
+        return ts
+    })
+
+    //tab选中状态
+    const tabState = ref("content")
+
+    let changeTab = (e)=>{
+        tabState.value = e;
+    }
+
+    return {
+        tabs,tabState,changeTab
+    }
+}
+
+
 </script>
 
 <style>
