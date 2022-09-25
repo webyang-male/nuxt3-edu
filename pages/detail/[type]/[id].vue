@@ -2,7 +2,7 @@
 <template>
     <LoadingGroup :pending="pending" :error="error">
         <section class="detail-top">
-            <n-image :src="data.cover" object-fit="cover" class="image" />
+            <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}"/>
             <div class="info">
                 <div class="flex flex-col items-start">
                     <div class="flex items-center">
@@ -38,10 +38,10 @@
                     </div>
                     <!-- 详情目录 -->
                     <DetailMenu v-else>
-                        <DetailMenuItem v-for="(item,index) in data.column_courses" :key="index" :index="index"
+                        <DetailMenuItem v-for="(item,index) in menus" :key="index" :index="index"
                             :item="item" @click="learn(item)" />
 
-                        <Empty v-if="data.column_courses.length == 0" desc="啊咧~暂无目录" />
+                        <Empty v-if="menus.length == 0" desc="啊咧~暂无目录" />
                     </DetailMenu>
                 </section>
             </n-grid-item>
@@ -167,6 +167,10 @@ function useRequestQuery() {
     return query
 }
 
+//电子书目录
+const menus = computed(() =>(type=="book" ? data.value.book_details : data.value.column_courses)|| [])
+
+
 </script>
 
 <style>
@@ -175,7 +179,10 @@ function useRequestQuery() {
 }
 
 .detail-top .image {
-    @apply rounded  h-[210px] mr-5
+    @apply rounded w-[340px]  h-[210px] mr-5
+}
+.detail-top .book-image{
+    @apply rounded w-[130px] h-[180px] mr-8 ml-3
 }
 
 .detail-top .info {

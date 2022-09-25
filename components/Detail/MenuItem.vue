@@ -1,10 +1,10 @@
 <template>
     <li class="detail-menu-item">
-        <n-tag :bordered="false" type="info" size="small" class="mr-3">
+        <n-tag v-if="item.type" :bordered="false" type="info" size="small" class="mr-3">
             {{t[item.type] }}
         </n-tag>
         章节{{index+1}}&ensp;{{item.title}}
-        <n-tag v-if="item.price == 0" :bordered="false" type="success" size="small" class="ml-auto watch">
+        <n-tag v-if="item.price == 0 || item.isfree == 1" :bordered="false" type="success" size="small" class="ml-auto watch">
             免费观看
         </n-tag>
     </li>
