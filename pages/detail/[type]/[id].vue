@@ -53,7 +53,7 @@ import { useLearnApi } from '~~/apis/course';
 const route = useRoute()
 const { id, type } = route.params
 
-const { data, error, pending, refresh } = await useReadCourseApi({
+const { data, error, pending, refresh } = await useReadDetailApi(type,{
     id
 })
 

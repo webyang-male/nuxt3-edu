@@ -24,3 +24,13 @@ export function useListApi(type, query={}) {
     lazy: true,
   });
 }
+
+//查看课程、专栏详情接口
+export function useReadDetailApi(type,query = {}) {
+  let q = useQueryToString(query);
+  return useHttpGet("readDetail", `/${type}/read${q}`, {
+    lazy: true,
+  });
+}
+
+
