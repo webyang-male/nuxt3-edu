@@ -15,11 +15,11 @@
 let footerLinkArrays = [
     {
         name: "项目源码",
-        url: "https://github.com/webyang-male/vue3SSR"
+        url: "https://github.com/webyang-male/nuxt3-edu"
     },
     {
         name: "其他项目",
-        url: "https://github.com/webyang-male/mallManagSys",
+        url: "https://github.com/webyang-male/vue3-mallManage",
     },
     {
         name: "站长博客",
