@@ -175,7 +175,7 @@ function useRequestQuery() {
 }
 
 .detail-top .image {
-    @apply rounded w-[340px] h-[210px] mr-5
+    @apply rounded  h-[210px] mr-5
 }
 
 .detail-top .info {

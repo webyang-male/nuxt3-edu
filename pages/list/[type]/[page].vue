@@ -12,7 +12,8 @@
         <!-- 课程渲染 -->
         <LoadingGroup :pending="pending" :error="error" :isEmpty="rows.length === 0">
             <template #loading>
-                <LoadingCourseSkeleton />
+                <LoadingBookSkeletion v-if="type == 'book'" />
+                <LoadingCourseSkeleton v-else />
             </template>
             <n-grid :x-gap="20" :cols="type == 'book'?2:4">
                 <n-gi v-for="(item, index) in rows" :key="index">
