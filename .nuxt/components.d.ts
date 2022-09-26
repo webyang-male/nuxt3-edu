@@ -27,6 +27,7 @@ declare module 'vue' {
     'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'PlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
@@ -74,6 +75,7 @@ declare module 'vue' {
     'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'LazyPlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
@@ -123,6 +125,7 @@ export const LoadingBookSkeletion: typeof import("../components/Loading/BookSkel
 export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const PlayerAudio: typeof import("../components/Player/Audio.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
@@ -170,6 +173,7 @@ export const LazyLoadingBookSkeletion: typeof import("../components/Loading/Book
 export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const LazyPlayerAudio: typeof import("../components/Player/Audio.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']

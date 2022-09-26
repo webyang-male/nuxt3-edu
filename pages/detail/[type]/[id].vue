@@ -1,7 +1,17 @@
 <!-- 课程详情页 -->
 <template>
     <LoadingGroup :pending="pending" :error="error">
-        <section class="detail-top">
+        <section class="py-4" v-if="data.isbuy && (data.type !='media' && type=='course' )">
+            <ClientOnly>
+                <template #fallback>
+                    <LoadingSkeleton/>
+                </template>
+                <PlayerAudio v-if="data.type == 'audio'" :title="data.title" :url="data.content" :cover="data.cover" />
+            </ClientOnly>
+        </section>
+
+
+        <section v-else class="detail-top">
             <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}" />
             <div class="info">
                 <div class="flex flex-col items-start">
@@ -22,7 +32,8 @@
                     <template v-if="type=='book'">
                         <template v-if="menus.length >0">
                             <n-button @click="buy" type="primary" :loading="loading">光速学习</n-button>
-                            <n-button v-if="freeID" @click="learn({id:freeID})" strong secondary type="info" class="ml-2">
+                            <n-button v-if="freeID" @click="learn({id:freeID})" strong secondary type="info"
+                                class="ml-2">
                                 免费试看
                             </n-button>
                         </template>
@@ -71,6 +82,8 @@ import {
 
 const route = useRoute()
 const { id, type } = route.params
+
+useInitHead();
 
 const {
     tabs, tabState, changeTab
@@ -195,7 +208,22 @@ function useRequestQuery() {
 //电子书目录
 const menus = computed(() => (type == "book" ? data.value.book_details : data.value.column_courses) || [])
 
-
+//初始化head音频引入
+//出于nuxt3环境兼容考虑，直接将aplayer资源放置public目录
+function useInitHead() {
+    if (type == "course") {
+        useHead({
+            link: [{
+                rel: "stylesheet",
+                //tip: nuxt3 public目录下资源可直接引用
+                href: "/aplayer/APlayer.min.css"
+            }],
+            script: [{
+                src: "/aplayer/APlayer.min.js"
+            }]
+        })
+    }
+}
 </script>
 
 <style>
