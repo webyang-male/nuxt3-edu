@@ -10,9 +10,9 @@ const { book_id, id } = route.params
 const { data, error, pending } = await useBookDetailApi(book_id, id)
 
 //修改页面标题
-const title = computed(() => {
+const title = computed(() => 
     data.value ? data.value.title : "电子书详情页"
-})
+)
 useHead({ title });
 
 definePageMeta({
