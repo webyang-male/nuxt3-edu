@@ -2,7 +2,7 @@
 <template>
     <LoadingGroup :pending="pending" :error="error">
         <section class="detail-top">
-            <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}"/>
+            <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}" />
             <div class="info">
                 <div class="flex flex-col items-start">
                     <div class="flex items-center">
@@ -19,7 +19,17 @@
                 </div>
                 <!-- 免费学习功能建议自行注册账号体验效果 -->
                 <div class="mt-auto" v-if="!data.isbuy">
-                    <n-button type="primary" @click="buy" :loading="loading">光速学习</n-button>
+                    <template v-if="type=='book'">
+                        <template v-if="menus.length >0">
+                            <n-button @click="buy" type="primary" :loading="loading">光速学习</n-button>
+                            <n-button v-if="freeID" @click="learn({id:freeID})" strong secondary type="info" class="ml-2">
+                                免费试看
+                            </n-button>
+                        </template>
+                        <n-button v-else type="error" disabled>敬请期待</n-button>
+                    </template>
+
+                    <n-button v-else type="primary" @click="buy" :loading="loading">光速学习</n-button>
                 </div>
             </div>
         </section>
@@ -38,8 +48,8 @@
                     </div>
                     <!-- 详情目录 -->
                     <DetailMenu v-else>
-                        <DetailMenuItem v-for="(item,index) in menus" :key="index" :index="index"
-                            :item="item" @click="learn(item)" />
+                        <DetailMenuItem v-for="(item,index) in menus" :key="index" :index="index" :item="item"
+                            @click="learn(item)" />
 
                         <Empty v-if="menus.length == 0" desc="啊咧~暂无目录" />
                     </DetailMenu>
@@ -141,17 +151,32 @@ function useInitDeatailTabs(t) {
     }
 }
 
+//电子书第一个免费ID
+const freeID = computed(() => {
+    let fid = 0
+    if (type == "book" && data.value) {
+        let item = data.value.book_details.find(o => o.isfree == 1)
+        if (item) {
+            fid = item.id
+        }
+    }
+    return fid
+})
+
 //点击学习
 let learn = (item) => {
     useHasAuth(() => {
         const { message } = createDiscreteApi(["message"])
-        if(type == "column" && item.price != 0 && !data.value.isbuy){
+        //专栏
+        if (type == "column" && item.price != 0 && !data.value.isbuy) {
             return message.error("请先购买")
         }
         //跳转详情
         let url = "";
         if (type == "column") {
             url = `/detail/course/${item.id}?column_id=${data.value.id}`
+        } else if (type == 'book') {
+            url = `/book/${data.value.id}/${item.id}`
         }
         navigateTo(url)
     })
@@ -168,7 +193,7 @@ function useRequestQuery() {
 }
 
 //电子书目录
-const menus = computed(() =>(type=="book" ? data.value.book_details : data.value.column_courses)|| [])
+const menus = computed(() => (type == "book" ? data.value.book_details : data.value.column_courses) || [])
 
 
 </script>
@@ -179,9 +204,10 @@ const menus = computed(() =>(type=="book" ? data.value.book_details : data.value
 }
 
 .detail-top .image {
-    @apply rounded w-[340px]  h-[210px] mr-5
+    @apply rounded w-[340px] h-[210px] mr-5
 }
-.detail-top .book-image{
+
+.detail-top .book-image {
     @apply rounded w-[130px] h-[180px] mr-8 ml-3
 }
 
