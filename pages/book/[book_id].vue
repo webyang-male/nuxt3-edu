@@ -3,7 +3,7 @@
         <n-grid :x-gap="20">
             <!-- 目录区 -->
             <n-grid-item :span="6">
-                <n-scrollbar style="max-height:450px" class="bg-white rounded shadow ">
+                <n-scrollbar style="max-height:450px" class="bg-white rounded shadow mb-5">
                     <div class="flex flex-col items-center justify-center">
                         <n-image :src="data.detail.cover" width="60" height="80" class="rounded shadow my-4" />
                         <span class="text-sm font-bold">{{data.detail.title}}</span>

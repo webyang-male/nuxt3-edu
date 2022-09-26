@@ -63,6 +63,7 @@ declare global {
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
   const useBindPhoneApi: typeof import('../../apis/user')['useBindPhoneApi']
+  const useBookDetailApi: typeof import('../../apis/book')['useBookDetailApi']
   const useBookMenusApi: typeof import('../../apis/book')['useBookMenusApi']
   const useCollectApi: typeof import('../../apis/user')['useCollectApi']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
@@ -199,6 +200,7 @@ declare module '@vue/runtime-core' {
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useBindPhoneApi: UnwrapRef<typeof import('../../apis/user')['useBindPhoneApi']>
+    readonly useBookDetailApi: UnwrapRef<typeof import('../../apis/book')['useBookDetailApi']>
     readonly useBookMenusApi: UnwrapRef<typeof import('../../apis/book')['useBookMenusApi']>
     readonly useCollectApi: UnwrapRef<typeof import('../../apis/user')['useCollectApi']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
