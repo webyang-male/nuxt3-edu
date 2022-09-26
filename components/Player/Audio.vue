@@ -1,3 +1,4 @@
+<!-- aplayer音频组件 -->
 <template>
     <div id="aplayer"></div>
 </template>

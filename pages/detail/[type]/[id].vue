@@ -4,9 +4,12 @@
         <section class="py-4" v-if="data.isbuy && (data.type !='media' && type=='course' )">
             <ClientOnly>
                 <template #fallback>
-                    <LoadingSkeleton/>
+                    <LoadingSkeleton />
                 </template>
+                <!-- 音频播放器 -->
                 <PlayerAudio v-if="data.type == 'audio'" :title="data.title" :url="data.content" :cover="data.cover" />
+                <!-- 视频播放器 -->
+                <PlayerVideo v-else-if="data.type == 'video'" :url="data.content"/>
             </ClientOnly>
         </section>
 
@@ -220,6 +223,8 @@ function useInitHead() {
             }],
             script: [{
                 src: "/aplayer/APlayer.min.js"
+            }, {
+                src: "//unpkg.byted-static.com/xgplayer/2.31.2/browser/index.js"
             }]
         })
     }
