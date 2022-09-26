@@ -44,6 +44,7 @@ function scrollToTop() {
     align-items: center;
     transition: all ease-in-out .5s;
     overflow: hidden;
+    background-color: rgb(255, 255, 255);
 
     &-img {
         width: 25px;
