@@ -77,6 +77,7 @@ declare global {
   const useForgetApi: typeof import('../../apis/user')['useForgetApi']
   const useGetCaptchaApi: typeof import('../../apis/user')['useGetCaptchaApi']
   const useGetGoodsInfoApi: typeof import('../../apis/order')['useGetGoodsInfoApi']
+  const useGetUseableUserCouponApi: typeof import('../../apis/order')['useGetUseableUserCouponApi']
   const useGetinfoApi: typeof import('../../apis/user')['useGetinfoApi']
   const useGroupDataApi: typeof import('../../apis/index')['useGroupDataApi']
   const useHandleSupportPost: typeof import('../../composables/useAuth')['useHandleSupportPost']
@@ -216,6 +217,7 @@ declare module '@vue/runtime-core' {
     readonly useForgetApi: UnwrapRef<typeof import('../../apis/user')['useForgetApi']>
     readonly useGetCaptchaApi: UnwrapRef<typeof import('../../apis/user')['useGetCaptchaApi']>
     readonly useGetGoodsInfoApi: UnwrapRef<typeof import('../../apis/order')['useGetGoodsInfoApi']>
+    readonly useGetUseableUserCouponApi: UnwrapRef<typeof import('../../apis/order')['useGetUseableUserCouponApi']>
     readonly useGetinfoApi: UnwrapRef<typeof import('../../apis/user')['useGetinfoApi']>
     readonly useGroupDataApi: UnwrapRef<typeof import('../../apis/index')['useGroupDataApi']>
     readonly useHandleSupportPost: UnwrapRef<typeof import('../../composables/useAuth')['useHandleSupportPost']>

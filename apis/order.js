@@ -4,3 +4,8 @@ export function useGetGoodsInfoApi(id,type="course"){
         lazy:true
     })
 }
+
+//获取可用优惠券    /user_coupon?goods_id=6&type=course&page=1
+export function useGetUseableUserCouponApi(id,type="course"){
+    return useHttpGet("GetUseableUserCoupon",`/user_coupon?goods_id=${id}&type=${type}&page=1`)
+}
