@@ -115,6 +115,7 @@ declare global {
   const useSearchListApi: typeof import('../../apis/common')['useSearchListApi']
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
+  const useTimeStatus: typeof import('../../composables/useUtil')['useTimeStatus']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useUncollectApi: typeof import('../../apis/user')['useUncollectApi']
   const useUpdatePasswordApi: typeof import('../../apis/user')['useUpdatePasswordApi']
@@ -252,6 +253,7 @@ declare module '@vue/runtime-core' {
     readonly useSearchListApi: UnwrapRef<typeof import('../../apis/common')['useSearchListApi']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
+    readonly useTimeStatus: UnwrapRef<typeof import('../../composables/useUtil')['useTimeStatus']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useUncollectApi: UnwrapRef<typeof import('../../apis/user')['useUncollectApi']>
     readonly useUpdatePasswordApi: UnwrapRef<typeof import('../../apis/user')['useUpdatePasswordApi']>

@@ -49,6 +49,11 @@ let open = () => {
     else if (props.item.type == "column") {
         path = `/detail/column/${props.item.id}`
     }
+    //直播详情
+    else if(props.item.type == "live"){
+        path = `/detail/live/${props.item.id}`
+    }
+
     navigateTo(path);
 }
 

@@ -9,7 +9,7 @@
                 <!-- 音频播放器 -->
                 <PlayerAudio v-if="data.type == 'audio'" :title="data.title" :url="data.content" :cover="data.cover" />
                 <!-- 视频播放器 -->
-                <PlayerVideo v-else-if="data.type == 'video'" :url="data.content"/>
+                <PlayerVideo v-else-if="data.type == 'video'" :url="data.content" />
             </ClientOnly>
         </section>
 
@@ -23,12 +23,18 @@
                         <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type" />
                     </div>
                     <p class="my-2 text-sm text-gray-400 ml-[0.1rem]">{{subTitle}}</p>
-                    <!-- 领取优惠券组件 -->
-                    <CouponModal />
+
                     <div v-if="!data.isbuy">
                         <Price :value="data.price" class="text-xl" />
                         <Price :value="data.t_price" through class="text-sm ml-1" />
                     </div>
+
+                    <!-- 领取优惠券组件 -->
+                    <CouponModal v-if="type != 'live'" />
+
+                    <!-- 直播详情页时间状态组件 -->
+                    <LiveStatusBar v-else :start="data.start_time" :end="data.end_time"/>
+
                 </div>
                 <!-- 免费学习功能建议自行注册账号体验效果 -->
                 <div class="mt-auto" v-if="!data.isbuy">

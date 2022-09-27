@@ -13,6 +13,7 @@ declare module 'vue' {
     'ImageAd': typeof import("../components/ImageAd.vue")['default'],
     'ImageNav': typeof import("../components/ImageNav.vue")['default'],
     'ListCard': typeof import("../components/ListCard.vue")['default'],
+    'LiveStatusBar': typeof import("../components/LiveStatusBar.vue")['default'],
     'NavBar': typeof import("../components/NavBar.vue")['default'],
     'PageFooter': typeof import("../components/PageFooter.vue")['default'],
     'PostList': typeof import("../components/PostList.vue")['default'],
@@ -23,12 +24,12 @@ declare module 'vue' {
     'Uploader': typeof import("../components/Uploader.vue")['default'],
     'DetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'DetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
-    'PlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
-    'PlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'LoadingBookSkeletion': typeof import("../components/Loading/BookSkeletion.vue")['default'],
     'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'PlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
+    'PlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
@@ -62,6 +63,7 @@ declare module 'vue' {
     'LazyImageAd': typeof import("../components/ImageAd.vue")['default'],
     'LazyImageNav': typeof import("../components/ImageNav.vue")['default'],
     'LazyListCard': typeof import("../components/ListCard.vue")['default'],
+    'LazyLiveStatusBar': typeof import("../components/LiveStatusBar.vue")['default'],
     'LazyNavBar': typeof import("../components/NavBar.vue")['default'],
     'LazyPageFooter': typeof import("../components/PageFooter.vue")['default'],
     'LazyPostList': typeof import("../components/PostList.vue")['default'],
@@ -72,12 +74,12 @@ declare module 'vue' {
     'LazyUploader': typeof import("../components/Uploader.vue")['default'],
     'LazyDetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'LazyDetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
-    'LazyPlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
-    'LazyPlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'LazyLoadingBookSkeletion': typeof import("../components/Loading/BookSkeletion.vue")['default'],
     'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'LazyPlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
+    'LazyPlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
@@ -113,6 +115,7 @@ export const HotCourseList: typeof import("../components/HotCourseList.vue")['de
 export const ImageAd: typeof import("../components/ImageAd.vue")['default']
 export const ImageNav: typeof import("../components/ImageNav.vue")['default']
 export const ListCard: typeof import("../components/ListCard.vue")['default']
+export const LiveStatusBar: typeof import("../components/LiveStatusBar.vue")['default']
 export const NavBar: typeof import("../components/NavBar.vue")['default']
 export const PageFooter: typeof import("../components/PageFooter.vue")['default']
 export const PostList: typeof import("../components/PostList.vue")['default']
@@ -123,12 +126,12 @@ export const SendCode: typeof import("../components/SendCode.vue")['default']
 export const Uploader: typeof import("../components/Uploader.vue")['default']
 export const DetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const DetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
-export const PlayerAudio: typeof import("../components/Player/Audio.vue")['default']
-export const PlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const LoadingBookSkeletion: typeof import("../components/Loading/BookSkeletion.vue")['default']
 export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const PlayerAudio: typeof import("../components/Player/Audio.vue")['default']
+export const PlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
@@ -162,6 +165,7 @@ export const LazyHotCourseList: typeof import("../components/HotCourseList.vue")
 export const LazyImageAd: typeof import("../components/ImageAd.vue")['default']
 export const LazyImageNav: typeof import("../components/ImageNav.vue")['default']
 export const LazyListCard: typeof import("../components/ListCard.vue")['default']
+export const LazyLiveStatusBar: typeof import("../components/LiveStatusBar.vue")['default']
 export const LazyNavBar: typeof import("../components/NavBar.vue")['default']
 export const LazyPageFooter: typeof import("../components/PageFooter.vue")['default']
 export const LazyPostList: typeof import("../components/PostList.vue")['default']
@@ -172,12 +176,12 @@ export const LazySendCode: typeof import("../components/SendCode.vue")['default'
 export const LazyUploader: typeof import("../components/Uploader.vue")['default']
 export const LazyDetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const LazyDetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
-export const LazyPlayerAudio: typeof import("../components/Player/Audio.vue")['default']
-export const LazyPlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const LazyLoadingBookSkeletion: typeof import("../components/Loading/BookSkeletion.vue")['default']
 export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const LazyPlayerAudio: typeof import("../components/Player/Audio.vue")['default']
+export const LazyPlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
