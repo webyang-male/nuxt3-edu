@@ -76,6 +76,7 @@ declare global {
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
   const useForgetApi: typeof import('../../apis/user')['useForgetApi']
   const useGetCaptchaApi: typeof import('../../apis/user')['useGetCaptchaApi']
+  const useGetGoodsInfoApi: typeof import('../../apis/order')['useGetGoodsInfoApi']
   const useGetinfoApi: typeof import('../../apis/user')['useGetinfoApi']
   const useGroupDataApi: typeof import('../../apis/index')['useGroupDataApi']
   const useHandleSupportPost: typeof import('../../composables/useAuth')['useHandleSupportPost']
@@ -214,6 +215,7 @@ declare module '@vue/runtime-core' {
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
     readonly useForgetApi: UnwrapRef<typeof import('../../apis/user')['useForgetApi']>
     readonly useGetCaptchaApi: UnwrapRef<typeof import('../../apis/user')['useGetCaptchaApi']>
+    readonly useGetGoodsInfoApi: UnwrapRef<typeof import('../../apis/order')['useGetGoodsInfoApi']>
     readonly useGetinfoApi: UnwrapRef<typeof import('../../apis/user')['useGetinfoApi']>
     readonly useGroupDataApi: UnwrapRef<typeof import('../../apis/index')['useGroupDataApi']>
     readonly useHandleSupportPost: UnwrapRef<typeof import('../../composables/useAuth')['useHandleSupportPost']>

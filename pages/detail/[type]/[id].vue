@@ -105,7 +105,6 @@ const { data, error, pending, refresh } = await useReadDetailApi(type, query)
 
 //懒加载数据获取修改页面title失败处理
 const title = computed(() => !pending.value ? data.value?.title : "详情页")
-
 useHead({ title });
 
 const o = {
@@ -142,6 +141,20 @@ let buy = () => {
 
             return
         }
+
+        //付费学习
+        let ty = "course"
+        let id = data.value.id
+
+        if(type == "book"){
+            ty = "book"
+        }else if(type == "live") {
+            ty = "live"
+        }else if(type == "column") {
+            ty = "column"
+        }
+
+        navigateTo(`/createorder?id=${id}&type=${ty}`)
     })
 }
 
