@@ -35,7 +35,6 @@ export function useTimeStatus(start, end) {
   end = new Date(end).getTime();
   const now = Date.now();
 
-  //时间状态
   let status = "";
   if (start < now && now < end) {
     status = "ing";

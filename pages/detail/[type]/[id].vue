@@ -1,18 +1,18 @@
 <!-- 课程详情页 -->
 <template>
     <LoadingGroup :pending="pending" :error="error">
-        <section class="py-4" v-if="data.isbuy && (data.type !='media' && type=='course' )">
+        <section class="py-4" v-if="data.isbuy && ((data.type != 'media' && type=='course') || type == 'live')">
             <ClientOnly>
                 <template #fallback>
                     <LoadingSkeleton />
                 </template>
-                <!-- 音频播放器 -->
                 <PlayerAudio v-if="data.type == 'audio'" :title="data.title" :url="data.content" :cover="data.cover" />
-                <!-- 视频播放器 -->
+                <!-- 引入视频播放器 -->
                 <PlayerVideo v-else-if="data.type == 'video'" :url="data.content" />
+                <!-- 引入直播播放器 -->
+                <PlayerLive v-else-if="type == 'live'" :url="data.playUrl" />
             </ClientOnly>
         </section>
-
 
         <section v-else class="detail-top">
             <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}" />
@@ -33,7 +33,7 @@
                     <CouponModal v-if="type != 'live'" />
 
                     <!-- 直播详情页时间状态组件 -->
-                    <LiveStatusBar v-else :start="data.start_time" :end="data.end_time"/>
+                    <LiveStatusBar v-else :start="data.start_time" :end="data.end_time" />
 
                 </div>
                 <!-- 免费学习功能建议自行注册账号体验效果 -->
@@ -220,17 +220,26 @@ const menus = computed(() => (type == "book" ? data.value.book_details : data.va
 //初始化head音频引入
 //出于nuxt3环境兼容考虑，直接将aplayer资源放置public目录
 function useInitHead() {
-    if (type == "course") {
+    if (type === "course") {
         useHead({
             link: [{
                 rel: "stylesheet",
-                //tip: nuxt3 public目录下资源可直接引用
                 href: "/aplayer/APlayer.min.css"
             }],
             script: [{
-                src: "/aplayer/APlayer.min.js"
+                src: "/aplayer/APlayer.min.js",
             }, {
                 src: "//unpkg.byted-static.com/xgplayer/2.31.2/browser/index.js"
+            }]
+        })
+    }
+
+    if (type === "live") {
+        useHead({
+            script: [{
+                src: "//unpkg.byted-static.com/xgplayer/2.31.2/browser/index.js",
+            }, {
+                src: "//unpkg.byted-static.com/xgplayer-flv/2.5.1/dist/index.min.js"
             }]
         })
     }
