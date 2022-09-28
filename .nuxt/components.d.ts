@@ -21,6 +21,7 @@ declare module 'vue' {
     'SearchBar': typeof import("../components/SearchBar.vue")['default'],
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'SendCode': typeof import("../components/SendCode.vue")['default'],
+    'TimeBox': typeof import("../components/TimeBox.vue")['default'],
     'Uploader': typeof import("../components/Uploader.vue")['default'],
     'DetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'DetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
@@ -72,6 +73,7 @@ declare module 'vue' {
     'LazySearchBar': typeof import("../components/SearchBar.vue")['default'],
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazySendCode': typeof import("../components/SendCode.vue")['default'],
+    'LazyTimeBox': typeof import("../components/TimeBox.vue")['default'],
     'LazyUploader': typeof import("../components/Uploader.vue")['default'],
     'LazyDetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'LazyDetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
@@ -125,6 +127,7 @@ export const Price: typeof import("../components/Price.vue")['default']
 export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const SendCode: typeof import("../components/SendCode.vue")['default']
+export const TimeBox: typeof import("../components/TimeBox.vue")['default']
 export const Uploader: typeof import("../components/Uploader.vue")['default']
 export const DetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const DetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
@@ -176,6 +179,7 @@ export const LazyPrice: typeof import("../components/Price.vue")['default']
 export const LazySearchBar: typeof import("../components/SearchBar.vue")['default']
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazySendCode: typeof import("../components/SendCode.vue")['default']
+export const LazyTimeBox: typeof import("../components/TimeBox.vue")['default']
 export const LazyUploader: typeof import("../components/Uploader.vue")['default']
 export const LazyDetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const LazyDetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
