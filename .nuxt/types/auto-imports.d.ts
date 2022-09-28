@@ -79,6 +79,7 @@ declare global {
   const useGetCaptchaApi: typeof import('../../apis/user')['useGetCaptchaApi']
   const useGetGoodsInfoApi: typeof import('../../apis/order')['useGetGoodsInfoApi']
   const useGetUseableUserCouponApi: typeof import('../../apis/order')['useGetUseableUserCouponApi']
+  const useGetWxpayStatusApi: typeof import('../../apis/order')['useGetWxpayStatusApi']
   const useGetinfoApi: typeof import('../../apis/user')['useGetinfoApi']
   const useGroupDataApi: typeof import('../../apis/index')['useGroupDataApi']
   const useHandleSupportPost: typeof import('../../composables/useAuth')['useHandleSupportPost']
@@ -128,6 +129,7 @@ declare global {
   const useUserCouponApi: typeof import('../../apis/user')['useUserCouponApi']
   const useUserHistoryApi: typeof import('../../apis/user')['useUserHistoryApi']
   const useUserTestApi: typeof import('../../apis/user')['useUserTestApi']
+  const useWxpayApi: typeof import('../../apis/order')['useWxpayApi']
   const usecourseListApi: typeof import('../../apis/course')['usecourseListApi']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -220,6 +222,7 @@ declare module '@vue/runtime-core' {
     readonly useGetCaptchaApi: UnwrapRef<typeof import('../../apis/user')['useGetCaptchaApi']>
     readonly useGetGoodsInfoApi: UnwrapRef<typeof import('../../apis/order')['useGetGoodsInfoApi']>
     readonly useGetUseableUserCouponApi: UnwrapRef<typeof import('../../apis/order')['useGetUseableUserCouponApi']>
+    readonly useGetWxpayStatusApi: UnwrapRef<typeof import('../../apis/order')['useGetWxpayStatusApi']>
     readonly useGetinfoApi: UnwrapRef<typeof import('../../apis/user')['useGetinfoApi']>
     readonly useGroupDataApi: UnwrapRef<typeof import('../../apis/index')['useGroupDataApi']>
     readonly useHandleSupportPost: UnwrapRef<typeof import('../../composables/useAuth')['useHandleSupportPost']>
@@ -269,6 +272,7 @@ declare module '@vue/runtime-core' {
     readonly useUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useUserCouponApi']>
     readonly useUserHistoryApi: UnwrapRef<typeof import('../../apis/user')['useUserHistoryApi']>
     readonly useUserTestApi: UnwrapRef<typeof import('../../apis/user')['useUserTestApi']>
+    readonly useWxpayApi: UnwrapRef<typeof import('../../apis/order')['useWxpayApi']>
     readonly usecourseListApi: UnwrapRef<typeof import('../../apis/course')['usecourseListApi']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>

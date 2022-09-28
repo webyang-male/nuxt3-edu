@@ -33,7 +33,7 @@ function scrollToTop() {
 .to-top {
     position: fixed;
     right: 20px;
-    bottom: 50px;
+    bottom: 150px;
     z-index: 2;
     border: 1px solid #333333;
     border-radius: 50%;

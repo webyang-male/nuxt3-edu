@@ -3,7 +3,10 @@
     <div class="flex justify-center">
         <n-card class="w-[450px] mb-10">
             <ClientOnly>
-                <n-alert title="支付超时" type="error" class="mb-2" v-if="isTimeOut">
+                <n-alert title="支付成功" type="success" class="mb-2" v-if="ispay">
+                    正在跳转...
+                </n-alert>
+                <n-alert title="支付超时" type="error" class="mb-2" v-else-if="isTimeOut">
                     请刷新页面重新支付
                 </n-alert>
                 <h4 class="text-xl mb-2">微信支付</h4>
@@ -16,7 +19,7 @@
                     <Price :value="data.price" />
                 </h5>
                 <!-- 二维码组件 -->
-                <QrCode :data="data.code_url" v-if="data.code_url"/>
+                <QrCode :data="data.code_url" v-if="data.code_url" />
                 <div class="flex justify-center items-center py-4 text-green-500">
                     <n-icon size="35">
                         <ScanCircleOutline />
@@ -33,18 +36,62 @@
 </template>
 
 <script setup>
-import { NCard, NIcon, NAlert } from 'naive-ui';
-import { ScanCircleOutline } from "@vicons/ionicons5"
+import {
+    NCard,
+    NAlert,
+    NIcon
+} from "naive-ui"
 
-const data = {
-    "price": "10.00",
-    "code_url": "weixin://wxpay/bizpayurl?pr=QdPmZtyzz"
-}
+import {
+    ScanCircleOutline
+} from "@vicons/ionicons5"
+
+// // 模拟响应结果
+// const data = {
+//     "price": "10.00", 
+//     "code_url": "weixin://wxpay/bizpayurl?pr=QdPmZtyzz" 
+// }
+
+const route = useRoute()
+const { no } = route.query
+
+// 发起微信PC支付
+const {
+    data,
+    error
+} = await useWxpayApi(no)
 
 // 支付超时
 const isTimeOut = ref(false)
 function handleTimeOut() {
     isTimeOut.value = true
+}
+
+// 开始轮询订单状态
+const ispay = ref(false)
+const timer = ref(null)
+function checkIspay() {
+    if (timer.value) clearInterval(timer.value)
+    timer.value = setInterval(() => {
+        useGetWxpayStatusApi(no).then(res => {
+            if (!res.error.value && res.data.value.trade_state == "SUCCESS") {
+                handleSuccess()
+            }
+        })
+    }, 2000);
+}
+
+if (!error.value) {
+    checkIspay()
+}
+
+// 支付成功处理
+function handleSuccess() {
+    ispay.value = true
+    if (timer.value) clearInterval(timer.value)
+    setTimeout(() => {
+        navigateTo("/user/buy/1", { replace: true })
+    }, 2000);
 }
 </script>
 
