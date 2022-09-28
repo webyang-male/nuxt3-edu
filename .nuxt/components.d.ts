@@ -18,6 +18,7 @@ declare module 'vue' {
     'PageFooter': typeof import("../components/PageFooter.vue")['default'],
     'PostList': typeof import("../components/PostList.vue")['default'],
     'Price': typeof import("../components/Price.vue")['default'],
+    'QrCode': typeof import("../components/QrCode.vue")['default'],
     'SearchBar': typeof import("../components/SearchBar.vue")['default'],
     'Seckill': typeof import("../components/Seckill.vue")['default'],
     'SendCode': typeof import("../components/SendCode.vue")['default'],
@@ -70,6 +71,7 @@ declare module 'vue' {
     'LazyPageFooter': typeof import("../components/PageFooter.vue")['default'],
     'LazyPostList': typeof import("../components/PostList.vue")['default'],
     'LazyPrice': typeof import("../components/Price.vue")['default'],
+    'LazyQrCode': typeof import("../components/QrCode.vue")['default'],
     'LazySearchBar': typeof import("../components/SearchBar.vue")['default'],
     'LazySeckill': typeof import("../components/Seckill.vue")['default'],
     'LazySendCode': typeof import("../components/SendCode.vue")['default'],
@@ -124,6 +126,7 @@ export const NavBar: typeof import("../components/NavBar.vue")['default']
 export const PageFooter: typeof import("../components/PageFooter.vue")['default']
 export const PostList: typeof import("../components/PostList.vue")['default']
 export const Price: typeof import("../components/Price.vue")['default']
+export const QrCode: typeof import("../components/QrCode.vue")['default']
 export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const Seckill: typeof import("../components/Seckill.vue")['default']
 export const SendCode: typeof import("../components/SendCode.vue")['default']
@@ -176,6 +179,7 @@ export const LazyNavBar: typeof import("../components/NavBar.vue")['default']
 export const LazyPageFooter: typeof import("../components/PageFooter.vue")['default']
 export const LazyPostList: typeof import("../components/PostList.vue")['default']
 export const LazyPrice: typeof import("../components/Price.vue")['default']
+export const LazyQrCode: typeof import("../components/QrCode.vue")['default']
 export const LazySearchBar: typeof import("../components/SearchBar.vue")['default']
 export const LazySeckill: typeof import("../components/Seckill.vue")['default']
 export const LazySendCode: typeof import("../components/SendCode.vue")['default']

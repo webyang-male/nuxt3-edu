@@ -16,6 +16,7 @@
     "@css-render/vue3-ssr": "^0.15.10",
     "aplayer": "^1.10.1",
     "darkmode-js": "^1.5.7",
+    "qrcode": "^1.5.1",
     "sass": "^1.55.0"
   }
 }
