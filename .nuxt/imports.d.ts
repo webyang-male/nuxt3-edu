@@ -5,9 +5,9 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { useUser, useRefreshUserInfo, useLogout, useHasAuth, useHandleSupportPost } from 'E:/WebProject/nuxt3-edu/composables/useAuth';
 export { fetchConfig, useHttp, useHttpGet, useHttpPost } from 'E:/WebProject/nuxt3-edu/composables/useHttp';
 export { useQueryToString, useEnterEvent, useTimeStatus } from 'E:/WebProject/nuxt3-edu/composables/useUtil';
-export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
-export { usePage } from 'E:/WebProject/nuxt3-edu/composables/usePage';
 export { useBookMenusApi, useBookDetailApi } from 'E:/WebProject/nuxt3-edu/apis/book';
+export { usePage } from 'E:/WebProject/nuxt3-edu/composables/usePage';
+export { usePostSupportApi, useDeletePostApi } from 'E:/WebProject/nuxt3-edu/apis/bbs';
 export { useSearchListApi, useCouponListApi, useListApi, useReadDetailApi } from 'E:/WebProject/nuxt3-edu/apis/common';
 export { usecourseListApi, useReadCourseApi, useHotCourseListApi, useLearnApi } from 'E:/WebProject/nuxt3-edu/apis/course';
 export { useIndexDataApi, useGroupDataApi } from 'E:/WebProject/nuxt3-edu/apis/index';

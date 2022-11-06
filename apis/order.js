@@ -14,8 +14,13 @@ export function useGetUseableUserCouponApi(id, type = "course") {
 }
 
 //创建订单
-export function useCreateOrderApi(body) {
-  return useHttpPost("CreateOrder", `/order/save`, {
+export function useCreateOrderApi(body, type) {
+  let url = `/order/save`;
+  
+  if (type === "flashsale") {
+    url = `/order/flashsale`;
+  }
+  return useHttpPost("CreateOrder", url, {
     body,
   });
 }
@@ -29,14 +34,12 @@ export function useWxpayApi(no) {
   });
 }
 
-
 //查询订单支付状态
 export function useGetWxpayStatusApi(no) {
-    return useHttpPost("getWxpayStatus", `/order/iswxpay`, {
-      body: {
-        no,
-      },
-      $:true
-    });
-  }
-  
+  return useHttpPost("getWxpayStatus", `/order/iswxpay`, {
+    body: {
+      no,
+    },
+    $: true,
+  });
+}

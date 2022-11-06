@@ -31,14 +31,14 @@ declare module 'vue' {
     'LoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'PlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
+    'PlayerLive': typeof import("../components/Player/Live.vue")['default'],
+    'PlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'UiImage': typeof import("../components/Ui/Image.vue")['default'],
     'UiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'UiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'UiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'UiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
-    'PlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
-    'PlayerLive': typeof import("../components/Player/Live.vue")['default'],
-    'PlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'UserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'UserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'UserFavaList': typeof import("../components/User/FavaList.vue")['default'],
@@ -85,14 +85,14 @@ declare module 'vue' {
     'LazyLoadingCourseSkeleton': typeof import("../components/Loading/CourseSkeleton.vue")['default'],
     'LazyLoadingGroup': typeof import("../components/Loading/Group.vue")['default'],
     'LazyLoadingSkeleton': typeof import("../components/Loading/Skeleton.vue")['default'],
+    'LazyPlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
+    'LazyPlayerLive': typeof import("../components/Player/Live.vue")['default'],
+    'LazyPlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'LazyUiImage': typeof import("../components/Ui/Image.vue")['default'],
     'LazyUiMenu': typeof import("../components/Ui/Menu.vue")['default'],
     'LazyUiMenuItem': typeof import("../components/Ui/MenuItem.vue")['default'],
     'LazyUiTab': typeof import("../components/Ui/Tab.vue")['default'],
     'LazyUiTabItem': typeof import("../components/Ui/TabItem.vue")['default'],
-    'LazyPlayerAudio': typeof import("../components/Player/Audio.vue")['default'],
-    'LazyPlayerLive': typeof import("../components/Player/Live.vue")['default'],
-    'LazyPlayerVideo': typeof import("../components/Player/Video.vue")['default'],
     'LazyUserBuyList': typeof import("../components/User/BuyList.vue")['default'],
     'LazyUserCouponList': typeof import("../components/User/CouponList.vue")['default'],
     'LazyUserFavaList': typeof import("../components/User/FavaList.vue")['default'],
@@ -141,14 +141,14 @@ export const LoadingBookSkeletion: typeof import("../components/Loading/BookSkel
 export const LoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const PlayerAudio: typeof import("../components/Player/Audio.vue")['default']
+export const PlayerLive: typeof import("../components/Player/Live.vue")['default']
+export const PlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const UiImage: typeof import("../components/Ui/Image.vue")['default']
 export const UiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const UiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const UiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const UiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
-export const PlayerAudio: typeof import("../components/Player/Audio.vue")['default']
-export const PlayerLive: typeof import("../components/Player/Live.vue")['default']
-export const PlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const UserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const UserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const UserFavaList: typeof import("../components/User/FavaList.vue")['default']
@@ -195,14 +195,14 @@ export const LazyLoadingBookSkeletion: typeof import("../components/Loading/Book
 export const LazyLoadingCourseSkeleton: typeof import("../components/Loading/CourseSkeleton.vue")['default']
 export const LazyLoadingGroup: typeof import("../components/Loading/Group.vue")['default']
 export const LazyLoadingSkeleton: typeof import("../components/Loading/Skeleton.vue")['default']
+export const LazyPlayerAudio: typeof import("../components/Player/Audio.vue")['default']
+export const LazyPlayerLive: typeof import("../components/Player/Live.vue")['default']
+export const LazyPlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const LazyUiImage: typeof import("../components/Ui/Image.vue")['default']
 export const LazyUiMenu: typeof import("../components/Ui/Menu.vue")['default']
 export const LazyUiMenuItem: typeof import("../components/Ui/MenuItem.vue")['default']
 export const LazyUiTab: typeof import("../components/Ui/Tab.vue")['default']
 export const LazyUiTabItem: typeof import("../components/Ui/TabItem.vue")['default']
-export const LazyPlayerAudio: typeof import("../components/Player/Audio.vue")['default']
-export const LazyPlayerLive: typeof import("../components/Player/Live.vue")['default']
-export const LazyPlayerVideo: typeof import("../components/Player/Video.vue")['default']
 export const LazyUserBuyList: typeof import("../components/User/BuyList.vue")['default']
 export const LazyUserCouponList: typeof import("../components/User/CouponList.vue")['default']
 export const LazyUserFavaList: typeof import("../components/User/FavaList.vue")['default']

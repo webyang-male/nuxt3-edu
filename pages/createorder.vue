@@ -6,25 +6,25 @@
             <h4>产品信息</h4>
             <div class="flex mb-5">
                 <n-image :src="data.cover" class="flex flex-shrink-0   rounded"
-                    :class="type=='book'? 'w-[100px] h-[140px]':'w-[180px] h-[100px]'" />
+                    :class="type == 'book' ? 'w-[100px] h-[140px]' : 'w-[180px] h-[100px]'" />
                 <div class="flex flex-1 ml-4 flex-col">
                     <h5 class="flex text-xl text-gray-600 ">
-                        {{data.title}}
+                        {{ data.title }}
                         <Price :value="data.price" class="ml-auto" />
                     </h5>
                     <div class="mt-auto" v-if="type == 'course'">
                         <n-tag size="small" :bordered="false">
-                            {{t[data.type]}}
+                            {{ t[data.type] }}
                         </n-tag>
                     </div>
                 </div>
             </div>
             <h4>优惠券</h4>
             <n-grid :x-gap="20" :cols="4" class="mb-3">
-                <n-grid-item v-for="(item,index) in couponData.rows" :key="index">
-                    <n-button strong secondary :type="user_coupon_id == item.id ? 'success':'tertiary'"
+                <n-grid-item v-for="(item, index) in couponData.rows" :key="index">
+                    <n-button strong secondary :type="user_coupon_id == item.id ? 'success' : 'tertiary'"
                         @click="chooseCoupon(item)">
-                        ￥{{item.price}} 优惠券
+                        ￥{{ item.price }} 优惠券
                     </n-button>
                 </n-grid-item>
             </n-grid>
@@ -44,7 +44,7 @@
 
             <div class="flex items-center mb-5">
                 <small class="text-red-400 mr-auto">请在30分钟内完成支付</small>
-                <span v-if="user_coupon_id">优惠券已抵扣<b class="text-red-500">{{coupon_price}}</b>元，</span>
+                <span v-if="user_coupon_id">优惠券已抵扣<b class="text-red-500">{{ coupon_price }}</b>元，</span>
                 需支付
                 <Price :value="price" />
             </div>
@@ -112,9 +112,13 @@ async function submit() {
         if (user_coupon_id.value) {
             d.user_coupon_id = user_coupon_id.value
         }
+    } else if (type == "flashsale") {
+        d = {
+            flashsale_id: id
+        }
     }
 
-    let { data: createOrderResult, error: createOrderError } = await useCreateOrderApi(d)
+    let { data: createOrderResult, error: createOrderError } = await useCreateOrderApi(d,type)
 
     loading.value = false
 

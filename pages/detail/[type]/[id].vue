@@ -159,6 +159,11 @@ let buy = () => {
             ty = "column"
         }
 
+        if (data.value.flashsale) {
+            ty = "flashsale"
+            id = data.value.flashsale.id
+        }
+
         navigateTo(`/createorder?id=${id}&type=${ty}`)
     })
 }
