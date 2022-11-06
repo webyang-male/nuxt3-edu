@@ -1,0 +1,1 @@
+initiating group competition

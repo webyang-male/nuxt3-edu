@@ -19,7 +19,10 @@ export function useCreateOrderApi(body, type) {
   
   if (type === "flashsale") {
     url = `/order/flashsale`;
+  }else if(type == "group"){
+    url = `/order/group`;
   }
+
   return useHttpPost("CreateOrder", url, {
     body,
   });

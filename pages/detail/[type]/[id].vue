@@ -54,7 +54,7 @@
                         <n-button v-else type="error" disabled>敬请期待</n-button>
                     </template>
 
-                    <n-button v-else type="primary" @click="buy" :loading="loading">光速学习</n-button>
+                    <n-button v-else type="primary" @click="buy" :loading="loading">{{ btn }}</n-button>
                 </div>
             </div>
         </section>
@@ -147,6 +147,23 @@ let buy = () => {
             return
         }
 
+        //发起拼团
+        if (data.value.group) {
+            loading.value = true;
+            useCreateOrderApi({
+                group_id: data.value.group.id
+            }, "group")
+                .then(res => {
+                    if (!res.error.value) {
+                        navigateTo(`/pay?no=${res.data.value.no}`)
+                    }
+                })
+                .finally(() => {
+                    loading.value = false;
+                })
+            return
+        }
+
         //付费学习
         let ty = "course"
         let id = data.value.id
@@ -159,6 +176,7 @@ let buy = () => {
             ty = "column"
         }
 
+        //秒杀
         if (data.value.flashsale) {
             ty = "flashsale"
             id = data.value.flashsale.id
@@ -167,6 +185,18 @@ let buy = () => {
         navigateTo(`/createorder?id=${id}&type=${ty}`)
     })
 }
+
+//购买按钮文字展示
+const btn = computed(() => {
+    if (data.value.group) {
+        return "立即拼团"
+    } else if (data.value.flashsale) {
+        return "立即秒杀"
+    }
+    return "即刻学习"
+})
+
+
 
 //初始化详情页tab
 function useInitDeatailTabs(t) {
