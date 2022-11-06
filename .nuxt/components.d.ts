@@ -25,6 +25,7 @@ declare module 'vue' {
     'TimeBox': typeof import("../components/TimeBox.vue")['default'],
     'Uploader': typeof import("../components/Uploader.vue")['default'],
     'DetailActiveBar': typeof import("../components/Detail/ActiveBar.vue")['default'],
+    'DetailGroupWorks': typeof import("../components/Detail/GroupWorks.vue")['default'],
     'DetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'DetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
     'LoadingBookSkeletion': typeof import("../components/Loading/BookSkeletion.vue")['default'],
@@ -79,6 +80,7 @@ declare module 'vue' {
     'LazyTimeBox': typeof import("../components/TimeBox.vue")['default'],
     'LazyUploader': typeof import("../components/Uploader.vue")['default'],
     'LazyDetailActiveBar': typeof import("../components/Detail/ActiveBar.vue")['default'],
+    'LazyDetailGroupWorks': typeof import("../components/Detail/GroupWorks.vue")['default'],
     'LazyDetailMenu': typeof import("../components/Detail/Menu.vue")['default'],
     'LazyDetailMenuItem': typeof import("../components/Detail/MenuItem.vue")['default'],
     'LazyLoadingBookSkeletion': typeof import("../components/Loading/BookSkeletion.vue")['default'],
@@ -135,6 +137,7 @@ export const SendCode: typeof import("../components/SendCode.vue")['default']
 export const TimeBox: typeof import("../components/TimeBox.vue")['default']
 export const Uploader: typeof import("../components/Uploader.vue")['default']
 export const DetailActiveBar: typeof import("../components/Detail/ActiveBar.vue")['default']
+export const DetailGroupWorks: typeof import("../components/Detail/GroupWorks.vue")['default']
 export const DetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const DetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
 export const LoadingBookSkeletion: typeof import("../components/Loading/BookSkeletion.vue")['default']
@@ -189,6 +192,7 @@ export const LazySendCode: typeof import("../components/SendCode.vue")['default'
 export const LazyTimeBox: typeof import("../components/TimeBox.vue")['default']
 export const LazyUploader: typeof import("../components/Uploader.vue")['default']
 export const LazyDetailActiveBar: typeof import("../components/Detail/ActiveBar.vue")['default']
+export const LazyDetailGroupWorks: typeof import("../components/Detail/GroupWorks.vue")['default']
 export const LazyDetailMenu: typeof import("../components/Detail/Menu.vue")['default']
 export const LazyDetailMenuItem: typeof import("../components/Detail/MenuItem.vue")['default']
 export const LazyLoadingBookSkeletion: typeof import("../components/Loading/BookSkeletion.vue")['default']

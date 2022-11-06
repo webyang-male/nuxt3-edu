@@ -61,6 +61,9 @@
 
         <n-grid :x-gap="20">
             <n-grid-item :span="18">
+                <!-- 拼团组件 -->
+                <DetailGroupWorks v-if="data.isbuy && data.group" :group_id="data.group.id" />
+
                 <section class="detail-bottom">
                     <UiTab class="border-b">
                         <UiTabItem :active="tabState == item.value" v-for="(item, index) in tabs" :key="index"

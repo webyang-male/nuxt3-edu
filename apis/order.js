@@ -16,10 +16,10 @@ export function useGetUseableUserCouponApi(id, type = "course") {
 //创建订单
 export function useCreateOrderApi(body, type) {
   let url = `/order/save`;
-  
+
   if (type === "flashsale") {
     url = `/order/flashsale`;
-  }else if(type == "group"){
+  } else if (type == "group") {
     url = `/order/group`;
   }
 
@@ -45,4 +45,12 @@ export function useGetWxpayStatusApi(no) {
     },
     $: true,
   });
+}
+
+//当前拼团专栏/课程的可组团列表    /pc/group_work/list?group_id=19&page=1
+export function useGetGroupWorkListApi(group_id, page = 1) {
+  return useHttpGet(
+    "getGroupWorkList",
+    `/group_work/list?group_id=${group_id}&page=${page}`
+  );
 }
