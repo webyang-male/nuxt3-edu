@@ -24,17 +24,22 @@
                     </div>
                     <p class="my-2 text-sm text-gray-400 ml-[0.1rem]">{{ subTitle }}</p>
 
-                    <div v-if="!data.isbuy">
-                        <Price :value="data.price" class="text-xl" />
-                        <Price :value="data.t_price" through class="text-sm ml-1" />
-                    </div>
+                    <template v-if="!data.isbuy">
+                        <DetailActiveBar :data="data" v-if="data.group || data.flashsale" />
+                        <template v-else>
+                            <div>
+                                <Price :value="data.price" class="text-xl" />
+                                <Price :value="data.t_price" through class="text-sm ml-1" />
+                            </div>
 
-                    <!-- 领取优惠券组件 -->
-                    <CouponModal v-if="type != 'live'" />
+                            <!-- 领取优惠券组件 -->
+                            <CouponModal v-if="type != 'live'" />
 
-                    <!-- 直播详情页时间状态组件 -->
-                    <LiveStatusBar v-else :start="data.start_time" :end="data.end_time" />
+                            <!-- 直播详情页时间状态组件 -->
+                            <LiveStatusBar v-else :start="data.start_time" :end="data.end_time" />
 
+                        </template>
+                    </template>
                 </div>
                 <!-- 免费学习功能建议自行注册账号体验效果 -->
                 <div class="mt-auto" v-if="!data.isbuy">
@@ -230,7 +235,7 @@ function useRequestQuery() {
     } else if (group_id) {
         query.group_id = group_id;
     }
-    
+
     return query
 }
 
