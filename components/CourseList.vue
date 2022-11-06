@@ -50,8 +50,17 @@ let open = () => {
         path = `/detail/column/${props.item.id}`
     }
     //直播详情
-    else if(props.item.type == "live"){
+    else if (props.item.type == "live") {
         path = `/detail/live/${props.item.id}`
+    }
+
+    //秒杀和拼团
+    if (props.item.group_id) {
+        path = `${path}?group_id=${props.item.group_id}`
+    }
+
+    if (props.item.flashsale_id) {
+        path = `${path}?flashsale_id=${props.item.flashsale_id}`
     }
 
     navigateTo(path);

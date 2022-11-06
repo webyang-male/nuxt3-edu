@@ -1,7 +1,7 @@
 <!-- 课程详情页 -->
 <template>
     <LoadingGroup :pending="pending" :error="error">
-        <section class="py-4" v-if="data.isbuy && ((data.type != 'media' && type=='course') || type == 'live')">
+        <section class="py-4" v-if="data.isbuy && ((data.type != 'media' && type == 'course') || type == 'live')">
             <ClientOnly>
                 <template #fallback>
                     <LoadingSkeleton />
@@ -15,14 +15,14 @@
         </section>
 
         <section v-else class="detail-top">
-            <n-image :src="data.cover" object-fit="cover" class="image" :class="{'book-image':type=='book'}" />
+            <n-image :src="data.cover" object-fit="cover" class="image" :class="{ 'book-image': type == 'book' }" />
             <div class="info">
                 <div class="flex flex-col items-start">
                     <div class="flex items-center">
-                        <span class="text-xl mr-2">{{data.title}}</span>
+                        <span class="text-xl mr-2">{{ data.title }}</span>
                         <FavaBtn :isfava="data.isfava" :goods_id="data.id" :type="type" />
                     </div>
-                    <p class="my-2 text-sm text-gray-400 ml-[0.1rem]">{{subTitle}}</p>
+                    <p class="my-2 text-sm text-gray-400 ml-[0.1rem]">{{ subTitle }}</p>
 
                     <div v-if="!data.isbuy">
                         <Price :value="data.price" class="text-xl" />
@@ -38,10 +38,10 @@
                 </div>
                 <!-- 免费学习功能建议自行注册账号体验效果 -->
                 <div class="mt-auto" v-if="!data.isbuy">
-                    <template v-if="type=='book'">
-                        <template v-if="menus.length >0">
+                    <template v-if="type == 'book'">
+                        <template v-if="menus.length > 0">
                             <n-button @click="buy" type="primary" :loading="loading">光速学习</n-button>
-                            <n-button v-if="freeID" @click="learn({id:freeID})" strong secondary type="info"
+                            <n-button v-if="freeID" @click="learn({ id: freeID })" strong secondary type="info"
                                 class="ml-2">
                                 免费试看
                             </n-button>
@@ -58,17 +58,17 @@
             <n-grid-item :span="18">
                 <section class="detail-bottom">
                     <UiTab class="border-b">
-                        <UiTabItem :active="tabState == item.value" v-for="(item,index) in tabs" :key="index"
-                            @click="changeTab(item.value)">{{item.label}}
+                        <UiTabItem :active="tabState == item.value" v-for="(item, index) in tabs" :key="index"
+                            @click="changeTab(item.value)">{{ item.label }}
                         </UiTabItem>
                     </UiTab>
                     <!-- 课程是图文类型并且已经购买则显示课程内容，否则显示介绍 -->
-                    <div v-if="tabState =='content'" class="content"
-                        v-html="(data.type == 'media' && data.isbuy) ? data.content: data.try">
+                    <div v-if="tabState == 'content'" class="content"
+                        v-html="(data.type == 'media' && data.isbuy) ? data.content : data.try">
                     </div>
                     <!-- 详情目录 -->
                     <DetailMenu v-else>
-                        <DetailMenuItem v-for="(item,index) in menus" :key="index" :index="index" :item="item"
+                        <DetailMenuItem v-for="(item, index) in menus" :key="index" :index="index" :item="item"
                             @click="learn(item)" />
 
                         <Empty v-if="menus.length == 0" desc="啊咧~暂无目录" />
@@ -146,11 +146,11 @@ let buy = () => {
         let ty = "course"
         let id = data.value.id
 
-        if(type == "book"){
+        if (type == "book") {
             ty = "book"
-        }else if(type == "live") {
+        } else if (type == "live") {
             ty = "live"
-        }else if(type == "column") {
+        } else if (type == "column") {
             ty = "column"
         }
 
@@ -219,11 +219,18 @@ let learn = (item) => {
 
 //获取query参数
 function useRequestQuery() {
-    const { column_id } = route.query;
+    const { column_id, group_id, flashsale_id } = route.query;
     let query = { id }
     if (column_id) {
         query.column_id = column_id;
     }
+
+    if (flashsale_id) {
+        query.flashsale_id = flashsale_id;
+    } else if (group_id) {
+        query.group_id = group_id;
+    }
+    
     return query
 }
 
