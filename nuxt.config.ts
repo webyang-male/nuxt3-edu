@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          href: "https://v3.nuxtjs.org/_nuxt/icons/icon_64x64.a3b4ce.png",
+          href: "https://cn.vuejs.org/logo.svg",
         },
       ],
     },
