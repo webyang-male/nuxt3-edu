@@ -4,7 +4,7 @@
         <n-grid-item :span="18">
             <LoadingGroup :pending="pending" :error="error" :isEmpty="rows.length === 0">
                 <!-- 考试列表组件 -->
-                <TestPaperList/>
+                <TestPaperList v-for="(item,index) in rows" :key="index" :item="item"/>
                 <!-- 分页组件 -->
                 <div class="flex justify-center items-center mt-5 mb-10">
                     <n-pagination size="large" :item-count="total" :page="page" :page-size="limit"

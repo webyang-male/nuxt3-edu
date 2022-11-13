@@ -2,19 +2,35 @@
 <template>
     <section class="bg-white shadow p-5 mb-5 rounded">
         <div class="flex justify-between">
-            <h4>标题</h4>
-            <small class="text-xs text-rose-500">时长:60分钟</small>
+            <h4>{{ item.title }}</h4>
+            <small class="text-xs text-rose-500">时长:{{ item.expire }}分钟</small>
         </div>
         <p class="py-5 text-sm text-gray-500">
-            题目总数：0 总分数：100 及格分：62
+            题目总数：{{ item.question_count }} 总分数：{{ item.total_score }} 及格分：{{ item.pass_score }}
         </p>
         <div class="flex justify-end">
-            <n-button type="primary" @click="">进入考试</n-button>
+            <n-button type="primary" @click="test()">进入考试</n-button>
         </div>
     </section>
 </template>
 
 <script setup>
-import { NButton} from "naive-ui";
+import { NButton, createDiscreteApi } from "naive-ui";
+
+const props = defineProps({
+    item: Object
+})
+// console.log(props);
+const test = () => {
+    const { dialog } = createDiscreteApi(["dialog"])
+    dialog.create({
+        content: "是否要参与考试啦？",
+        positiveText: "立即考试",
+        negativeText: "取消",
+        onPositiveClick: async () => {
+            navigateTo(`/paper_test/${props.item.id}`)
+        },
+    });
+}
 </script>
 
