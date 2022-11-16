@@ -10,7 +10,8 @@
             <div v-if="item.type == 'radio' || item.type == 'trueOrfalse' || item.type == 'checkbox'">
                 <p class="tips">答案:</p>
                 <ul>
-                    <li class="options" v-for="(q, qI) in item.options" :key="qI">
+                    <li class="options" v-for="(q, qI) in item.options" :key="qI" :class="{ active: isActive(qI) }"
+                        @click="handleChooseOption(qI)">
                         <span class="mr-2">{{ en[Number(qI + 1)] }}</span>
                         <div v-html="q"></div>
                     </li>
@@ -21,10 +22,13 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
     item: Object,
     index: Number
 })
+
+//设置动态选中值
+const modelValue = ref(props.item.user_value)
 
 //题目类型
 const typeOptions = {
@@ -44,6 +48,38 @@ const en = {
     6: "F",
     7: "G",
 }
+
+function handleChooseOption(val) {
+    const { item } = props
+    if (item.type == "radio" || item.type == "trueOrfalse") {
+        modelValue.value = modelValue.vallue == val ? -1 : val
+    } else {
+        let i = modelValue.value.findIndex(v => v == val)
+        if (i == -1) {
+            modelValue.value.push(val)
+        } else {
+            modelValue.value.splice(i, 1)
+        }
+    }
+}
+
+//单选/多选是否选中
+function isActive(v) {
+    const { item } = props
+    if (item.type == "radio" || item.type == "trueOrfalse") {
+        return modelValue.value == v
+    }
+    return modelValue.value.includes(v)
+}
+
+//监听值变化
+const emit = defineEmits(["change"])
+watch(modelValue, (newval) => {
+    emit("change", unref(newval))
+}, {
+    //针对数组
+    deep: true
+})
 </script>
 
 <style>

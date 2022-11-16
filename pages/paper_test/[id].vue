@@ -14,7 +14,8 @@
                 </template>
                 <!-- 题目组件 -->
                 <PaperTestItems v-for="(item, index) in data.testpaper_questions" :key="index"
-                :item="item" :index="index"/>
+                :item="item" :index="index"
+                @change="handleUserValuecChange(item,$event)"/>
             </n-card>
         </n-grid-item>
         <!-- 右侧试卷情况预览 -->
@@ -165,4 +166,10 @@ const data = ref({
     "user_test_id": 7
 
 })
+
+//监听题目值的变化
+function handleUserValuecChange(item,val){
+    // console.log(val);
+    item.user_value = val;
+}
 </script>
