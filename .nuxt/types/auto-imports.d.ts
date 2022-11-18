@@ -109,6 +109,7 @@ declare global {
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useReadCourseApi: typeof import('../../apis/course')['useReadCourseApi']
   const useReadDetailApi: typeof import('../../apis/common')['useReadDetailApi']
+  const useReadTestPaperApi: typeof import('../../apis/test')['useReadTestPaperApi']
   const useReceiveUserCouponApi: typeof import('../../apis/user')['useReceiveUserCouponApi']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
   const useRegApi: typeof import('../../apis/user')['useRegApi']
@@ -120,6 +121,7 @@ declare global {
   const useSearchListApi: typeof import('../../apis/common')['useSearchListApi']
   const useSlots: typeof import('vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app')['useState']
+  const useSubmitTestApi: typeof import('../../apis/test')['useSubmitTestApi']
   const useTimeStatus: typeof import('../../composables/useUtil')['useTimeStatus']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useUncollectApi: typeof import('../../apis/user')['useUncollectApi']
@@ -253,6 +255,7 @@ declare module '@vue/runtime-core' {
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useReadCourseApi: UnwrapRef<typeof import('../../apis/course')['useReadCourseApi']>
     readonly useReadDetailApi: UnwrapRef<typeof import('../../apis/common')['useReadDetailApi']>
+    readonly useReadTestPaperApi: UnwrapRef<typeof import('../../apis/test')['useReadTestPaperApi']>
     readonly useReceiveUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useReceiveUserCouponApi']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
     readonly useRegApi: UnwrapRef<typeof import('../../apis/user')['useRegApi']>
@@ -264,6 +267,7 @@ declare module '@vue/runtime-core' {
     readonly useSearchListApi: UnwrapRef<typeof import('../../apis/common')['useSearchListApi']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useState']>
+    readonly useSubmitTestApi: UnwrapRef<typeof import('../../apis/test')['useSubmitTestApi']>
     readonly useTimeStatus: UnwrapRef<typeof import('../../composables/useUtil')['useTimeStatus']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useUncollectApi: UnwrapRef<typeof import('../../apis/user')['useUncollectApi']>

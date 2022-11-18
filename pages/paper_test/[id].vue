@@ -36,7 +36,7 @@
                 </n-grid>
                 <n-divider />
                 <div>
-                    <n-button type="primary" class="w-full">交 卷</n-button>
+                    <n-button type="primary" class="w-full" @click="submit()" :loading="loading">交 卷</n-button>
                 </div>
             </n-card>
         </n-grid-item>
@@ -54,81 +54,11 @@ import {
     createDiscreteApi
 } from "naive-ui"
 
-const data = ref({
-    "id": 12,
-    "title": "测试试卷111",
-    "total_score": 100,
-    "pass_score": 60,
-    "expire": 60,
-    "testpaper_questions": [
-        {
-            "id": 42,
-            "score": 25,
-            "question_id": 73,
-            "title": "说说你的看法",
-            "remark": "问题解析",
-            "type": "answer",
-            "user_value": [
-                ""
-            ]
-        },
-        {
-            "id": 43,
-            "score": 25,
-            "question_id": 72,
-            "title": "请问我年龄多大",
-            "remark": "问题解析",
-            "type": "completion",
-            "user_value": [
-                "",
-            ]
-        },
-        {
-            "id": 44,
-            "score": 0,
-            "question_id": 71,
-            "title": "请问我是男生还是女生",
-            "remark": "问题解析",
-            "type": "trueOrfalse",
-            "options": [
-                "正确",
-                "错误"
-            ],
-            "user_value": -1
-        },
-        {
-            "id": 45,
-            "score": 25,
-            "question_id": 70,
-            "title": "<p>你的名字叫什么</p>",
-            "remark": "问题解析",
-            "type": "checkbox",
-            "options": [
-                "张三",
-                "李四",
-                "王五",
-                "王五哈"
-            ],
-            "user_value": []
-        },
-        {
-            "id": 46,
-            "score": 25,
-            "question_id": 65,
-            "title": "你的名字叫什么",
-            "remark": "问题解析",
-            "type": "checkbox",
-            "options": [
-                "张三",
-                "李四",
-                "王五",
-                "王五哈"
-            ],
-            "user_value": []
-        }
-    ],
-    "user_test_id": 7
-})
+const route = useRoute()
+
+let { data } = useReadDetailApi(route.params.id)
+
+
 
 // 题目列表
 const testpaper_questions = computed(() => {
@@ -193,5 +123,36 @@ onBeforeRouteLeave((to, from, next) => {
     }
 
 })
+
+
+//交卷
+const loading = ref(false)
+async function submit() {
+    const { message } = createDiscreteApi(["message"])
+    let l = (testpaper_questions.value.fliter(v => !v.isTest)).length
+    if (l > 0) {
+        return message.warning("还有题目没完成,请检查~")
+    }
+    loading.value = true
+    const {
+        data: submitData,
+        error: submitError,
+    } = await useSubmitTestApi({
+        user_test_id: data.user_test_id,
+        value: testpaper_questions.value.map(o => o.value)
+    })
+    loading.value = false
+
+    if(submitError.value) return
+
+    //跳转前先把disabled_PageBack设置为false
+    disabled_PageBack.value = false;
+    message.success("交卷成功(＾－＾)V")
+    navigateTo(`/paper/1`,{
+        replace:true
+    })
+}
+
+//自动交卷
 
 </script>
