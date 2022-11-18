@@ -13,8 +13,7 @@
                 </template>
 
                 <!-- 题目组件 -->
-                <PaperTestItems v-for="(item, index) in testpaper_questions" 
-                :id="'question_' + index" :key="index"
+                <PaperTestItems v-for="(item, index) in testpaper_questions" :id="'question_' + index" :key="index"
                     :item="item" :index="index" @change="handleUserValueChange(item, $event)" />
 
             </n-card>
@@ -44,13 +43,15 @@
     </n-grid>
 </template>
 <script setup>
+import { onBeforeRouteLeave } from "vue-router"
 import {
     NGrid,
     NGridItem,
     NButton,
     NTag,
     NCard,
-    NDivider
+    NDivider,
+    createDiscreteApi
 } from "naive-ui"
 
 const data = ref({
@@ -170,4 +171,27 @@ function jumpToQuestion(index) {
     let questionDom = document.getElementById("question_" + index)
     window.scrollTo(0, questionDom.offsetTop)
 }
+
+/* 考试拦截切换其他页面
+需考生确认放弃考试 */
+const disabled_PageBack = ref(true)
+onBeforeRouteLeave((to, from, next) => {
+    if (!disabled_PageBack.value) {
+        next()
+    } else {
+        const { dialog } = createDiscreteApi(["dialog"])
+        dialog.warning({
+            content: "是否要放弃考试？",
+            positiveText: "确定",
+            negativeText: "取消",
+            onPositiveClick: () => {
+                disabled_PageBack.value = false
+                navigateTo(to.fullPath || "/", { replace: true })
+            },
+        });
+        next(false)
+    }
+
+})
+
 </script>

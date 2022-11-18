@@ -1,6 +1,12 @@
-# Nuxt3-Edu
+i# Nuxt3-Edu 🎓
 ### 一·、项目简介
+<p align="center" dir="auto"><a href="https://vuejs.org" rel="nofollow"><img width="100" src="https://camo.githubusercontent.com/c8f91d18976e27123643a926a2588b8d931a0292fd0b6532c3155379e8591629/68747470733a2f2f7675656a732e6f72672f696d616765732f6c6f676f2e706e67" alt="Vue logo" data-canonical-src="https://vuejs.org/images/logo.png" style="max-width: 100%;"></a></p>
 
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Vue&message=3.2&color=#36ad6"></img>
+  <img src="https://img.shields.io/static/v1?label=WindiCSS &message=2.4.3&color=informational"></img>
+  <img src="https://img.shields.io/static/v1?label=Nuxt&message=3 alpha&color=#0c7a43"></img>
+</p>
 基于Nuxt3 + Vue3 + NaiveUI+ Vite实战开发在线教育SSR服务端渲染网站应用。
 
 ### 二、项目内容
@@ -46,6 +52,15 @@ npm run dev [-- -o]
 
 **项目首页展示👇**
 
-![](./demo/screenshot-20220726-index.png)
+![](./demo/index.png)
+![](./demo/1.png)
+![](./demo/2.png)
+![](./demo/3.png)
+![](./demo/4.png)
+![](./demo/5.png)
+![](./demo/6.png)
+![](./demo/7.png)
+![](./demo/8.png)
+![](./demo/9.png)
 
 推荐练手的Vue3全家桶<font color="#C20C0C">网易云音乐项目👉https://github.com/path-yu/cloud-music</font>
