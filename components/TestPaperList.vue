@@ -1,4 +1,5 @@
 <!-- 考试列表组件 -->
+<!-- 注意:体验考试请自行注册新账号 -->
 <template>
     <section class="bg-white shadow p-5 mb-5 rounded">
         <div class="flex justify-between">
@@ -9,7 +10,7 @@
             题目总数：{{ item.question_count }} 总分数：{{ item.total_score }} 及格分：{{ item.pass_score }}
         </p>
         <div class="flex justify-end">
-            <n-button type="primary" @click="test()">进入考试</n-button>
+            <n-button type="primary" @click="test()" :disabled="item.isTest">{{ item.isTest ? '考试结束' : '进入考试' }}</n-button>
         </div>
     </section>
 </template>

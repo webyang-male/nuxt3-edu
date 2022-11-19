@@ -109,7 +109,7 @@ declare global {
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useReadCourseApi: typeof import('../../apis/course')['useReadCourseApi']
   const useReadDetailApi: typeof import('../../apis/common')['useReadDetailApi']
-  const useReadTestPaperApi: typeof import('../../apis/test')['useReadTestPaperApi']
+  const useReadTestpaperApi: typeof import('../../apis/test')['useReadTestpaperApi']
   const useReceiveUserCouponApi: typeof import('../../apis/user')['useReceiveUserCouponApi']
   const useRefreshUserInfo: typeof import('../../composables/useAuth')['useRefreshUserInfo']
   const useRegApi: typeof import('../../apis/user')['useRegApi']
@@ -255,7 +255,7 @@ declare module '@vue/runtime-core' {
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useReadCourseApi: UnwrapRef<typeof import('../../apis/course')['useReadCourseApi']>
     readonly useReadDetailApi: UnwrapRef<typeof import('../../apis/common')['useReadDetailApi']>
-    readonly useReadTestPaperApi: UnwrapRef<typeof import('../../apis/test')['useReadTestPaperApi']>
+    readonly useReadTestpaperApi: UnwrapRef<typeof import('../../apis/test')['useReadTestpaperApi']>
     readonly useReceiveUserCouponApi: UnwrapRef<typeof import('../../apis/user')['useReceiveUserCouponApi']>
     readonly useRefreshUserInfo: UnwrapRef<typeof import('../../composables/useAuth')['useRefreshUserInfo']>
     readonly useRegApi: UnwrapRef<typeof import('../../apis/user')['useRegApi']>

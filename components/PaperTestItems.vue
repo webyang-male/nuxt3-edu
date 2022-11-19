@@ -1,4 +1,5 @@
-<!-- 考试题目列组件 -->
+<!-- 考试题目组件 -->
+<!-- 注意:体验考试请自行注册新账号 -->
 <template>
     <div class="test-item">
         <div class="title">
