@@ -1,3 +1,4 @@
+<!-- 全局错误页 -->
 <template>
     <div class="pt-[14rem]">
         <n-result status="500" title="500 服务器错误" :description="error.message">

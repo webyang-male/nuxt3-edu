@@ -7,12 +7,33 @@ export function usePostSupportApi(post_id, type = "support") {
   });
 }
 
-//删除帖子 
+//删除帖子
 export function useDeletePostApi(id) {
-    return useHttpPost("deletePost", `/post/delete`, {
-      body: {
-       id
-      },
-    });
-  }
-  
+  return useHttpPost("deletePost", `/post/delete`, {
+    body: {
+      id,
+    },
+  });
+}
+
+//社区分类列表
+export function useBbsListApi(){
+  return useHttpGet("bbsList","/pc/bbs?page=1",{
+    lazy:true,
+  })
+}
+
+//分类下帖子列表
+///pc/post/list?page=1&bbs_id=1&is_top=0
+export function usePostListApi(query) {
+  return useHttpGet(
+    "postList",
+    () => {
+      let q = useQueryToString(query());
+      return `/post/list${q}`;
+    },
+    {
+      lazy: true,
+    }
+  );
+}

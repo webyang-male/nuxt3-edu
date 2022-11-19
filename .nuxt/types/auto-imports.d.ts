@@ -62,6 +62,7 @@ declare global {
   const useActiveRoute: typeof import('../../node_modules/nuxt/dist/app')['useActiveRoute']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useBbsListApi: typeof import('../../apis/bbs')['useBbsListApi']
   const useBindPhoneApi: typeof import('../../apis/user')['useBindPhoneApi']
   const useBookDetailApi: typeof import('../../apis/book')['useBookDetailApi']
   const useBookMenusApi: typeof import('../../apis/book')['useBookMenusApi']
@@ -105,6 +106,7 @@ declare global {
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const useOrderListApi: typeof import('../../apis/user')['useOrderListApi']
   const usePage: typeof import('../../composables/usePage')['usePage']
+  const usePostListApi: typeof import('../../apis/bbs')['usePostListApi']
   const usePostSupportApi: typeof import('../../apis/bbs')['usePostSupportApi']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
   const useReadCourseApi: typeof import('../../apis/course')['useReadCourseApi']
@@ -208,6 +210,7 @@ declare module '@vue/runtime-core' {
     readonly useActiveRoute: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useActiveRoute']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useBbsListApi: UnwrapRef<typeof import('../../apis/bbs')['useBbsListApi']>
     readonly useBindPhoneApi: UnwrapRef<typeof import('../../apis/user')['useBindPhoneApi']>
     readonly useBookDetailApi: UnwrapRef<typeof import('../../apis/book')['useBookDetailApi']>
     readonly useBookMenusApi: UnwrapRef<typeof import('../../apis/book')['useBookMenusApi']>
@@ -251,6 +254,7 @@ declare module '@vue/runtime-core' {
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useOrderListApi: UnwrapRef<typeof import('../../apis/user')['useOrderListApi']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
+    readonly usePostListApi: UnwrapRef<typeof import('../../apis/bbs')['usePostListApi']>
     readonly usePostSupportApi: UnwrapRef<typeof import('../../apis/bbs')['usePostSupportApi']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>
     readonly useReadCourseApi: UnwrapRef<typeof import('../../apis/course')['useReadCourseApi']>
