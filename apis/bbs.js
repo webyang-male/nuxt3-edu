@@ -17,10 +17,10 @@ export function useDeletePostApi(id) {
 }
 
 //社区分类列表
-export function useBbsListApi(){
-  return useHttpGet("bbsList","/pc/bbs?page=1",{
-    lazy:true,
-  })
+export function useBbsListApi() {
+  return useHttpGet("bbsList", "/bbs?page=1", {
+    lazy: true,
+  });
 }
 
 //分类下帖子列表
