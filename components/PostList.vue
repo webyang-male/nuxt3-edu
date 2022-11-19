@@ -32,7 +32,7 @@
                 评论 {{ item.comment_count || 0 }}
             </n-button>
             <n-button text size="tiny" class="mr-3">作者：{{ item.user.name }}</n-button>
-            <n-button type="error" size="tiny" @click="deleteItem" :loading="loading">
+            <n-button v-if="showDel" type="error" size="tiny" @click="deleteItem" :loading="loading">
                 删除
             </n-button>
         </div>
@@ -42,7 +42,13 @@
 <script setup>
 import { NTag, NImage, NButton, NIcon, createDiscreteApi } from 'naive-ui'
 import { ThumbsUpSharp, ChatboxEllipsesOutline } from "@vicons/ionicons5"
-const props = defineProps({ item: Object })
+const props = defineProps({
+    item: Object,
+    showDel: {
+        type: Boolean,
+        default: true
+    }
+})
 
 //点赞点击事件
 const {
@@ -77,6 +83,6 @@ const deleteItem = () => {
 }
 
 const open = () => {
-    navigateTo("/post_detail/"+props.item.id)
+    navigateTo("/post_detail/" + props.item.id)
 }
 </script>
