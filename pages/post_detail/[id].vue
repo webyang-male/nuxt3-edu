@@ -64,14 +64,14 @@
 
                 <!-- 评论区 -->
                 <NDivider />
-                <Comment/>
+                <Comment :post_id="id"/>
             </n-grid-item>
 
             <n-grid-item :span="6">
                 <n-button type="primary" class="mb-5 w-full">发布帖子</n-button>
                 <HotCourseList />
             </n-grid-item>
-            
+
         </n-grid>
     </div>
 </template>

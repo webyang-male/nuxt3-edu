@@ -47,7 +47,7 @@ export function useReadPostApi(id) {
 
 //查看帖子评价列表 
 // /pc/post_comment?page=1&post_id=7
-export function usePostCommentApi() {
+export function usePostCommentApi(query) {
   return useHttpGet(
     "postComment",
     () => {
