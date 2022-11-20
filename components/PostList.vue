@@ -7,7 +7,7 @@
             </n-tag>
             {{ item.desc.text }}
         </div>
-        <div class="mt-3 cursor-pointer max-w-[500px]">
+        <div class="mt-3 cursor-pointer max-w-[500px]" @click="open">
             <n-image v-for="(img, imgI) in item.desc.images" :key="imgI" :src="img"
                 :width="item.desc.images.length == 1 ? 300 : 150" :height="item.desc.images.length == 1 ? 200 : 100"
                 class="mr-3 mb-2 rounded" />

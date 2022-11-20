@@ -37,3 +37,10 @@ export function usePostListApi(query) {
     }
   );
 }
+
+//查看帖子 /pc/post/read?id=1
+export function useReadPostApi(id) {
+  return useHttpGet("readPost", "/post/read?id=" + id, {
+    lazy: true,
+  });
+}
