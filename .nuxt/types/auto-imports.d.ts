@@ -106,6 +106,7 @@ declare global {
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const useOrderListApi: typeof import('../../apis/user')['useOrderListApi']
   const usePage: typeof import('../../composables/usePage')['usePage']
+  const usePostCommentApi: typeof import('../../apis/bbs')['usePostCommentApi']
   const usePostListApi: typeof import('../../apis/bbs')['usePostListApi']
   const usePostSupportApi: typeof import('../../apis/bbs')['usePostSupportApi']
   const useQueryToString: typeof import('../../composables/useUtil')['useQueryToString']
@@ -255,6 +256,7 @@ declare module '@vue/runtime-core' {
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useOrderListApi: UnwrapRef<typeof import('../../apis/user')['useOrderListApi']>
     readonly usePage: UnwrapRef<typeof import('../../composables/usePage')['usePage']>
+    readonly usePostCommentApi: UnwrapRef<typeof import('../../apis/bbs')['usePostCommentApi']>
     readonly usePostListApi: UnwrapRef<typeof import('../../apis/bbs')['usePostListApi']>
     readonly usePostSupportApi: UnwrapRef<typeof import('../../apis/bbs')['usePostSupportApi']>
     readonly useQueryToString: UnwrapRef<typeof import('../../composables/useUtil')['useQueryToString']>

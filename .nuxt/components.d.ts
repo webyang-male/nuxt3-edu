@@ -4,6 +4,7 @@ declare module 'vue' {
     'Banner': typeof import("../components/Banner.vue")['default'],
     'BbsTabs': typeof import("../components/BbsTabs.vue")['default'],
     'BookList': typeof import("../components/BookList.vue")['default'],
+    'Comment': typeof import("../components/Comment.vue")['default'],
     'CouponList': typeof import("../components/CouponList.vue")['default'],
     'CouponModal': typeof import("../components/CouponModal.vue")['default'],
     'CourseList': typeof import("../components/CourseList.vue")['default'],
@@ -62,6 +63,7 @@ declare module 'vue' {
     'LazyBanner': typeof import("../components/Banner.vue")['default'],
     'LazyBbsTabs': typeof import("../components/BbsTabs.vue")['default'],
     'LazyBookList': typeof import("../components/BookList.vue")['default'],
+    'LazyComment': typeof import("../components/Comment.vue")['default'],
     'LazyCouponList': typeof import("../components/CouponList.vue")['default'],
     'LazyCouponModal': typeof import("../components/CouponModal.vue")['default'],
     'LazyCourseList': typeof import("../components/CourseList.vue")['default'],
@@ -122,6 +124,7 @@ declare module 'vue' {
 export const Banner: typeof import("../components/Banner.vue")['default']
 export const BbsTabs: typeof import("../components/BbsTabs.vue")['default']
 export const BookList: typeof import("../components/BookList.vue")['default']
+export const Comment: typeof import("../components/Comment.vue")['default']
 export const CouponList: typeof import("../components/CouponList.vue")['default']
 export const CouponModal: typeof import("../components/CouponModal.vue")['default']
 export const CourseList: typeof import("../components/CourseList.vue")['default']
@@ -180,6 +183,7 @@ export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/
 export const LazyBanner: typeof import("../components/Banner.vue")['default']
 export const LazyBbsTabs: typeof import("../components/BbsTabs.vue")['default']
 export const LazyBookList: typeof import("../components/BookList.vue")['default']
+export const LazyComment: typeof import("../components/Comment.vue")['default']
 export const LazyCouponList: typeof import("../components/CouponList.vue")['default']
 export const LazyCouponModal: typeof import("../components/CouponModal.vue")['default']
 export const LazyCourseList: typeof import("../components/CourseList.vue")['default']

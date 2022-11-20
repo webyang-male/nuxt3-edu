@@ -44,3 +44,18 @@ export function useReadPostApi(id) {
     lazy: true,
   });
 }
+
+//查看帖子评价列表 
+// /pc/post_comment?page=1&post_id=7
+export function usePostCommentApi() {
+  return useHttpGet(
+    "postComment",
+    () => {
+      let q = useQueryToString(query());
+      return `/post_comment${q}`;
+    },
+    {
+      lazy: true,
+    }
+  );
+}
