@@ -43,7 +43,7 @@ export async function useHttp(key,url,options = {}){
             }
         }).catch(err=>{
             const msg = err?.data?.data
-            if(process.client){
+            if(import.meta.client){
                 const { message } = createDiscreteApi(["message"])
                 message.error(msg || '服务端错误')
             }
@@ -64,7 +64,7 @@ export async function useHttp(key,url,options = {}){
     })
 
     // 客户端错误处理
-    if(process.client && res.error.value){
+    if(import.meta.client && res.error.value){
         const msg = res.error.value?.data?.data
         if(!options.lazy){
             const { message } = createDiscreteApi(["message"])

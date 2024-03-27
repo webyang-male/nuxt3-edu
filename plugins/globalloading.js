@@ -17,7 +17,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
   nuxtApp.hook("app:error", (e) => {
     //判断是否在客户端
-    if (process.client) {
+    if (import.meta.client) {
       setTimeout(() => bar.value?.finish(), 300);
     }
   });
