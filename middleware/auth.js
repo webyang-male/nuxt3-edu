@@ -7,7 +7,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   //未登录
   if (!token.value) {
-    if (process.client) {
+    if (import.meta.client) {
       const { message } = createDiscreteApi(["message"]);
       message.error("请先登录");
     }
@@ -19,7 +19,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   if (!phone && route.name != "bindphone") {
     const { message } = createDiscreteApi(["message"]);
     //处于客户端
-    if (process.client) {
+    if (import.meta.client) {
       message.error("请先绑定手机号");
     }
 

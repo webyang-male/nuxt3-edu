@@ -51,7 +51,7 @@ const {
 // })
 
 // 服务端时直接报错
-if (process.server && error.value) {
+if (import.meta.server && error.value) {
     throwError(error.value?.data?.data)
 }
 

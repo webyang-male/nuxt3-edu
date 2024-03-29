@@ -2,7 +2,7 @@ import { setup } from '@css-render/vue3-ssr'
 import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  if (process.server) {
+  if (import.meta.server) {
     const { collect } = setup(nuxtApp.vueApp)
     const originalRenderMeta = nuxtApp.ssrContext?.renderMeta
     nuxtApp.ssrContext = nuxtApp.ssrContext || {}
