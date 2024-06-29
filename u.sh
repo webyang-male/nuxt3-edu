@@ -4,4 +4,4 @@ then info="feat:Update project dependencies and implement post publishing and co
 fi
 git add -A
 git commit -m "$info"
-git push origin main
+git push origin dev
