@@ -1,7 +1,6 @@
-<!-- 首页轮播图 -->
 <template>
-    <n-carousel show-arrow class="mb-6">
-        <img v-for="(item,index) in data" :key="item"
+    <n-carousel show-arrow class="mb-6" autoplay>
+        <img v-for="(item,index) in data" :key="index"
         class="carousel-img rounded cursor-pointer"
         :src="item.src"
         @click="$commonOpen(item)"
@@ -16,11 +15,6 @@ import {
 defineProps({
     data:Array
 })
-const open = (item)=>{
-    if(item.type == "webview"){
-        window.open(item.url)
-    }
-}
 </script>
 <style scoped>
 .carousel-img {

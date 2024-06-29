@@ -1,6 +1,5 @@
 <template>
     <div style="width:100%;">
-        <!-- 不在客户端渲染会有不能上传图片的bug -->
         <ClientOnly>
             <template #fallback>
                 <!-- 加载中 -->
@@ -10,17 +9,17 @@
                 </div>
             </template>
             <n-upload
-                accept="image/*"
+                accept="image/png,image/jpeg,image/gif"
                 :action="action"
                 :headers="headers"
                 v-model:file-list="fileList"
                 name="file"
                 :data="data"
                 list-type="image-card"
-                :max="1"
+                :max="max"
                 :on-error="handleError"
                 :on-finish="handleSuccess"
-                :multiple="false"
+                :multiple="max > 1"
             />
         </ClientOnly>
     </div>
@@ -37,9 +36,13 @@ const {
 } = useUploadConfig()
 
 const props = defineProps({
-    modelValue:String,
+    modelValue:[String,Array],
     data:{
         type:Object
+    },
+    max:{
+        type:Number,
+        default:1
     }
 })
 
@@ -49,7 +52,6 @@ initFileList()
 
 // 上传成功
 const handleSuccess = (...e)=>{
-    console.log(e);
     const { file,event } = e[0]
     const response = JSON.parse(event.target.response)
     file.url = response.data
@@ -64,12 +66,23 @@ const handleError = (e)=>{
 
 // 初始化filelist
 function initFileList(){
-    fileList.value = props.modelValue ? [{
-        id: props.modelValue,
-        name: props.modelValue,
-        status: 'finished',
-        url: props.modelValue
-    }] : []
+    if(typeof props.modelValue == "string"){
+        fileList.value = props.modelValue ? [{
+            id: props.modelValue,
+            name: props.modelValue,
+            status: 'finished',
+            url: props.modelValue
+        }] : []
+    } else {
+        fileList.value = props.modelValue.map(url=>{
+            return {
+                id: url,
+                name: url,
+                status: 'finished',
+                url: url
+            }
+        })
+    }
 }
 
 // 监听fileList变化
@@ -89,7 +102,7 @@ function updateModelValue(){
             urls.push(o.url)
         }
     })
-    emit("update:modelValue",urls[0] || "")
+    emit("update:modelValue", props.max == 1 ? (urls[0] || "") : urls) 
 }
 
 </script>

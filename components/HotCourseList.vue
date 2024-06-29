@@ -1,7 +1,6 @@
-<!-- 课程详情-精品推荐组件 -->
 <template>
-    <section class="bg-white shawdow rounded mb-5">
-        <div class="p-3 border-b ">
+    <section class="bg-white shadow rounded mb-5">
+        <div class="p-3 border-b">
             <h4>精品推荐</h4>
         </div>
         <div class="p-3">
@@ -9,7 +8,8 @@
         </div>
     </section>
 </template>
-
 <script setup>
-let { data } = await useHotCourseListApi();
+    let {
+        data
+    } = await useHotCourseListApi()
 </script>

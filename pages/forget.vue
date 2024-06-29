@@ -1,25 +1,19 @@
 <template>
-    <n-alert title="" type="info" class="mb-6">
-        演示账号为：
-        <n-tag :bordered="false" type="success">
-            133 333 333 3
-        </n-tag>
-    </n-alert>
     <n-form class="w-[340px]" ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="phone">
-            <n-input v-model:value="form.phone" placeholder="手机号" />
+            <n-input v-model:value="form.phone" placeholder="手机号"/>
         </n-form-item>
         <n-form-item :show-label="false" path="code">
             <n-input-group>
-                <n-input :style="{ width: '75%' }" v-model:value="form.code" placeholder="验证码" />
-                <SendCode :phone="form.phone" />
+                <n-input :style="{ width: '75%' }" v-model:value="form.code" placeholder="验证码"/>
+                <SendCode :phone="form.phone"/>
             </n-input-group>
         </n-form-item>
         <n-form-item :show-label="false" path="password">
-            <n-input v-model:value="form.password" placeholder="密码" type="password" />
+            <n-input v-model:value="form.password" placeholder="密码" type="password"/>
         </n-form-item>
         <n-form-item :show-label="false" path="repassword">
-            <n-input v-model:value="form.repassword" placeholder="确认密码" type="password" :disabled="!form.password" />
+            <n-input v-model:value="form.repassword" placeholder="确认密码" type="password" :disabled="!form.password"/>
         </n-form-item>
         <div class="flex justify-between w-full mb-2">
             <n-button quaternary type="primary" size="tiny" @click="$router.go(-1)">
@@ -35,8 +29,6 @@
 </template>
 <script setup>
 import {
-    NAlert,
-    NTag,
     NForm,
     NFormItem,
     NInput,
@@ -45,46 +37,46 @@ import {
     createDiscreteApi
 } from "naive-ui"
 const router = useRouter()
-useHead({ title: "忘记密码" })
+useHead({ title:"忘记密码" })
 
 const formRef = ref(null)
 const form = reactive({
-    phone: "",
-    code: "",
-    password: "",
-    repassword: ""
+    phone:"",
+    code:"",
+    password:"",
+    repassword:""
 })
 
 const rules = {
-    phone: [{
+    phone:[{
         required: true,
-        message: '手机号必填'
+        message:'手机号必填'
     }],
-    code: [{
+    code:[{
         required: true,
-        message: '验证码必填'
+        message:'验证码必填'
     }],
-    password: [{
+    password:[{
         required: true,
-        message: "密码必填"
+        message:"密码必填"
     }],
-    repassword: [{
+    repassword:[{
         required: true,
-        message: "确认密码必填"
-    }, {
+        message:"确认密码必填"
+    },{
         validator(rule, value) {
             return value === form.password
         },
-        message: "两次密码输入不一致",
+        message:"两次密码输入不一致",
         trigger: ["input", "blur"]
     }]
 }
 
 const loading = ref(false)
-const onSubmit = () => {
-    formRef.value.validate(async (errors) => {
-        if (errors) return
-
+const onSubmit = ()=>{
+    formRef.value.validate(async (errors)=>{
+        if(errors) return
+        
         loading.value = true
 
         let {
@@ -94,7 +86,7 @@ const onSubmit = () => {
 
         loading.value = false
 
-        if (error.value) return
+        if(error.value) return
 
         const { message } = createDiscreteApi(["message"])
 
@@ -104,12 +96,12 @@ const onSubmit = () => {
     })
 }
 
-useEnterEvent(() => onSubmit())
+useEnterEvent(()=>onSubmit())
 
 definePageMeta({
-    title: "忘记密码",
-    layout: "login",
-    middleware: ["only-visitor"]
+    title:"忘记密码",
+    layout:"login",
+    middleware:["only-visitor"]
 })
 
 </script>

@@ -1,15 +1,10 @@
-<!-- 搜索结果页tab组件 -->
 <template>
     <div class="tab">
-        <slot></slot>
+        <slot/>
     </div>
 </template>
-<script setup>
-
-</script>
 <style>
-    .tab {
-      @apply w-full flex overflow-x-auto bg-white rounded mb-4 ;
-    }
+.tab {
+    @apply w-full flex overflow-x-auto bg-white mb-4 rounded;
+}
 </style>
-

@@ -1,26 +1,20 @@
 <template>
-    <n-alert title="" type="info" class="mb-6">
-        演示账号和密码为：
-        <n-tag :bordered="false" type="success">
-            ceshi1
-        </n-tag>
-    </n-alert>
     <n-form class="w-[340px]" ref="formRef" :model="form" :rules="rules" size="large">
         <n-form-item :show-label="false" path="username">
-            <n-input clearable v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
+            <n-input v-model:value="form.username" :placeholder="type === 'login' ? '用户名/手机/邮箱' : '用户名'" />
         </n-form-item>
         <n-form-item :show-label="false" path="password">
-            <n-input clearable v-model:value="form.password" placeholder="密码" type="password" />
+            <n-input v-model:value="form.password" placeholder="密码" type="password" />
         </n-form-item>
         <n-form-item v-if="type != 'login'" :show-label="false" path="repassword">
-            <n-input clearable v-model:value="form.repassword" placeholder="确认密码" type="password" />
+            <n-input v-model:value="form.repassword" placeholder="确认密码" type="password" />
         </n-form-item>
         <div class="flex justify-between w-full mb-2">
             <n-button quaternary type="primary" size="tiny" @click="changeType">
                 {{ type === 'login' ? '注册' : '登录' }}
             </n-button>
-            <nuxt-link to="/forget" class="text-primary" >
-                <n-button quaternary type="primary" size="tiny" >忘记密码</n-button>
+            <nuxt-link to="/forget">
+                <n-button quaternary type="primary" size="tiny">忘记密码？</n-button>
             </nuxt-link>
         </div>
         <div>
@@ -36,31 +30,22 @@
         </div>
     </n-form>
 </template>
-
-
 <script setup>
 import {
     NForm,
-    NInput,
     NFormItem,
+    NInput,
     NButton,
-    NAlert,
-    NTag,
     createDiscreteApi
 } from "naive-ui"
-
 const route = useRoute()
 const type = ref("login")
 const title = ref("登录")
+useHead({ title })
 
-useHead({
-    title
-})
-
-//表单验证
 const formRef = ref(null)
 const form = reactive({
-    name: "",
+    username: "",
     password: "",
     repassword: ""
 })
@@ -69,31 +54,27 @@ const rules = computed(() => {
     let r = {
         username: [{
             required: true,
-            message: type.value === "login" ? "请输入用户名/手机/邮箱" : "请输入用户名",
-            trigger: "blur"
+            message: type.value === 'login' ? '用户名/手机号/邮箱必填' : '用户名必填'
         }],
         password: [{
             required: true,
-            message: "请输入密码",
-            trigger: "blur"
-        }],
-
+            message: "密码必填"
+        }]
     }
+
     if (type.value != "login") {
         r.repassword = [{
             required: true,
-            message: "请再次输入密码",
+            message: "确认密码必填"
         }, {
-            validator: (rule, value, callback) => {
-                if (value !== form.password) {
-                    callback(new Error("两次输入的密码不一致"))
-                } else {
-                    callback()
-                }
+            validator(rule, value) {
+                return value === form.password
             },
-            trigger: ["blur", "input"]
+            message: "两次密码输入不一致",
+            trigger: ["input", "blur"]
         }]
     }
+
     return r
 })
 
@@ -107,16 +88,11 @@ const changeType = () => {
     formRef.value.restoreValidation()
 }
 
-//加载效果
 const loading = ref(false)
-
-//回车事件
 const onSubmit = () => {
     formRef.value.validate(async (errors) => {
-        if (errors) return;
-
+        if (errors) return
         loading.value = true
-
         let {
             data,
             error
@@ -124,24 +100,22 @@ const onSubmit = () => {
 
         loading.value = false
 
-        if (error.value) return;
+        if (error.value) return
 
         const { message } = createDiscreteApi(["message"])
-        message.success(type.value === 'login' ? "登录成功" : "注册成功")
+        message.success(type.value === "login" ? "登录成功" : "注册成功")
 
-        if (type.value === 'login') {
+        if (type.value === "login") {
             // 将用户登录成功返回的token存储在cookie当中，用户登录成功的标识
             const token = useCookie("token")
             token.value = data.value.token
-            // console.log(data.value);
             const user = useUser()
-
             user.value = data.value
 
             // 跳转
             navigateTo(route.query.from || "/", { replace: true })
         } else {
-            //切换回登录页
+            // 切换回登录页
             changeType()
         }
     })
@@ -149,14 +123,8 @@ const onSubmit = () => {
 
 useEnterEvent(() => onSubmit())
 
-
-
-//ui布局
 definePageMeta({
     layout: "login",
     middleware: ["only-visitor"]
 })
-
-
 </script>
-

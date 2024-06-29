@@ -1,11 +1,12 @@
-// 点击分页返回顶部
 export default {
   scrollBehavior(to, from, savedPosition) {
-    //在按下前进/后退按钮，就会触发这个方法实现前进后退功能
+    // 在按下 后退/前进 按钮时。就会像浏览器的原生表现那样
     if (savedPosition) {
       return savedPosition;
-    } else {
-      return { top: 0 };
     }
+
+    return {
+      top: 0,
+    };
   },
 };

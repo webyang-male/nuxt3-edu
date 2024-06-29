@@ -1,4 +1,3 @@
-<!-- 社区分类tabs组件 -->
 <template>
     <UiTab>
         <UiTabItem v-for="(item,index) in tabs" :key="index" :active="item.id == bbs_id" @click="handleClick(item.id)">{{ item.title }}</UiTabItem>

@@ -1,5 +1,3 @@
-<!-- 考试内容页面 -->
-<!-- 注意:体验考试请自行注册新账号 -->
 <template>
     <n-grid :x-gap="20">
         <n-grid-item :span="18">
@@ -15,7 +13,7 @@
                 </template>
 
                 <!-- 题目组件 -->
-                <PaperTestItems v-for="(item,index) in testpaper_questions" :key="index" :item="item" :index="index"
+                <PaperTestItem v-for="(item,index) in testpaper_questions" :key="index" :item="item" :index="index"
                 @change="handleUserValueChange(item,$event)"
                 :id="'question_'+index"/>
 
@@ -43,7 +41,6 @@
         </n-grid-item>
     </n-grid>
 </template>
-
 <script setup>
 import { onBeforeRouteLeave } from "vue-router"
 import {
