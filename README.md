@@ -1,6 +1,6 @@
 # Nuxt3-Edu 🎓
 ### 一·、项目简介
-<p align="center" dir="auto"><a href="https://vuejs.org" rel="nofollow"><img width="100" src="https://camo.githubusercontent.com/c8f91d18976e27123643a926a2588b8d931a0292fd0b6532c3155379e8591629/68747470733a2f2f7675656a732e6f72672f696d616765732f6c6f676f2e706e67" alt="Vue logo" data-canonical-src="https://vuejs.org/images/logo.png" style="max-width: 100%;"></a></p>
+<p align="center" dir="auto"><a href="https://vuejs.org" rel="nofollow"><img alt="Vue logo" src="./demo/Vue.png" style="max-width: 100%;"></a></p>
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=Vue&message=3.2&color=#36ad6"></img>
