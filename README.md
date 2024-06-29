@@ -42,3 +42,8 @@ npm run preview
 Checkout the
 [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more
 information.
+
+
+## Notes
+下载Dev分支代码即可正常运行，main分支是beta版。
+建议使用Node-18.20.3 LTS版本。
